@@ -1,0 +1,10 @@
+/*******************************************************************
+// 설명 : 전역으로 사용하는 font 요소
+// 전역 사용중 경로 : ~@/assets/scss/common.scss
+********************************************************************/
+
+@mixin customFont($font-family: Noto Sans CJK KR, $font-style: normal, $font-weight: normal) {
+  font-family: $font-family;
+  font-style: $font-style;
+  font-weight: $font-weight;
+}

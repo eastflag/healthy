@@ -1,0 +1,26 @@
+/*******************************************************************
+// 설명 : 프로젝트 공통적인 스타일링
+********************************************************************/
+@import 'font.scss';
+@import 'variables.scss';
+
+@import "~vuetify/src/styles/styles.sass";
+
+//전역 기본 폰트 커스텀
+#app{
+  @include customFont(Noto Sans CJK KR,normal,normal);
+  letter-spacing: 0.05rem;
+  color: $color-main;
+}
+
+//page Layout 영역
+.containerLayout{
+  position: relative;
+  left: 108px;
+  width: 1720px;
+  height: 1080px;
+  margin: 110px auto 0;
+  overflow-x: hidden;
+  padding: 10px;
+  //background-color: antiquewhite;
+}
