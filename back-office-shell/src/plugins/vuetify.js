@@ -8,6 +8,9 @@ import '@/assets/scss/_index.scss';
 import logo from '@/assets/images/icon/logo'
 import arrowDown from '@/assets/images/icon/arrow_down'
 import calender from '@/assets/images/icon/calender'
+import pagingArrow from '@/assets/images/icon/paging_nav_arrow'
+import actionPagingArrow from '@/assets/images/icon/action_paging_nav_arrow'
+import plusBtn from '@/assets/images/icon/plus_btn'
 
 Vue.use(Vuetify)
 
@@ -21,6 +24,9 @@ export default new Vuetify({
             logo:{ component: logo },
             arrowDown:{ component: arrowDown },
             calender:{ component: calender },
+            pagingArrow:{ component: pagingArrow },
+            actionPagingArrow:{ component: actionPagingArrow },
+            plusBtn:{ component: plusBtn },
         }
     },
     theme: {

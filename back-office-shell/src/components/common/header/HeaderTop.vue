@@ -1,7 +1,6 @@
 <template>
     <div class="hearderTop d-flex">
         <router-link to="/"><v-icon class="logo">$logo</v-icon></router-link>
-        <span>Healthy HADA</span>
     </div>
 </template>
 
@@ -23,14 +22,6 @@
 
            a{
                display: inline-block;
-           }
-           >span{
-               height: 30px;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               padding-left: 5px;
-               color: white;
            }
        }
     }

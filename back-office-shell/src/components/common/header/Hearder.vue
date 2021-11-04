@@ -33,7 +33,7 @@
             overflow: hidden;
             position: fixed;
             z-index: 2;
-            background-color: white;
+            background-color: $color-white;
             border-bottom: 1px solid $color-sub;
 
             .headerNav{

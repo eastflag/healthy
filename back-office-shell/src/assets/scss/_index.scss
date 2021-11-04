@@ -2,16 +2,19 @@
 // 설명 : SCSS의 @import를 형성하는 저장소
 ********************************************************************/
 
-@import "~vuetify/src/styles/main.sass";
+@import '~vuetify/src/styles/main.sass';
 
 //프로젝트 css 속성 리셋
-@import "reset.scss";
+@import 'reset.scss';
 
 //컴포넌트 공통 스타일링
-@import "common.scss";
+@import 'common.scss';
+
+//스크롤바 커스텀 스타일링
+@import 'customScrollBar.scss';
 
 //전역 scss
-//@import "variables.scss";
+@import 'variables.scss';
 
 //전역 폰트 스타일링
 @import 'font.scss';

@@ -22,12 +22,15 @@ export default {
 
 <style lang="scss">
 #app {
-   /*Router Transition*/
-  .page-enter-active, .page-leave-active{
-    transition: opacity .3s;
-  }
-  .page-enter, .page-leave-to{
-    opacity: 0;
-  };
+    width: 1920px;
+    height: auto;
+    background-color: #F9F9F9;
+    /*Router Transition*/
+      .page-enter-active, .page-leave-active{
+        transition: opacity .2s;
+      }
+      .page-enter, .page-leave-to{
+        opacity: 0;
+      };
 }
 </style>

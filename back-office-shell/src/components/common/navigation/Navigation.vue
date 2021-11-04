@@ -46,10 +46,11 @@
      #app{
         .navigationLayout{
             position: absolute;
+            height: auto;
+            min-height: 860px;
             margin-top: 110px;
             width:200px;
-            height: 1080px;
-            background: #88BFB5;
+            background: $color-sub;
             overflow: hidden;
             z-index: 1;
 
@@ -58,17 +59,16 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color:  $color-basic;
             }
 
             ul.nav{
-                height: 100%;
                 padding-left: 15px;
                 text-align: left;
-                font-size: 14px;
+                font-size: $font-14;
 
                 >li{
                     height: auto;
+                    margin-bottom: 5px;
                     padding: 5px 0 0 10px;
 
                     >a{
@@ -90,17 +90,17 @@
                                 margin-top: 3px;
                             }
                             &:hover a{
-                                color: $color-actionFont !important;
+                                color: $color-action-font !important;
                             }
                         }
                     }
 
                     &.action{
                         border-radius: 10px 0 0 10px;
-                        background-color: white;
+                        background-color: $color-basic-bg;
 
                         //action, hover & onclick change-font
-                        //li{color: $color-actionFont;}
+                        //li{color: $color-action-font;}
                     }
                 }
             }

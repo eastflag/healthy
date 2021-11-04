@@ -6,7 +6,6 @@
 
 *{
   -webkit-text-size-adjust:none;
-
 }
 
 html, body, div, span, applet, object, iframe,
@@ -43,18 +42,25 @@ button, input, select, textarea{
   margin: 0;
   vertical-align: baseline;
 }
+
+input, textarea{
+  outline: 0;
+  &:focus{
+    border: 1px solid #88BFB5;
+  }
+}
+
 button{
   cursor:pointer;
 }
+
 button, input {
   line-height: normal;
   border:none;
   background:none;
   outline:none;
 }
-:focus {
-  outline: 0;
-}
+
 /* HTML5 hidden-attribute fix for newer browsers */
 *[hidden] {
   display: none;
