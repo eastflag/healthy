@@ -7,23 +7,42 @@
 @import "~vuetify/src/styles/styles.sass";
 
 /** 전역 기본 폰트 커스텀 */
+html{
+  background-color: $color-basic-bg;
+}
 #app{
   @include customFont(Noto Sans CJK KR,normal,normal);
   letter-spacing: 0.05rem;
   color: $color-basic;
+  background-color: $color-basic-bg;
+  /*Router Transition*/
+  //.page-enter-active, .page-leave-active{
+  //  transition: opacity .3s;
+  //}
+  //.page-enter, .page-leave-to{
+  //  opacity: 0;
+  //};
+
+  .app{
+    width: 1920px;
+    min-height: 970px;
+    height: auto;
+    margin: 0 auto;
+  }
 }
 
 /**  전역 Views Page Layout 영역 */
 .containerLayout{
+  box-sizing: border-box;
   position: relative;
   left: 97px;
   width: 1715px;
   max-width: 1715px;
   min-width: 1715px;
+  min-height: 970px;
   height: auto;
   margin: 110px auto 0;
   padding: 20px;
-  overflow: hidden;
 }
 
 /** common button 스타일링 커스텀 영역 */
@@ -95,9 +114,9 @@ input.checkbx[type="checkbox"],input.radiobx[type="radio"]{
 /** 체크박스 커스텀 스타일링 영역 */
 input.checkbx[type="checkbox"]{
   &:checked + label:before, &:not(:checked) + label:before{
-     width: 18px;
-     height: 18px;
-   }
+    width: 18px;
+    height: 18px;
+  }
   &:checked + label:after, &:not(:checked) + label:after{
     top: 0px;
     left: 5px;
@@ -121,32 +140,32 @@ input.checkbx[type="checkbox"]{
   }
 }
 
-/** 라디오 박스 커스텀 스타일링 영역 */u
-input.radiobx[type="radio"] {
-  &:checked + label:before, &:not(:checked) + label:before{
-    width: 20px;
-    height: 20px;
-    border-radius: ($border-radius-root)x4;
-  }
-  &:checked + label:after, &:not(:checked) + label:after{
-    top: 3px;
-    left:3px;
-    border-radius: 16px;
-    width: 16px;
-    height: 16px;
-    background: $color-sub;
-  }
-  &:not(:checked) + label:after{
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-  &:checked + label:after {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
+/** 라디오 박스 커스텀 스타일링 영역 */
+   input.radiobx[type="radio"] {
+     &:checked + label:before, &:not(:checked) + label:before{
+       width: 20px;
+       height: 20px;
+       border-radius: ($border-radius-root)x4;
+     }
+     &:checked + label:after, &:not(:checked) + label:after{
+       top: 3px;
+       left:3px;
+       border-radius: 16px;
+       width: 16px;
+       height: 16px;
+       background: $color-sub;
+     }
+     &:not(:checked) + label:after{
+       opacity: 0;
+       -webkit-transform: scale(0);
+       transform: scale(0);
+     }
+     &:checked + label:after {
+       opacity: 1;
+       -webkit-transform: scale(1);
+       transform: scale(1);
+     }
+   }
 
 /** select, inputText 스타일링 커스텀 영역 */
 input[type="text"],select {

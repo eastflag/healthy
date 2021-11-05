@@ -32,7 +32,7 @@
             height: 110px;
             overflow: hidden;
             position: fixed;
-            z-index: 2;
+            z-index: 99;
             background-color: $color-white;
             border-bottom: 1px solid $color-sub;
 

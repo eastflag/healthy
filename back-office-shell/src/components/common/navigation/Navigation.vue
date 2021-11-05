@@ -1,4 +1,7 @@
 <template>
+    <!--<div class="navigationLayout">
+        <sidebar-menu :menu="menu"/>
+    </div>-->
     <transition name="page" slot-scope="value">
         <div class='navigationLayout'>
             <div class="title">{{ title }}</div>
@@ -30,12 +33,62 @@
 <script>
     export default {
         name: "Navigation",
+        components: {
+            // SidebarMenu
+        },
         data () {
             return {
                 title: '게시판 관리',
-                treeData:[
-                    {}
-                ]
+                items: [
+                    {
+                        header: true,
+                        title: "게시판 관리",
+                        hiddenOnCollapse: false,
+                    },
+                    {
+                        title: "FAQ",
+                        child: [
+                            {
+                                href: "/faq",
+                                title: "FAQ목록",
+                            },
+                            {
+                                href: "/faq-upload-revise",
+                                title: "FAQ 등록/수정",
+                            },
+                        ],
+                    },
+                    {
+                        title: "1:1문의",
+                        child: [
+                            {
+                                href: "/inquiry-faq",
+                                title: "FAQ",
+                            },
+                            {
+                                href: "/inquiry-list",
+                                title: "문의목록",
+                            },
+                            {
+                                href: "/inquiry-notice",
+                                title: "공지사항",
+                            },
+                        ],
+                    },
+                    {
+                        title: "공지사항",
+                        child: [
+                            {
+                                href: "/notice-list",
+                                title: "공지목록",
+                            },
+                            {
+                                href: "/notice-upload-revise",
+                                title: "공지 등록/수정",
+                            },
+                        ],
+                    },
+                ],
             }
         },
     }
@@ -47,11 +100,10 @@
         .navigationLayout{
             position: absolute;
             height: auto;
-            min-height: 860px;
+            min-height: 970px;
             margin-top: 110px;
             width:200px;
             background: $color-sub;
-            overflow: hidden;
             z-index: 1;
 
             .title{

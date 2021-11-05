@@ -10,12 +10,12 @@
                 <td>
                     <div class="dm_bx">
                         <div class="datebx">
-                            <input type="text" id="address" name="info1" placeholder="2021.04.01" class="calen">
+                            <input type="text" id="address" name="info1" :placeholder=todate class="calen">
                             <label for="address"></label>
                         </div>
                         ~
                         <div class="datebx">
-                            <input type="text" id="address" name="info1" placeholder="2021.04.01" class="calen">
+                            <input type="text" id="address" name="info1" :placeholder=todate class="calen">
                             <label for="address"></label>
                         </div>
                         <div class="month">
@@ -62,10 +62,16 @@
 <script>
     import ActionBtn from '../buttonComponents/ActionBtn'
     import BasicBtn from '../buttonComponents/BasicBtn'
+    import dayjs from 'dayjs'
 
     export default {
         name: "BoardInput",
-        components: { ActionBtn , BasicBtn}
+        components: { ActionBtn , BasicBtn , dayjs },
+        data() {
+            return {
+                todate: dayjs().format("YYYY-MM-DD"),
+            }
+        },
     }
 </script>
 

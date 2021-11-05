@@ -6,17 +6,26 @@
             </div>
         </template>
         <template>
-            <board-input/>
+            <upload-editor/>
+        </template>
+        <template>
+            <upload-form/>
         </template>
     </v-container>
 </template>
 
 <script>
+    import UploadForm from '@/components/common/boardComponents/UploadForm'
+    import UploadEditor from '@/components/common/boardComponents/UploadEditor'
 
     export default {
         name: "NoticeUploadRevise",
-        components: {
-        }
+        components: { UploadForm , UploadEditor },
+        data() {
+            return {
+
+            };
+        },
     }
 </script>
 
@@ -25,8 +34,8 @@
     #app{
         .containerLayout{
             .content{
-                width: 99%;
-                height: 60px;
+                width: 100%;
+                height: 32px;
                 overflow: hidden;
             }
         }

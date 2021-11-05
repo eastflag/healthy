@@ -1,12 +1,14 @@
 <template>
   <v-app id="app">
       <Header/>
-      <template>
-          <navigation/>
-      </template>
-      <transition name="page">
-          <router-view />
-      </transition>
+      <div class="app">
+          <template>
+              <navigation style="height: 100%"/>
+          </template>
+          <transition name="page">
+              <router-view />
+          </transition>
+      </div>
   </v-app>
 </template>
 
@@ -20,17 +22,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#app {
-    width: 1920px;
-    height: auto;
-    background-color: #F9F9F9;
-    /*Router Transition*/
-      .page-enter-active, .page-leave-active{
-        transition: opacity .2s;
-      }
-      .page-enter, .page-leave-to{
-        opacity: 0;
-      };
-}
+<style lang="scss" scoped>
+    @import '~@/assets/scss/_index.scss';
 </style>
