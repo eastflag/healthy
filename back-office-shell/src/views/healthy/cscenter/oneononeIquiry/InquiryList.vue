@@ -1,12 +1,21 @@
-<template>
-    <div class="containerLayout">
-        <p>Inquiry list</p>
-    </div>
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+    <v-container fluid class="containerLayout">
+        <template>
+            <inquiry-list-input/>
+        </template>
+        <template>
+            <inquiry-list-list/>
+        </template>
+    </v-container>
 </template>
 
 <script>
+    import InquiryListInput from '@/components/common/eachPageComponents/cscenterComponents/InquiryListInput'
+    import InquiryListList from '@/components/common/eachPageComponents/cscenterComponents/InquiryListList'
+
     export default {
-        name: "InquiryList"
+        name: "InquiryList",
+        components: { InquiryListInput , InquiryListList }
     }
 </script>
 

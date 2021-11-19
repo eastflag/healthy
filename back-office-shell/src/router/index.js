@@ -71,7 +71,7 @@ import TrchnicalMember from '@/views/healthy/member/member/TrchnicalMember'
 // import {} from ''
 
 //프로모션/마케팅
-// import {} from ''
+import CouponList from '@/views/healthy/promotionalMarketing/coupon/CouponList'
 // import {} from ''
 // import {} from ''
 // import {} from ''
@@ -86,19 +86,6 @@ import FAQUploadRevise from '@/views/healthy/cscenter/FAQ/FAQUploadRevise'
 import InquiryList from '@/views/healthy/cscenter/oneononeIquiry/InquiryList'
 import NoticeList from '@/views/healthy/cscenter/notice/NoticeList'
 import NoticeUploadRevise from '@/views/healthy/cscenter/notice/NoticeUploadRevise'
-
-//정산
-// import {} from ''
-// import {} from ''
-// import {} from ''
-
-//시스템관리
-// import {} from ''
-// import {} from ''
-// import {} from ''
-// import {} from ''
-// import {} from ''
-// import {} from ''
 
 Vue.use(VueRouter)
 
@@ -115,9 +102,9 @@ const router = new VueRouter({
 
         { path : '/', component : mainLayOut,
             children: [
-                //슈퍼관리 대시보드
+                //슈퍼관리 대시보드 => 할당 예정 페이지
                 { path : 'super/main', redirect: '/super/main/dash-board' },
-                { path : 'super/main/dash-board',  name :'DashBoard',  component: DashBoard },
+                { path : 'super/main/dash-board',  name :'DashBoard',  component: DashBoard }, //대시보드
 
                 //슈퍼관리 관리자 환경설정
                 { path : 'super/admin-member', redirect: '/super/admin-member/items' },
@@ -153,16 +140,27 @@ const router = new VueRouter({
                 //회원관리 탈퇴회원
                 //회원관리 통계
 
-                //게시판 관리 FAQ
+
+                //프로모션/마케팅 쿠폰관리
+                { path : 'promotional', redirect: '/promotional/coupon/items' },
+                { path : '/promotional/coupon/items', name :'CouponList', component: CouponList }, //쿠폰목록
+                { path : '', name :'', component: '' }, //쿠폰발행요청
+                { path : '', name :'', component: '' }, //쿠폰등록/수정
+
+                //프로모션/마케팅 포인트관리
+                { path : '', name :'', component: ''}, //포인트관리
+
+
+                //게시판 관리 FAQ => 할당 예정 페이지
                 { path: 'cs-center/faq', redirect: '/cs-center/faq/items' },
-                { path: 'cs-center/faq/items', component: FAQ },
-                { path: 'cs-center/faq/add-items', component: FAQUploadRevise },
+                { path: 'cs-center/faq/items', component: FAQ }, //FAQ목록
+                { path: 'cs-center/faq/add-items', component: FAQUploadRevise }, //FAQ등록/수정
 
-                //게시판 관리 1:1문의
+                //게시판 관리 1:1문의 => 할당 예정 페이지 ( 컴포넌트 세팅 된 페이지 )
                 { path : 'cs-center/one-on-one', redirect: '/cs-center/one-on-one/items' },
-                { path : 'cs-center/one-on-one/items', name :'InquiryList', component: InquiryList },
+                { path : 'cs-center/one-on-one/items', name :'InquiryList', component: InquiryList }, //문의목록
 
-                //게시판 관리 공지사항
+                //게시판 관리 공지사항 => 견본 페이지 & 컴포넌트
                 { path : 'cs-center/notice', redirect: '/cs-center/notice/items' },
                 { path : 'cs-center/notice/items', name : 'NoticeList', component: NoticeList },
                 { path : 'cs-center/notice/add-items', name :'NoticeUploadRevise', component: NoticeUploadRevise },
@@ -213,47 +211,8 @@ const router = new VueRouter({
 
          //상품관리 상품일괄관리
          { path : '', name :'', component: ''},
-
-         //프로모션/마케팅 프로모션관리
-         { path : '', name :'', component: ''},
-         { path : '', name :'', component: ''},
-
-         //프로모션/마케팅 마케팅관리
-         { path : '', name :'', component: ''},
-         { path : '', name :'', component: ''},
-
-         //프로모션/마케팅 쿠폰관리
-         { path : '', name :'', component: ''},
-         { path : '', name :'', component: ''},
-
-         //프로모션/마케팅 포인트관리
-         { path : '', name :'', component: ''},
-         { path : '', name :'', component: ''},
          */
 
-
-        /**
-         //정산 수수료정산
-         { path : '', name :'', component: ''},
-
-         //정산 전문인정산지급
-         { path : '', name :'', component: ''},
-
-         //정산 정산관리
-         { path : '', name :'', component: ''},
-
-         //시스템관리 시스템관리
-         { path : '', name :'', component: ''},
-         { path : '', name :'', component: ''},
-         { path : '', name :'', component: ''},
-
-         //시스템관리 사용자 접속통계
-         { path : '', name :'', component: ''},
-
-         //시스템관리 회원등급관리
-         { path : '', name :'', component: ''},
-         { path : '', name :'', component: ''},
-         */
     ]
 })
 
