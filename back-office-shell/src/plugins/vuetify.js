@@ -5,12 +5,15 @@ import ko from 'vuetify/es5/locale/ko';
 import '@/assets/scss/_index.scss';
 
 //svg 이미지 적용플러그인
-import logo from '@/assets/images/icon/logo'
-import arrowDown from '@/assets/images/icon/arrow_down'
-import calender from '@/assets/images/icon/calender'
-import pagingArrow from '@/assets/images/icon/paging_nav_arrow'
-import actionPagingArrow from '@/assets/images/icon/action_paging_nav_arrow'
-import plusBtn from '@/assets/images/icon/plus_btn'
+import logo from '@/assets/images/vuetfiyIcon/logo'
+import arrowDown from '@/assets/images/vuetfiyIcon/arrow_down'
+import calender from '@/assets/images/vuetfiyIcon/calender'
+import pagingArrow from '@/assets/images/vuetfiyIcon/paging_nav_arrow'
+import actionPagingArrow from '@/assets/images/vuetfiyIcon/action_paging_nav_arrow'
+import plusBtn from '@/assets/images/vuetfiyIcon/plus_btn'
+import closeBtn from '@/assets/images/vuetfiyIcon/modalClose'
+import titleListIcon from '@/assets/images/vuetfiyIcon/titleListIcon'
+import titleIcon from '@/assets/images/vuetfiyIcon/title_icon'
 
 Vue.use(Vuetify)
 
@@ -20,6 +23,7 @@ export default new Vuetify({
         current: 'ko',
     },
     icons:{
+        iconfont: 'mdi',
         values:{
             logo:{ component: logo },
             arrowDown:{ component: arrowDown },
@@ -27,6 +31,9 @@ export default new Vuetify({
             pagingArrow:{ component: pagingArrow },
             actionPagingArrow:{ component: actionPagingArrow },
             plusBtn:{ component: plusBtn },
+            closeBtn:{ component: closeBtn },
+            titleListIcon:{ component: titleListIcon },
+            titleIcon:{ component: titleIcon },
         }
     },
     theme: {

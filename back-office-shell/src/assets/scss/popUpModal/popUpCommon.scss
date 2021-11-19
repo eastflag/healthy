@@ -1,0 +1,136 @@
+/*******************************************************************
+// 설명 : Modal에 공통되는 스타일링
+********************************************************************/
+@import '../_index.scss';
+
+.popup_bx{
+  height: auto;
+  max-height: 330px;
+  padding:30px;
+  text-align:center;
+  border:1px solid $color-bg-border;
+  background-color: $color-white;
+
+  .tit{
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color-sub;
+    text-align:left;
+    font-size: $font-16;
+    color: $color-sub;
+  }
+
+  p{
+    padding-top: 50px;
+    line-height:1.4em;
+    font-size: $font-15;
+    text-align:left;
+  }
+}
+
+// 승인 Modal
+ul, ul.listForm{
+  width: 100%;
+  height: 65px;
+  padding: 0 !important;
+  margin-top: 20px;
+  text-align: left;
+
+  li{
+    display: flex;
+    align-items: center;
+
+
+    /** "l" Vertical bar line */
+    //:not(:last-child)
+    &:before{
+      position: absolute;
+      width: 3px;
+      height: 14px;
+      content:"";
+      background-color: $color-sub;
+    }
+    em{
+      display: inline-block;
+      padding-left: 13px;
+
+      &:after{
+        content: " : ";
+      }
+    }
+    span{
+      padding-left: 3px;
+    }
+  }
+}
+.inputLayoutContent{
+  margin-top: 25px;
+  input[teyps="text"]{
+    color: $color-basic;
+  }
+}
+
+// successModal
+.modalLayout{
+  width: inherit;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border:1px solid $color-bg-border;
+
+  .and_popup_bx{
+    margin-top: 50px;
+    width: 90%;
+    text-align: center;
+
+    p{
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// NotApprovedModal
+.and_popup_input {
+  height: 220px;
+  padding: 20px;
+  font-weight: bold;
+  border: 1px solid $color-bg-border;
+
+  .modalTitle{
+      display: flex;
+      align-items: center;
+
+      &:before{
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 14px;
+        background-color: $color-sub;
+      }
+
+      span{
+        padding-left: 13px;
+      }
+    }
+  .inputLayoutContent{
+    textarea {
+      width: 458px;
+      height: 80px;
+      padding: 10px;
+      word-break: break-word;
+      font-weight: normal;
+      border: 1px solid $color-bg-border;
+
+      &::placeholder{
+        font-weight: normal;
+      }
+      &:focus{
+        border: 1px solid $color-sub;
+      }
+    }
+  }
+}
+
+
+

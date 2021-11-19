@@ -11,4 +11,9 @@
 </script>
 
 <style lang="scss" scoped>
+    #app{
+        .button{
+            margin-bottom: 15px;
+        }
+    }
 </style>

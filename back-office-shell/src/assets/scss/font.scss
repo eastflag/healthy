@@ -1,6 +1,7 @@
 /*******************************************************************
 // 설명 : 전역으로 사용하는 font 요소
 // 전역 사용중 경로 : ~@/assets/scss/common.scss
+// 사용 법 : @include customFont(Noto Sans CJK KR,normal,normal);
 ********************************************************************/
 
 @mixin customFont($font-family: Noto Sans CJK KR, $font-style: normal, $font-weight: normal) {

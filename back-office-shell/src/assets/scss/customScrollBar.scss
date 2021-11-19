@@ -4,7 +4,7 @@
 // 사용 법 : @include customScrollBar();
 ********************************************************************/
 
-@mixin customScrollBar($width: 5px, $height: 5px, $color: rgba(0, 0, 0, 0.4), $radius: 3px) {
+@mixin customScrollBar($width: 5px, $height: 5px, $color: #88BFB5, $radius: 3px) {
   /* width */
   &::-webkit-scrollbar {
     width: $width !important;

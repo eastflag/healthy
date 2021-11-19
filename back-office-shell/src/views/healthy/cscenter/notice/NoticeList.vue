@@ -18,12 +18,12 @@
 </template>
 
 <script>
-    import boardList from '@/components/common/boardComponents/BoardList'
-    import boardInput from '@/components/common/boardComponents/BoardInput'
+    import boardList from '../../../../components/common/eachPageComponents/cscenterComponents/BoardList'
+    import boardInput from '../../../../components/common/eachPageComponents/cscenterComponents/BoardInput'
 
     export default {
         name: "NoticeList",
-        components: { boardInput , boardList }
+        components: { boardInput , boardList },
     }
 </script>
 
@@ -31,31 +31,31 @@
     @import '~@/assets/scss/_index.scss';
     #app{
         .containerLayout{
-           .content{
-               width: 99%;
-               height: 60px;
-               overflow: hidden;
+            .content{
+                width: 99%;
+                height: 60px;
+                overflow: hidden;
 
-               .boardNav{
-                   width: 200px;
-                   height: 25px;
-                   display:flex;
-                   justify-content: space-between;
-                   align-items: center;
-                   font-size: $font-12;
-                   color: $color-span;
+                .boardNav{
+                    width: 200px;
+                    height: 25px;
+                    display:flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: $font-12;
+                    color: $color-span;
 
-                   span:last-child{
-                       color:  $color-basic;
-                   }
-               }
+                    span:last-child{
+                        color:  $color-basic;
+                    }
+                }
 
-               .title{
-                   display: inline-block;
-                   margin-top: 5px;
-                   font-size: $font-24 !important;
-               }
-           }
+                .title{
+                    display: inline-block;
+                    margin-top: 5px;
+                    font-size: $font-24 !important;
+                }
+            }
         }
     }
 </style>

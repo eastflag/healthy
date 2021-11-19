@@ -1,5 +1,4 @@
 const store = {
     modules:{
-
     }
 }

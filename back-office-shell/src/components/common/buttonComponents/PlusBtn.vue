@@ -1,7 +1,7 @@
 <template>
     <div class="button d-flex justify-center">
         <button class="btn mid bg_green" v-bind="$attrs" v-on="$listeners">
-            <slot></slot>
+            <v-icon class="plusBtn">$plusBtn</v-icon><slot></slot>
         </button>
     </div>
 </template>
@@ -13,10 +13,19 @@
 </script>
 
 <style lang="scss" scoped>
-    button{
-        display: flex;
-        height: inherit;
-        align-items: center;
-        justify-content: center;
+    #app{
+        .button{
+            margin-bottom: 15px;
+
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .plusBtn{
+                    padding-right: 5px;
+                }
+            }
+        }
     }
 </style>

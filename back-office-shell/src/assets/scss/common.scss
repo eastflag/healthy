@@ -15,13 +15,6 @@ html{
   letter-spacing: 0.05rem;
   color: $color-basic;
   background-color: $color-basic-bg;
-  /*Router Transition*/
-  //.page-enter-active, .page-leave-active{
-  //  transition: opacity .3s;
-  //}
-  //.page-enter, .page-leave-to{
-  //  opacity: 0;
-  //};
 
   .app{
     width: 1920px;
@@ -69,7 +62,7 @@ html{
 
 /** check button 스타일링 커스텀 영역 */
 //input & textarea 공통 커스텀
-input[type="text"],textarea,select{
+input[type="text"],input[type="url"],textarea,select{
   outline: none;
   &::placeholder{
     color: $color-action;
@@ -145,14 +138,14 @@ input.checkbx[type="checkbox"]{
      &:checked + label:before, &:not(:checked) + label:before{
        width: 20px;
        height: 20px;
-       border-radius: ($border-radius-root)x4;
+       border-radius: 50%;
      }
      &:checked + label:after, &:not(:checked) + label:after{
        top: 3px;
-       left:3px;
-       border-radius: 16px;
-       width: 16px;
-       height: 16px;
+       left: 3px;
+       border-radius: 50%;
+       width: 14px;
+       height: 14px;
        background: $color-sub;
      }
      &:not(:checked) + label:after{
@@ -168,7 +161,7 @@ input.checkbx[type="checkbox"]{
    }
 
 /** select, inputText 스타일링 커스텀 영역 */
-input[type="text"],select {
+input[type="text"],input[type="url"],input[type="password"],select {
   width: 100%;
   padding: 5px 10px;
   display: inline-block;

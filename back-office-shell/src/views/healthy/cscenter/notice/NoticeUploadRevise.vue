@@ -6,21 +6,21 @@
             </div>
         </template>
         <template>
-            <upload-editor/>
+            <upload-editor-input/>
         </template>
         <template>
-            <upload-form/>
+            <upload-editor-form/>
         </template>
     </v-container>
 </template>
 
 <script>
-    import UploadForm from '@/components/common/boardComponents/UploadForm'
-    import UploadEditor from '@/components/common/boardComponents/UploadEditor'
+    import UploadEditorInput from '@/components/common/eachPageComponents/cscenterComponents/UploadEditorInput'
+    import UploadEditorForm from '@/components/common/eachPageComponents/cscenterComponents/UploadEditorForm'
 
     export default {
         name: "NoticeUploadRevise",
-        components: { UploadForm , UploadEditor },
+        components: { UploadEditorInput , UploadEditorForm },
         data() {
             return {
 

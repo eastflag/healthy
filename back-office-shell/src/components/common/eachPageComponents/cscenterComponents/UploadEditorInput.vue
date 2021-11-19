@@ -16,11 +16,8 @@
                 </td>
                 <th>게시여부</th>
                 <td>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="upload" name="list_check"><label for="upload"><em>게시</em></label>
-                    </div>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="unUpload" name="list_check"><label for="unUpload"><em>미게시</em></label>
+                    <div v-for="(item, index) in radioBoxTop" :key="index" class="spot">
+                        <input class="radiobx" type="radio" :id="'T'+item.idx" name="radioT"><label :for="'T'+item.idx"><em>{{ item.title }}</em></label>
                     </div>
                 </td>
             </tr>
@@ -29,25 +26,14 @@
                 <td>
                     <div class="selectbx d-flex">
                         <select id="departure" name="departure">
-                            <option value="num1">검색1</option>
-                            <option value="num2">검색2</option>
-                            <option value="num3">검색3</option>
+                            <option :key="i" :value="data.value" v-for="(data, idex) in options">{{ data.title }}</option>
                         </select>
                     </div>
                 </td>
                 <th>게시유형</th>
                 <td>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="typeCheck0" name="type_check"><label for="typeCheck0"><em>전체</em></label>
-                    </div>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="typeCheck1" name="type_check"><label for="typeCheck1"><em>전문인</em></label>
-                    </div>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="typeCheck2" name="type_check"><label for="typeCheck2"><em>고객</em></label>
-                    </div>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="typeCheck3" name="type_check"><label for="typeCheck3"><em>입점업체</em></label>
+                    <div v-for="(item, index) in radioBox" :key="index" class="spot">
+                        <input class="radiobx" type="radio" :id="item.idx" name="radio"><label :for="item.idx"><em>{{ item.title }}</em></label>
                     </div>
                 </td>
             </tr>
@@ -56,7 +42,7 @@
                 <td>
                 <div class="dm_bx">
                     <div class="datebx">
-                        <input type="text" id="address" name="info1" :placeholder=todate class="calen">
+                        <input type="text" id="address" name="info1" :placeholder=todate class="calen" @click="calendar_toggle">
                         <label for="address"></label>
                     </div>
                     ~
@@ -72,12 +58,13 @@
                 </td>
             </tr>
         </table>
+        <calendar v-show="is_show"/>
     </v-container>
 </template>
 
 <script>
     import dayjs from 'dayjs'
-
+    // import Calendar from '@/components/common/Calendar'
     export default {
         name: "UploadEditor",
         component: {
@@ -87,8 +74,47 @@
             return {
                 // YYYY-MM-DD HH mm ss 한국시간 표시
                 todate: dayjs().format("YYYY-MM-DD"),
+                is_show: false,
+                options:[
+                    { value: "num1", title: "검색1" },
+                    { value: "num2", title: "검색2" },
+                    { value: "num3", title: "검색3" },
+                ],
+                radioBoxTop: [
+                    {
+                        idx:1,
+                        title: '게시',
+                    },
+                    {
+                        idx:2,
+                        title: '미게시',
+                    },
+                ],
+                radioBox: [
+                    {
+                        idx:1,
+                        title: '전체',
+                    },
+                    {
+                        idx:2,
+                        title: '전문인',
+                    },
+                    {
+                        idx:3,
+                        title: '고객',
+                    },
+                    {
+                        idx:4,
+                        title: '입점업체',
+                    },
+                ],
             }
         },
+        methods:{
+            calendar_toggle: function () {
+                this.is_show = !this.is_show;
+            }
+        }
     }
 </script>
 
@@ -149,7 +175,7 @@
                                 }
 
                                 .calen{
-                                    background:url('~@/assets/images/calender.svg') no-repeat 226px center;
+                                    background:url('~@/assets/images/icons/calender.svg') no-repeat 226px center;
                                     background-size:20px auto;
                                 }
                             }
@@ -169,7 +195,7 @@
                             select{
                                 width: 260px;
                                 margin-right: 15px;
-                                background:url('~@/assets/images/search.svg') no-repeat 226px center;
+                                background:url('~@/assets/images/icons/search.svg') no-repeat 226px center;
 
                                 option {
                                     height: 20px;
