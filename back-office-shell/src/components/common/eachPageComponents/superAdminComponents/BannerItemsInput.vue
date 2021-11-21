@@ -47,6 +47,9 @@
                             <input type="text" id="address" name="info1" :placeholder=todate class="calen">
                             <label for="address"></label>
                         </div>
+                        <div class="month">
+                            <span class="on">당일</span><span>1주일</span><span>1개월</span><span>3개월</span><span>6개월</span><span>1년</span><span>전체</span>
+                        </div>
                     </div>
                 </td>
             </tr>
@@ -233,6 +236,31 @@
                                     .calen{
                                         background:url('~@/assets/images/icons/calender.svg') no-repeat 226px center;
                                         background-size:20px auto;
+                                    }
+                                }
+                                .month{
+                                    span{
+                                        display:inline-block;
+                                        width:60px;
+                                        height:30px;
+                                        border: 1px solid $color-sub;
+                                        border-right: none;
+                                        line-height:30px;
+                                        text-align:center;
+                                        cursor:pointer;
+
+                                        &:last-child{
+                                            border-right:1px solid $color-sub;
+                                        }
+
+                                        &.on{
+                                            display:inline-block;
+                                            width:60px;
+                                            height:30px;
+                                            text-align:center;
+                                            line-height:30px;
+                                            background-color: $color-sub;
+                                        }
                                     }
                                 }
                             }

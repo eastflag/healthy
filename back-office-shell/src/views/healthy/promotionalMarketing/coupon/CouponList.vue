@@ -10,7 +10,6 @@
 </template>
 
 <script>
-    import {} from ''
     export default {
         name: "CouponList"
     }
@@ -18,5 +17,4 @@
 
 <style lang="scss" scoped>
     @import '~@/assets/scss/_index.scss';
-
 </style>
