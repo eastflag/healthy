@@ -1,6 +1,6 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <v-container fluid class="boardLayout">
-        <template v-if="!show">
+        <template v-if="show">
             <table>
                 <colgroup>
                     <col width="200px">
@@ -82,12 +82,12 @@
             </table>
         </template>
 
-        <template v-if="show">
-            <div>das</div>
+        <template v-if="!show">
+            <div>퍼블필요</div>
         </template>
 
         <template v-if="!show">
-            <div>das</div>
+            <div>퍼블필요</div>
         </template>
     </v-container>
 </template>

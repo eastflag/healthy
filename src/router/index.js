@@ -9,18 +9,17 @@ import VueRouter from 'vue-router'
 /** ************************************** */
 
 // healthy login layout
-import loginLayOut from "@/views/healthy/layout/loginPageLayout";
-import login from "@/views/healthy/login/login";
+import loginLayOut from "@/views/healthy/layout/loginPageLayout"
+import login from "@/views/healthy/login/login"
 
 // healthy mian layout
-import mainLayOut from "@/views/healthy/layout/mainPageLayout";
+import mainLayOut from "@/views/healthy/layout/mainPageLayout"
 
 //슈퍼 관리
 import DashBoard from '@/views/healthy/super/main/DashBoard'
 import AdminList from '@/views/healthy/super/adminMember/AdminUpload'
 import AdminUpload from '@/views/healthy/super/adminMember/JoinItems'
 import AdminHistory from '@/views/healthy/super/adminMember/PathHistories'
-import JoinSettings from '@/views/healthy/super/adminMember/JoinSettings'
 import BannerList from '@/views/healthy/super/banner/BannerItems'
 import BannerUpload from '@/views/healthy/super/banner/BannerAddItems'
 import PopUpList from '@/views/healthy/super/popUp/Items'
@@ -88,31 +87,42 @@ const router = new VueRouter({
         },
 
         { path : '/', component : mainLayOut,
+
+            /**
+             * [ 슈퍼관리 ]만 해당사항
+             * 퍼블 작업 필요한 페이지 : '퍼블 요청 O'
+             * 세부적 컴포넌트 및 페이지 별도(라우터상) 표시
+             *
+             * [ 게시판 관리 공지사항 ] 견본 퍼블페이지
+             * 퍼블 작업 완료된 페이지 : '퍼블 요청 X'
+             *
+             * 퍼블 페이지 견본 및 샘플링 컴포넌트구도는 [ 게시판 관리 ] 영역부터 살펴보시면 안내 되어있습니다.
+             **/
+
             children: [
-                //슈퍼관리 대시보드 => 할당 예정 페이지
-                { path : 'super/main', redirect: '/super/main/dash-board' },
+                //슈퍼관리 대시보드 => => 퍼블 요청 O
+                { path : 'super/main', redirect: 'super/main/dash-board' },
                 { path : 'super/main/dash-board',  name :'DashBoard',  component: DashBoard }, //대시보드
 
-                //슈퍼관리 관리자 환경설정
-                { path : 'super/admin-member', redirect: '/super/admin-member/items' },
-                { path : 'super/admin-member/items', name :'AdminList', component: AdminList }, //관리자리스트
-                { path : 'super/admin-member/join-items', name :'AdminUpload', component: AdminUpload }, //관리자등록 => 할당 예정 페이지
-                { path : 'super/admin-member/path-histories', name :'AdminHistory', component: AdminHistory }, //관리자이력관리
-                { path : 'super/admin-member/join-settings', name :'JoinSettings', component: JoinSettings }, //=> 시스템관리 이동 예정
+                //슈퍼관리 관리자 환경설정 => 퍼블 요청 O
+                { path : 'super/admin-member', redirect: 'super/admin-member/items' },
+                { path : 'super/admin-member/items', name :'AdminList', component: AdminList }, //관리자리스트 => 퍼블작업 done.
+                { path : 'super/admin-member/join-items', name :'AdminUpload', component: AdminUpload }, //관리자등록 => 퍼블작업 (1/4) done. [ 왼쪽 카테고리 드롭메뉴 포함 3개 컴포넌트&페이지 제작 필요]
+                { path : 'super/admin-member/path-histories', name :'AdminHistory', component: AdminHistory }, //관리자이력관리 => 퍼블작업 done.
 
-                //슈퍼관리 통합배너관리
-                { path : 'super/banner', redirect: '/super/banner/items' },
-                { path : 'super/banner/items', name :'BannerList', component: BannerList }, //배너리스트
-                { path : 'super/banner/add-items', name :'BannerUpload', component: BannerUpload }, //배너등록/수정 => 할당 예정 페이지
+                //슈퍼관리 통합배너관리 => 퍼블 요청 O
+                { path : 'super/banner', redirect: 'super/banner/items' },
+                { path : 'super/banner/items', name :'BannerList', component: BannerList }, //배너리스트 => 퍼블작업 done.
+                { path : 'super/banner/add-items', name :'BannerUpload', component: BannerUpload }, //배너등록/수정 => 퍼블직업(2/3) done. [ 배너 수정. 컴포넌트 제작 필요 ]
 
-                //슈퍼관리 팝업관리
-                { path : 'super/pop-up', redirect: '/super/pop-up/items' },
-                { path : 'super/pop-up/items', name :'PopUpList', component: PopUpList }, //팝업리스트
-                { path : 'super/pop-up/add-items', name :'PopUpload', component: PopUpload }, //팝업등록/수정 => 할당 예정 페이지
+                //슈퍼관리 팝업관리 => 퍼블 요청 O
+                { path : 'super/pop-up', redirect: 'super/pop-up/items' },
+                { path : 'super/pop-up/items', name :'PopUpList', component: PopUpList }, //팝업리스트 => 퍼블작업 done.
+                { path : 'super/pop-up/add-items', name :'PopUpload', component: PopUpload }, //팝업등록/수정 => 할당 예정 페이지 [ (등록/수정)기획서상 2개 페이지 ]
 
-                //슈퍼관리 운영정책관리
-                { path : 'super/service-policy', redirect: '/super/service-policy/services' },
-                { path : 'super/service-policy/services', name :'Services', component: Services }, //이용약관관리 => 할당 예정 페이지
+                //슈퍼관리 운영정책관리 => 퍼블 요청 X
+                { path : 'super/service-policy', redirect: 'super/service-policy/services' },
+                { path : 'super/service-policy/services', name :'Services', component: Services }, //이용약관관리 => 퍼블작업 done.
                 { path : 'super/service-policy/personal-proceddings', name :'PersonalPolicyManagement', component: PersonalProcessingPolicyManagement }, //개인정보처리방침관리
                 { path : 'super/service-policy/identifications', name :'Identifications', component: Identifications }, //고유식별정보수집동의
                 { path : 'super/service-policy/ad-receptions', name :'AdReceptions', component: AdReceptions }, //마케팅 및 광고 수신동의
@@ -146,46 +156,48 @@ const router = new VueRouter({
                 { path : 'order/claim/return-items', name :'ReturnList', component: ReturnList }, //반품 목록
 
 
-                //상담관리 상담관리 => 할당 예정 페이지
+                //상담관리 상담관리 => 퍼블 요청 O
                 { path : 'consultation/consultation', redirect: 'consultation/consultation/reservation' },
                 { path : 'consultation/consultation/reservation', name :'ConsultationReservation', component: ConsultationReservation }, //상담예약
                 { path : 'consultation/consultation/consultation-ing', name :'ConsultationIng', component: ConsultationIng }, //상담중
                 { path : 'consultation/consultation/completion', name :'ConsultationCompletion', component: ConsultationCompletion }, //상담완료
                 { path : 'consultation/consultation/cancel', name :'ConsultationCancel', component: ConsultationCancel }, //상담취소
 
-                //상담관리 블랙관리 => 할당 예정 페이지
+                //상담관리 블랙관리 => 퍼블 요청 O
                 { path : 'consultation/black-consumer', redirect: 'consultation/black-consumer/items' },
                 { path : 'consultation/black-consumer/items', name :'BlackList', component: BlackList}, //블랙리스트
                 { path : 'consultation/black-consumer/add-items', name :'BlackUpLoad', component: BlackUpLoad}, //블랙등록
 
 
-                //상품관리 상품관리 => 할당 예정 페이지 (Modal 1개 세팅 된 페이지)
+                //상품관리 상품관리 => 퍼블 요청 O (Modal 1개 세팅 된 페이지)
                 { path : 'product', redirect: 'product/items' },
                 { path : 'product/items', name :'ProductList', component: ProductList } , //상품목록
                 { path : 'product/add-items', name :'ProductUpLoad', component: ProductUpLoad } , //상품등록/수정
 
 
-                //프로모션/마케팅 쿠폰관리 => 할당 예정 페이지 (Modal 세팅 된 페이지)
+                //프로모션/마케팅 쿠폰관리 => 퍼블 요청 O (Modal 세팅 된 페이지)
                 { path : 'promotional/coupon', redirect: 'promotional/coupon/items' },
                 { path : 'promotional/coupon/items', name :'CouponList', component: CouponList }, //쿠폰목록
                 { path : 'promotional/coupon/issuance-request', name :'CouponIssuanceRequest', component: CouponIssuanceRequest },  //쿠폰발행요청
                 { path : 'promotional/coupon/add-items', name :'CouponUpLoad', component: CouponUpLoad },  //쿠폰등록/수정
 
-                //프로모션/마케팅 포인트관리 => 할당 예정 페이지
+                //프로모션/마케팅 포인트관리 => 퍼블 요청 O
                 { path : 'promotional/point/', redirect: 'promotional/coupon/items' }, //포인트관리
                 { path : 'promotional/point/items', name :'PointManagement', component: PointManagement }, //포인트관리
 
 
-                //게시판 관리 FAQ => 할당 예정 페이지
+                //게시판 관리 FAQ => 퍼블 요청 O
                 { path: 'cs-center/faq', redirect: '/cs-center/faq/items' },
                 { path: 'cs-center/faq/items', component: FAQ }, //FAQ목록
                 { path: 'cs-center/faq/add-items', component: FAQUploadRevise }, //FAQ등록/수정
 
-                //게시판 관리 1:1문의 => 할당 예정 페이지 ( 컴포넌트 세팅 된 페이지 )
+                //게시판 관리 1:1문의 => 퍼블 요청 O ( 컴포넌트 세팅 된 페이지 )
                 { path : 'cs-center/one-on-one', redirect: '/cs-center/one-on-one/items' },
                 { path : 'cs-center/one-on-one/items', name :'InquiryList', component: InquiryList }, //문의목록
 
-                //게시판 관리 공지사항 => 견본 페이지 & 컴포넌트
+
+                //견본 페이지 & 컴포넌트
+                //게시판 관리 공지사항 => 퍼블 요청 X
                 { path : 'cs-center/notice', redirect: '/cs-center/notice/items' },
                 { path : 'cs-center/notice/items', name : 'NoticeList', component: NoticeList },
                 { path : 'cs-center/notice/add-items', name :'NoticeUploadRevise', component: NoticeUploadRevise },
