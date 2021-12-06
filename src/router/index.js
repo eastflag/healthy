@@ -100,7 +100,7 @@ const router = new VueRouter({
              **/
 
             children: [
-                //슈퍼관리 대시보드 => => 퍼블 요청 O
+                //슈퍼관리 대시보드 => 퍼블 요청 O
                 { path : 'super/main', redirect: 'super/main/dash-board' },
                 { path : 'super/main/dash-board',  name :'DashBoard',  component: DashBoard }, //대시보드
 
@@ -129,17 +129,17 @@ const router = new VueRouter({
                 { path : 'super/service-policy/personal-consignments', name :'PersonalConsign', component: PersonalConsign }, //개인정보취급위탁 관리
 
 
-                //회원관리 회원관리
+                //회원관리 회원관리 => 퍼블 요청 O
                 { path : 'member/member', redirect: 'member/member/customer/items' },
                 { path : 'member/member/customer/items', name :'CustomerMember', component: CustomerMember }, //고객 회원
                 { path : 'member/member/trchnical/items', name :'TrchnicalMember', component: TrchnicalMember }, //전문인 회원
                 { path : 'member/member/store/items', name :'StoreCompanyMember', component: StoreCompanyMember }, //입점업체 회원
 
-                //회원관리 탈퇴회원
+                //회원관리 탈퇴회원 => 퍼블 요청 O
                 { path : 'member/drop-members/', redirect: 'member/drop-members/items' },
                 { path : 'member/drop-members/items', name :'WithdrawalMemberList', component: WithdrawalMemberList }, //탈퇴회원리스트
 
-                //주문관리 주문관리
+                //주문관리 주문관리 => 퍼블 요청 O
                 { path : 'order/order', redirect: 'order/order/order-reception'},
                 { path : 'order/order/order-reception', name :'OrderReception', component: OrderReception }, //주문접수
                 { path : 'order/order/payment-finished', name :'PaymentFinished', component: PaymentFinished }, //결제완료
@@ -149,7 +149,7 @@ const router = new VueRouter({
                 { path : 'order/order/delivery-complete', name :'DeliveryComplete', component: DeliveryComplete }, //배송완료
                 { path : 'order/order/confirm-purchasing', name :'ConfirmPurchasing', component: ConfirmPurchasing }, //구매확정
 
-                //주문관리 클레임관리
+                //주문관리 클레임관리 => 퍼블 요청 O
                 { path : 'order/claim', redirect: 'order/claim/items'},
                 { path : 'order/claim/items', name :'OrderCancellationList', component: OrderCancellationList}, //주문취소 목록
                 { path : 'order/claim/exchange-items', name :'ExchangeList', component: ExchangeList }, //교환 목록
