@@ -9,18 +9,108 @@
 /** 전역 기본 폰트 커스텀 */
 html{
   background-color: $color-basic-bg;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 #app{
   @include customFont(Noto Sans CJK KR,normal,normal);
   letter-spacing: 0.05rem;
   color: $color-basic;
   background-color: $color-basic-bg;
+  /*Router Transition*/
+  //.page-enter-active, .page-leave-active{
+  //  transition: opacity .3s;
+  //}
+  //.page-enter, .page-leave-to{
+  //  opacity: 0;
+  //};
 
   .app{
     width: 1920px;
     min-height: 970px;
     height: auto;
     margin: 0 auto;
+  }
+}
+
+
+/** 캘린터 공통 스타일링 */
+.Calendar {
+  position: absolute;
+  top: 12px;
+  left: -271px;
+  width: 262px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  z-index: 999;
+  text-align: center;
+  overflow: hidden;
+  user-select: none;
+  background-color: $color-white;
+
+  .Cr-Head, .Cr-Week {
+    font-weight: bold;
+    font-size: $font-13;
+
+    &.Cr-Head {
+      background: #07403A;
+      color: #fff;
+      justify-content: space-between;
+      line-height: 30px;
+
+      .Cr-Head_ltMonth,
+      .Cr-Head_gtMonth {
+        cursor: pointer;
+        width: 35px;
+        &:hover{
+          background: #88BFB5;
+        }
+      }
+    }
+
+    &.Cr-Week {
+      line-height: 2em;
+      .Cr-Week_day {
+        width: 40px;
+      }
+    }
+  }
+
+  .Cr-Days {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .Cr-Days_blank,
+    .Cr-Days_day {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+
+      &.Cr-Days_blank {
+        color: #88BFB5;
+      }
+      &.Cr-Days_day {
+        cursor: pointer;
+        border-radius: 50%;
+
+        &:hover:not(.currDay):not(.clickedDay) {
+          background-color: rgba(136, 191, 181, 0.2);
+        }
+      }
+    }
+
+    .currDay {
+      background: rgba(136, 191, 181, 0.2);
+      position: relative;
+    }
+    .clickedDay {
+      color: #fff;
+      font-weight: bold;
+      background: #88BFB5;
+    }
   }
 }
 
@@ -62,7 +152,7 @@ html{
 
 /** check button 스타일링 커스텀 영역 */
 //input & textarea 공통 커스텀
-input[type="text"],input[type="url"],textarea,select{
+input[type="text"],input[type="password"],input[type="url"],textarea,select{
   outline: none;
   &::placeholder{
     color: $color-action;
@@ -134,31 +224,31 @@ input.checkbx[type="checkbox"]{
 }
 
 /** 라디오 박스 커스텀 스타일링 영역 */
-   input.radiobx[type="radio"] {
-     &:checked + label:before, &:not(:checked) + label:before{
-       width: 20px;
-       height: 20px;
-       border-radius: 50%;
-     }
-     &:checked + label:after, &:not(:checked) + label:after{
-       top: 3px;
-       left: 3px;
-       border-radius: 50%;
-       width: 14px;
-       height: 14px;
-       background: $color-sub;
-     }
-     &:not(:checked) + label:after{
-       opacity: 0;
-       -webkit-transform: scale(0);
-       transform: scale(0);
-     }
-     &:checked + label:after {
-       opacity: 1;
-       -webkit-transform: scale(1);
-       transform: scale(1);
-     }
-   }
+input.radiobx[type="radio"] {
+  &:checked + label:before, &:not(:checked) + label:before{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  &:checked + label:after, &:not(:checked) + label:after{
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    background: $color-sub;
+  }
+  &:not(:checked) + label:after{
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  &:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 
 /** select, inputText 스타일링 커스텀 영역 */
 input[type="text"],input[type="url"],input[type="password"],select {

@@ -10,7 +10,7 @@
                 </select>
             </div>
         </div>
-        <table style="width: 100%; height: auto;">
+        <table>
             <colgroup>
                 <col width="2%">
                 <col width="5%">

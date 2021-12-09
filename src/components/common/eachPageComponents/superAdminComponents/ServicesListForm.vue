@@ -1,4 +1,4 @@
-<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+<template>
     <v-container fluid class="boardLayout">
         <div class="title d-flex justify-space-between">
             <div class="d-flex"><span>LISTLISTLIST</span> ('{{num}}'의 리스트가 조회되었습니다.)</div>
@@ -10,14 +10,14 @@
                 </select>
             </div>
         </div>
-        <table style="width: 100%; height: auto;">
+        <table>
             <colgroup>
                 <col width="2%">
-                <col width="5%">
-                <col width="5%">
-                <col width="5%">
-                <col width="5%">
-                <col width="5%">
+                <col width="10%">
+                <col width="10%">
+                <col width="10%">
+                <col width="10%">
+                <col width="10%">
                 <col width="5%">
                 <col width="5%">
             </colgroup>

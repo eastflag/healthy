@@ -18,8 +18,8 @@
 </template>
 
 <script>
-    import boardList from '../../../../components/common/eachPageComponents/cscenterComponents/BoardList'
-    import boardInput from '../../../../components/common/eachPageComponents/cscenterComponents/BoardInput'
+    import boardList from '@/components/common/eachPageComponents/cscenterComponents/BoardList'
+    import boardInput from '@/components/common/eachPageComponents/cscenterComponents/BoardInput'
 
     export default {
         name: "NoticeList",

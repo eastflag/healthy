@@ -1,36 +1,29 @@
 /*******************************************************************
 // 설명 : Modal에 공통되는 스타일링
-// 1차 정의 Modal
 ********************************************************************/
 @import '../_index.scss';
 
-.modalLayout{
-  width: inherit;
-  max-height: 230px;
+.popup_bx{
   height: auto;
+  max-height: 330px;
+  padding:30px;
+  text-align:center;
   border:1px solid $color-bg-border;
   background-color: $color-white;
 
-  .popup_bx{
-    height: auto;
-    max-height: 330px;
-    padding:30px;
-    text-align:center;
+  .tit{
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color-sub;
+    text-align:left;
+    font-size: $font-16;
+    color: $color-sub;
+  }
 
-    .tit{
-      padding-bottom: 20px;
-      border-bottom: 1px solid $color-sub;
-      text-align:left;
-      font-size: $font-16;
-      color: $color-sub;
-    }
-
-    p{
-      padding-top: 50px;
-      line-height:1.4em;
-      font-size: $font-15;
-      text-align:left;
-    }
+  p{
+    padding-top: 50px;
+    line-height:1.4em;
+    font-size: $font-15;
+    text-align:left;
   }
 }
 
@@ -76,76 +69,57 @@ ul, ul.listForm{
   }
 }
 
-/*// successModal
-.modalLayout{
-  width: inherit;
-  height: 250px;
+// 승인 successModal
+.and_popup_bx{
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   border:1px solid $color-bg-border;
+}
 
-  .and_popup_bx{
-    margin-top: 50px;
-    width: 90%;
-    text-align: center;
+// 미승인 NotApprovedModal
+.and_popup_input {
+  height: 220px;
+  padding: 20px;
+  font-weight: bold;
+  border: 1px solid $color-bg-border;
 
-    p{
-      margin-bottom: 50px;
+  .modalTitle{
+    display: flex;
+    align-items: center;
+
+    &:before{
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 14px;
+      background-color: $color-sub;
+    }
+
+    span{
+      padding-left: 13px;
     }
   }
-}*/
+  .inputLayoutContent{
+    textarea {
+      width: 458px;
+      height: 80px;
+      padding: 10px;
+      word-break: break-word;
+      font-weight: normal;
+      border: 1px solid $color-bg-border;
 
-// 사유 inputLayout
-.modalLayout{
-  width: inherit;
-  max-height: 230px;
-  height: auto;
-  border:1px solid $color-bg-border;
-  background-color: $color-white;
-
-  .and_popup_input {
-    height: auto;
-    padding: 20px;
-    font-weight: bold;
-
-    .modalTitle{
-      display: flex;
-      align-items: center;
-
-      &:before{
-        content: "";
-        position: absolute;
-        width: 3px;
-        height: 14px;
-        background-color: $color-sub;
-      }
-
-      span{
-        padding-left: 13px;
-      }
-    }
-    .inputLayoutContent{
-      textarea {
-        width: 458px;
-        height: 80px;
-        padding: 10px;
-        word-break: break-word;
+      &::placeholder{
         font-weight: normal;
-        border: 1px solid $color-bg-border;
-
-        &::placeholder{
-          font-weight: normal;
-        }
-        &:focus{
-          border: 1px solid $color-sub;
-        }
+      }
+      &:focus{
+        border: 1px solid $color-sub;
       }
     }
   }
 }
-
 
 
 

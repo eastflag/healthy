@@ -14,6 +14,7 @@ import plusBtn from '@/assets/images/vuetfiyIcon/plus_btn'
 import closeBtn from '@/assets/images/vuetfiyIcon/modalClose'
 import titleListIcon from '@/assets/images/vuetfiyIcon/titleListIcon'
 import titleIcon from '@/assets/images/vuetfiyIcon/title_icon'
+import person from '@/assets/images/vuetfiyIcon/person'
 
 Vue.use(Vuetify)
 
@@ -34,6 +35,7 @@ export default new Vuetify({
             closeBtn:{ component: closeBtn },
             titleListIcon:{ component: titleListIcon },
             titleIcon:{ component: titleIcon },
+            person:{ component: person },
         }
     },
     theme: {

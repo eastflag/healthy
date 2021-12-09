@@ -61,7 +61,7 @@
     import dayjs from 'dayjs'
     import ActionBtn from '../../buttonComponents/ActionBtn'
     import BasicBtn from '../../buttonComponents/BasicBtn'
-    // import Calendar from '@/components/common/Calendar'
+
     export default {
         name: "AdminInput",
         components: {
@@ -82,7 +82,6 @@
 
 <style lang="scss" scoped>
     @import '~@/assets/scss/_index.scss';
-
     #app{
         .boardLayout{
             max-width: 1680px;
@@ -168,7 +167,6 @@
                             top: 0;
                             left: 200px;
                             width: 1500px;
-                            border-bottom: 1px solid $color-border;
 
                             .dm_bx{
                                 position:relative;

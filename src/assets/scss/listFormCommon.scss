@@ -2,6 +2,7 @@
 // 설명 : Page List Form의 기본 구조의 스타일링입니다.
 // 사용 :  @import '~@/assets/scss/_index.scss';
 ********************************************************************/
+@import './variables.scss';
 
 #app{
   .boardLayout{
@@ -31,7 +32,7 @@
         select{
           width: 260px;
           height: 30px;
-          padding: 0px 10px;
+          padding: 0 10px;
           background:url('~@/assets/images/icons/search.svg') no-repeat 226px center;
           font-size: $font-12;
           color: $color-action;
@@ -46,18 +47,22 @@
     }
 
     table{
+      display: block;
       width: 1612px;
       max-width: 1612px;
+      height: auto;
+      min-height: 436px;
       margin: 20px auto 15px;
-      display: block;
       padding-bottom: 15px;
       overflow: auto;
+      background: url("~@/assets/images/icons/not_find_info.svg") no-repeat 50% 20%;
 
       thead{
         tr{
           th{
             position: relative;
             height:52px;
+            width: 1612px;
             background: $color-table-bg;
             border-top:1px solid $color-border;
             border-bottom:1px solid $color-border;
@@ -83,7 +88,7 @@
           height:52px;
           border-bottom:1px solid $color-border;
           font-size: $font-13;
-
+          background-color: $color-white;
           .spot{
             position: absolute;
             left: 30px;
@@ -99,7 +104,6 @@
               height: 25px;
               font-size: inherit;
             }
-
           }
         }
       }

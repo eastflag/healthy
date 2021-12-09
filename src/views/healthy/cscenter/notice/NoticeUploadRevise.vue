@@ -1,4 +1,4 @@
-<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+<template>
     <v-container fluid class="containerLayout">
         <template>
             <div class="content d-flex align-center justify-end">

@@ -1,4 +1,4 @@
-<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+<template>
     <v-container fluid class="boardLayout">
         <table>
             <colgroup>
@@ -27,8 +27,14 @@
             <tr>
                 <th>게시물상태</th>
                 <td>
-                    <div v-for="(item, index) in radioBox" :key="index" class="spot">
-                        <input class="radiobx" type="radio" :id="item.idx" name="radio"><label :for="item.idx"><em>{{ item.title }}</em></label>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>전체</em></label>
+                    </div>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>게시</em></label>
+                    </div>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>미게시</em></label>
                     </div>
                 </td>
             </tr>
@@ -37,7 +43,9 @@
                 <td>
                     <div class="selectbx d-flex">
                         <select id="departure" name="departure">
-                            <option :key="i" :value="data.value" v-for="(data, idex) in options">{{ data.title }}</option>
+                            <option value="num1">검색1</option>
+                            <option value="num2">검색2</option>
+                            <option value="num3">검색3</option>
                         </select>
                         <input type="text" id="cont" name="info1" placeholder="INPUTBOX">
                     </div>
@@ -62,25 +70,6 @@
         data() {
             return {
                 todate: dayjs().format("YYYY-MM-DD"),
-                radioBox: [
-                    {
-                        idx:1,
-                        title: '전체',
-                    },
-                    {
-                        idx:2,
-                        title: '게시',
-                    },
-                    {
-                        idx:3,
-                        title: '미게시',
-                    },
-                ],
-                options:[
-                    { value: "num1", title: "검색1" },
-                    { value: "num2", title: "검색2" },
-                    { value: "num3", title: "검색3" },
-                ]
             }
         },
     }
@@ -144,6 +133,7 @@
                             .calen{
                                 background:url('~@/assets/images/icons/calender.svg') no-repeat 226px center;
                                 background-size:20px auto;
+                                cursor: pointer;
                             }
                         }
 

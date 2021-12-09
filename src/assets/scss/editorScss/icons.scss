@@ -1,7 +1,3 @@
-/*******************************************************************
-// 설명 : editor 아이콘 스타일링
-********************************************************************/
-
 .icon {
   position: relative;
   display: inline-block;
@@ -27,7 +23,10 @@
 body > svg,
 .icon use > svg,
 symbol {
-  path,rect,circle,g {
+  path,
+  rect,
+  circle,
+  g {
     fill: currentColor;
     stroke: none;
   }

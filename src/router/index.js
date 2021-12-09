@@ -100,20 +100,20 @@ const router = new VueRouter({
              **/
 
             children: [
-                //슈퍼관리 대시보드 => => 퍼블 요청 O
+                //슈퍼관리 대시보드 => 퍼블 요청 O
                 { path : 'super/main', redirect: 'super/main/dash-board' },
                 { path : 'super/main/dash-board',  name :'DashBoard',  component: DashBoard }, //대시보드
 
                 //슈퍼관리 관리자 환경설정 => 퍼블 요청 O
                 { path : 'super/admin-member', redirect: 'super/admin-member/items' },
                 { path : 'super/admin-member/items', name :'AdminList', component: AdminList }, //관리자리스트 => 퍼블작업 done.
-                { path : 'super/admin-member/join-items', name :'AdminUpload', component: AdminUpload }, //관리자등록 => 퍼블작업 (1/4) done. [ 왼쪽 카테고리 드롭메뉴 포함 3개 컴포넌트&페이지 제작 필요]
+                { path : 'super/admin-member/join-items', name :'AdminUpload', component: AdminUpload }, //관리자등록 => 왼쪽 드롭다운메뉴 작업 필요(SB참고)
                 { path : 'super/admin-member/path-histories', name :'AdminHistory', component: AdminHistory }, //관리자이력관리 => 퍼블작업 done.
 
                 //슈퍼관리 통합배너관리 => 퍼블 요청 O
                 { path : 'super/banner', redirect: 'super/banner/items' },
                 { path : 'super/banner/items', name :'BannerList', component: BannerList }, //배너리스트 => 퍼블작업 done.
-                { path : 'super/banner/add-items', name :'BannerUpload', component: BannerUpload }, //배너등록/수정 => 퍼블직업(2/3) done. [ 배너 수정. 컴포넌트 제작 필요 ]
+                { path : 'super/banner/add-items', name :'BannerUpload', component: BannerUpload }, //배너등록/수정
 
                 //슈퍼관리 팝업관리 => 퍼블 요청 O
                 { path : 'super/pop-up', redirect: 'super/pop-up/items' },
@@ -129,17 +129,17 @@ const router = new VueRouter({
                 { path : 'super/service-policy/personal-consignments', name :'PersonalConsign', component: PersonalConsign }, //개인정보취급위탁 관리
 
 
-                //회원관리 회원관리
+                //회원관리 회원관리 => 퍼블 요청 O
                 { path : 'member/member', redirect: 'member/member/customer/items' },
                 { path : 'member/member/customer/items', name :'CustomerMember', component: CustomerMember }, //고객 회원
                 { path : 'member/member/trchnical/items', name :'TrchnicalMember', component: TrchnicalMember }, //전문인 회원
                 { path : 'member/member/store/items', name :'StoreCompanyMember', component: StoreCompanyMember }, //입점업체 회원
 
-                //회원관리 탈퇴회원
+                //회원관리 탈퇴회원 => 퍼블 요청 O
                 { path : 'member/drop-members/', redirect: 'member/drop-members/items' },
                 { path : 'member/drop-members/items', name :'WithdrawalMemberList', component: WithdrawalMemberList }, //탈퇴회원리스트
 
-                //주문관리 주문관리
+                //주문관리 주문관리 => 퍼블 요청 O
                 { path : 'order/order', redirect: 'order/order/order-reception'},
                 { path : 'order/order/order-reception', name :'OrderReception', component: OrderReception }, //주문접수
                 { path : 'order/order/payment-finished', name :'PaymentFinished', component: PaymentFinished }, //결제완료
@@ -149,7 +149,7 @@ const router = new VueRouter({
                 { path : 'order/order/delivery-complete', name :'DeliveryComplete', component: DeliveryComplete }, //배송완료
                 { path : 'order/order/confirm-purchasing', name :'ConfirmPurchasing', component: ConfirmPurchasing }, //구매확정
 
-                //주문관리 클레임관리
+                //주문관리 클레임관리 => 퍼블 요청 O
                 { path : 'order/claim', redirect: 'order/claim/items'},
                 { path : 'order/claim/items', name :'OrderCancellationList', component: OrderCancellationList}, //주문취소 목록
                 { path : 'order/claim/exchange-items', name :'ExchangeList', component: ExchangeList }, //교환 목록
@@ -182,7 +182,7 @@ const router = new VueRouter({
                 { path : 'promotional/coupon/add-items', name :'CouponUpLoad', component: CouponUpLoad },  //쿠폰등록/수정
 
                 //프로모션/마케팅 포인트관리 => 퍼블 요청 O
-                { path : 'promotional/point/', redirect: 'promotional/coupon/items' }, //포인트관리
+                { path : 'promotional/point', redirect: 'promotional/coupon/items' }, //포인트관리
                 { path : 'promotional/point/items', name :'PointManagement', component: PointManagement }, //포인트관리
 
 
@@ -191,7 +191,7 @@ const router = new VueRouter({
                 { path: 'cs-center/faq/items', component: FAQ }, //FAQ목록
                 { path: 'cs-center/faq/add-items', component: FAQUploadRevise }, //FAQ등록/수정
 
-                //게시판 관리 1:1문의 => 퍼블 요청 O ( 컴포넌트 세팅 된 페이지 )
+                //게시판 관리 1:1문의 => 퍼블 요청 O ( 컴포넌트 세팅 된 페이지 ) 'NoticeUploadRevise' 퍼블참고
                 { path : 'cs-center/one-on-one', redirect: '/cs-center/one-on-one/items' },
                 { path : 'cs-center/one-on-one/items', name :'InquiryList', component: InquiryList }, //문의목록
 
@@ -205,6 +205,5 @@ const router = new VueRouter({
         },
     ]
 })
-
 
 export default router
