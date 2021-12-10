@@ -21,11 +21,7 @@
       font-weight: bold;
 
       div>span{
-        display: inline-block;
-        width: 100px;
-        overflow:hidden;
-        text-overflow:ellipsis !important;
-        white-space:nowrap;
+       padding-right: 5px;
       }
 
       .selectbx{

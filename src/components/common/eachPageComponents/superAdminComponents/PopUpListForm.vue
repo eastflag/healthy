@@ -1,7 +1,7 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <v-container fluid class="boardLayout">
         <div class="title d-flex justify-space-between">
-            <div class="d-flex"><span>LISTLISTLIST</span> ('{{num}}'의 리스트가 조회되었습니다.)</div>
+            <div class="d-flex"><span>LIST</span> ('{{num}}'의 리스트가 조회되었습니다.)</div>
             <div class="selectbx">
                 <select id="departure" name="departure">
                     <option value="num1" selected>게시일자 최신 순</option>

@@ -1,7 +1,7 @@
 <template>
     <v-container fluid class="boardLayout">
         <div class="title d-flex justify-space-between">
-            <div class="d-flex"><span>LISTLISTLIST</span> ('{{num}}'의 리스트가 조회되었습니다.)</div>
+            <div class="d-flex"><span>LIST</span> ('{{num}}'의 리스트가 조회되었습니다.)</div>
             <div class="selectbx">
                 <select id="departure" name="departure">
                     <option value="num1" selected>조회수 순</option>
@@ -52,7 +52,7 @@
                 <td><span>공지</span></td>
                 <td><span>일반</span></td>
                 <td><span>게시</span></td>
-                <td><span>건강하다 출시안내</span></td>
+                <td><span><a>건강하다 출시안내</a></span></td>
                 <td><span>10,000</span></td>
                 <td><span>scn345</span></td>
                 <td><span>2021.08.01~12.31</span></td>
@@ -68,55 +68,7 @@
                 <td><span>공지</span></td>
                 <td><span>일반</span></td>
                 <td><span>게시</span></td>
-                <td><span>건강하다 출시안내</span></td>
-                <td><span>10,000</span></td>
-                <td><span>scn345</span></td>
-                <td><span>2021.08.01~12.31</span></td>
-                <td><span><button class="btn sm line_green">공지해제</button></span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="list3" name="list_check"><label for="list3"></label>
-                    </div>
-                </td>
-                <td><span>전체</span></td>
-                <td><span>공지</span></td>
-                <td><span>일반</span></td>
-                <td><span>게시</span></td>
-                <td><span>건강하다 출시안내</span></td>
-                <td><span>10,000</span></td>
-                <td><span>scn345</span></td>
-                <td><span>2021.08.01~12.31</span></td>
-                <td><span><button class="btn sm line_green">공지해제</button></span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="list3" name="list_check"><label for="list3"></label>
-                    </div>
-                </td>
-                <td><span>전체</span></td>
-                <td><span>공지</span></td>
-                <td><span>일반</span></td>
-                <td><span>게시</span></td>
-                <td><span>건강하다 출시안내</span></td>
-                <td><span>10,000</span></td>
-                <td><span>scn345</span></td>
-                <td><span>2021.08.01~12.31</span></td>
-                <td><span><button class="btn sm line_green">공지해제</button></span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="list3" name="list_check"><label for="list3"></label>
-                    </div>
-                </td>
-                <td><span>전체</span></td>
-                <td><span>공지</span></td>
-                <td><span>일반</span></td>
-                <td><span>게시</span></td>
-                <td><span>건강하다 출시안내</span></td>
+                <td><span><a>건강하다 출시안내</a></span></td>
                 <td><span>10,000</span></td>
                 <td><span>scn345</span></td>
                 <td><span>2021.08.01~12.31</span></td>
@@ -145,4 +97,25 @@
     @import '~@/assets/scss/_index.scss';
     // ListForm Common SCSS
     @import '~@/assets/scss/listFormCommon.scss';
+
+    #app{
+        table{
+            tbody{
+                td{
+                    &:nth-child(6){
+                        span{
+                            a{
+                                display: inline-block;
+                                width: 450px;
+                                text-align: center;
+                                overflow:hidden;
+                                text-overflow:ellipsis !important;
+                                white-space:nowrap;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 </style>
