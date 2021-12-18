@@ -87,6 +87,99 @@
                 ]
               }
             ]
+          } else if (to.fullPath.startsWith('/order')) {
+            this.title = "주문관리";
+            this.items = [
+              {
+                'title':'주문관리',
+                'children':[
+                  {
+                    'title':'주문접수',
+                    'path': '/order/order/order-reception'
+                  },
+                  {
+                    'title':'결제완료',
+                    'path': '/order/order/payment-finished'
+                  },
+                  {
+                    'title':'배송대기',
+                    'path': '/order/order/waiting-delivery'
+                  },
+                  {
+                    'title':'상품준비중',
+                    'path': '/order/order/product-ing'
+                  },
+                  {
+                    'title':'배송중',
+                    'path': '/order/order/delivering'
+                  },
+                  {
+                    'title':'배송완료',
+                    'path': '/order/order/delivery-complete'
+                  },
+                  {
+                    'title':'구매확정',
+                    'path': '/order/order/confirm-purchasing'
+                  }
+                ]
+              },
+              {
+                'title':'클레임관리',
+                'children':[
+                  {
+                    'title':'주문취소목록',
+                    'path': '/order/claim/items'
+                  },
+                  {
+                    'title':'교환목록',
+                    'path': '/order/claim/exchange-items'
+                  },
+                  {
+                    'title':'반품목록',
+                    'path': '/order/claim/return-items'
+                  },
+                ]
+              },
+            ]
+          } else if (to.fullPath.startsWith('/cs-center')) {
+            this.title = "게시판관리";
+            this.items = [
+              {
+                'title':'FAQ',
+                'children':[
+                  {
+                    'title':'FAQ목록',
+                    'path': '/cs-center/faq/items'
+                  },
+                  {
+                    'title':'FAQ등록/수정',
+                    'path': '/cs-center/faq/add-items'
+                  }
+                ]
+              },
+              {
+                'title':'1:1문의',
+                'children':[
+                  {
+                    'title':'문의목록',
+                    'path': '/cs-center/one-on-one/items'
+                  },
+                ]
+              },
+              {
+                'title':'공지사항',
+                'children':[
+                  {
+                    'title':'공지목록',
+                    'path': '/cs-center/notice/items'
+                  },
+                  {
+                    'title':'공지등록/수정',
+                    'path': '/cs-center/notice/add-items'
+                  }
+                ]
+              },
+            ]
           }
         }
       }
