@@ -5,7 +5,7 @@
             <ul class='nav'>
                 <li v-for="item of items" :key="item"><router-link to="">{{item.title}}</router-link>
                     <ul>
-                        <li v-for="item of item.children"><router-link to="">{{item.title}}</router-link></li>
+                        <li v-for="item of item.children"><router-link :to="item.path">{{item.title}}</router-link></li>
                     </ul>
                 </li>
             </ul>
@@ -53,6 +53,43 @@
                 ]
             }
         },
+      watch: {
+        $route(to, from) {
+          console.log(to);
+          console.log(from);
+          if (to.fullPath.startsWith('/member')) {
+            this.title = "회원관리";
+            this.items = [
+              {
+                'title':'회원관리',
+                'children':[
+                  {
+                    'title':'고객회원',
+                    'path': '/member/member/customer/items'
+                  },
+                  {
+                    'title':'전문인회원',
+                    'path': '/member/member/trchnical/items'
+                  },
+                  {
+                    'title':'입점업체 회원',
+                    'path': '/member/member/store/items'
+                  },
+                ]
+              },
+              {
+                'title':'탈퇴회원',
+                'children':[
+                  {
+                    'title':'탈퇴회원리스트',
+                    'path': '/member/drop-members/items'
+                  },
+                ]
+              }
+            ]
+          }
+        }
+      }
     }
 </script>
 

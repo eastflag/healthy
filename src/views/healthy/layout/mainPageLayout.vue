@@ -3,7 +3,7 @@
         <div class="headerTabLayout">
             <hearder-top/>
             <ul class="d-flex headerNav justify-space-around align-center">
-                <li v-for="item of items" :key="item"><router-link to="">{{item.title}}</router-link></li>
+                <li v-for="item of items" :key="item"><router-link :to="item.path">{{item.title}}</router-link></li>
             </ul>
         </div>
         <div class="app">
@@ -26,31 +26,40 @@
             return{
                 items:[
                     {
-                        'title':'슈퍼관리'
+                      'title':'슈퍼관리',
+                      'path': '/super/main'
                     },
                     {
-                        'title':'회원관리'
+                      'title':'회원관리',
+                      'path': '/member/member'
                     },
                     {
-                        'title':'주문관리'
+                      'title':'주문관리',
+                      'path': '/order/order'
                     },
                     {
-                        'title':'상담관리'
+                      'title':'상담관리',
+                      'path': '/consultation/consultation'
                     },
                     {
-                        'title':'상품관리'
+                      'title':'상품관리',
+                      'path': '/product'
                     },
                     {
-                        'title':'프로모션/마케팅'
+                      'title':'프로모션/마케팅',
+                      'path': '/promotional/coupon'
                     },
                     {
-                        'title':'게시판관리'
+                      'title':'게시판관리',
+                      'path': '/cs-center/faq'
                     },
                     {
-                        'title':'정산'
+                      'title':'정산',
+                      'path': '/'
                     },
                     {
-                        'title':'시스템관리'
+                      'title':'시스템관리',
+                      'path': '/'
                     },
                 ]
             }
