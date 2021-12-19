@@ -3,7 +3,7 @@
         <div class="headerTabLayout">
             <hearder-top/>
             <ul class="d-flex headerNav justify-space-around align-center">
-                <li v-for="item of items" :key="item"><router-link :to="item.path">{{item.title}}</router-link></li>
+                <li v-for="item of items" :key="item.title"><router-link :to="item.path">{{item.title}}</router-link></li>
             </ul>
         </div>
         <div class="app">

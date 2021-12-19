@@ -3,7 +3,7 @@
         <div class='navigationLayout'>
             <div class="title">{{title}}</div>
             <ul class='nav'>
-                <li v-for="item of items" :key="item"><router-link to="">{{item.title}}</router-link>
+                <li v-for="item of items" :key="item.title"><router-link to="">{{item.title}}</router-link>
                     <ul>
                         <li v-for="item of item.children"><router-link :to="item.path">{{item.title}}</router-link></li>
                     </ul>
@@ -24,10 +24,12 @@
                         'title':'FAQ',
                         'children':[
                             {
-                                'title':'FAQ목록'
+                                'title':'FAQ목록',
+                                'path': ''
                             },
                             {
-                                'title':'FAQ등록/수정'
+                                'title':'FAQ등록/수정',
+                                'path': ''
                             },
                         ]
                     },
@@ -35,7 +37,8 @@
                         'title':'1:1문의',
                         'children':[
                             {
-                                'title':'문의목록'
+                                'title':'문의목록',
+                                'path': ''
                             },
                         ]
                     },
@@ -43,10 +46,12 @@
                         'title':'공지사항',
                         'children':[
                             {
-                                'title':'공지목록'
+                                'title':'공지목록',
+                                'path': ''
                             },
                             {
-                                'title':'공지등록/수정'
+                                'title':'공지등록/수정',
+                                'path': ''
                             },
                         ]
                     },
@@ -55,8 +60,6 @@
         },
       watch: {
         $route(to, from) {
-          console.log(to);
-          console.log(from);
           if (to.fullPath.startsWith('/member')) {
             this.title = "회원관리";
             this.items = [
