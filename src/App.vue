@@ -19,6 +19,8 @@
     }
 </script>
 
-<style lang="scss" scoped>
-    @import '~@/assets/scss/_index.scss';
+<style lang="scss">
+@import '~@/assets/scss/_index.scss';
+// 공통 scss는 여기에 정의
+
 </style>
