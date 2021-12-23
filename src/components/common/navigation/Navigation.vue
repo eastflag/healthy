@@ -144,7 +144,56 @@
                 ]
               },
             ]
-          } else if (to.fullPath.startsWith('/cs-center')) {
+          } else if (to.fullPath.startsWith('/product')) {
+            this.title = "상품관리";
+            this.items = [
+              {
+                'title':'상품관리',
+                'children':[
+                  {
+                    'title':'상품목록',
+                    'path': '/product/items'
+                  },
+                  {
+                    'title':'상품등록/수정',
+                    'path': '/product/add-items'
+                  }
+                ]
+              },
+            ]
+          } else if (to.fullPath.startsWith('/promotional')) {
+            this.title = "프로모션/마케팅";
+            this.items = [
+              {
+                'title':'쿠폰관리',
+                'children':[
+                  {
+                    'title':'쿠폰목록',
+                    'path': '/promotional/coupon/items'
+                  },
+                  {
+                    'title':'쿠폰발행요청',
+                    'path': '/promotional/coupon/issuance-request'
+                  },
+                  {
+                    'title':'쿠폰등록/수정',
+                    'path': '/promotional/coupon/add-items'
+                  }
+                ]
+              },
+              {
+                'title':'포인트관리',
+                'children':[
+                  {
+                    'title':'포인트관리',
+                    'path': '/promotional/point/items'
+                  },
+                ]
+              },
+            ]
+          }
+
+          else if (to.fullPath.startsWith('/cs-center')) {
             this.title = "게시판관리";
             this.items = [
               {
