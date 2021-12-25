@@ -15,7 +15,7 @@
                                 <option value="date2">주문일</option>
                                 <option value="date3">결제일</option>
                                 <option value="date4">발송일</option>
-                                <option value="date5">발송완료</option>
+                                <option value="date5">배송완료</option>
                             </select>
                         </div>
                         <div class="datebx">
@@ -62,7 +62,7 @@
     import dayjs from 'dayjs'
 
     export default {
-        name: "BoardInput",
+        name: "DeliveryCompleteSearchInput",
         components: { ActionBtn , BasicBtn , dayjs },
         data() {
             return {

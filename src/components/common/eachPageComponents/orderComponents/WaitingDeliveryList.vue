@@ -87,7 +87,7 @@
     import BasicBtn from '../../buttonComponents/BasicBtn'
 
     export default {
-        name: "OrderList",
+        name: "WaitingDeliveryList",
         components: { PlusBtn, BasicBtn },
         data(){
             return{

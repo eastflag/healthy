@@ -61,7 +61,7 @@
     import dayjs from 'dayjs'
 
     export default {
-        name: "BoardInput",
+        name: "DeliveringSearchInput",
         components: { ActionBtn , BasicBtn , dayjs },
         data() {
             return {

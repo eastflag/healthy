@@ -9,6 +9,16 @@
                 <th>기간</th>
                 <td>
                     <div class="dm_bx">
+                        <div class="innerSelectbx d-flex">
+                            <select id="orderDetailSelect" name="orderDetailSelect">
+                                <option value="date1">당일</option>
+                                <option value="date2">주문일</option>
+                                <option value="date3">결제일</option>
+                                <option value="date4">발송일</option>
+                                <option value="date5">배송완료</option>
+                                <option value="date5">구매확정</option>
+                            </select>
+                        </div>
                         <div class="datebx">
                             <input type="text" id="strtDate1" name="strtDate1" :placeholder=todate class="calen">
                             <label for="strtDate1"></label>
@@ -30,9 +40,10 @@
                     <div class="selectbx d-flex">
                         <select id="orderDetailSelect" name="orderDetailSelect">
                             <option value="">전체</option>
-                            <option value="orderNum">주문번호</option>
-                            <option value="Name">성명</option>
+                            <option value="name">성명</option>
+                            <option value="id">id</option>
                             <option value="phoneNum">휴대폰번호</option>
+                            <option value="orderNum">주문번호</option>
                         </select>
                         <input type="text" id="detail" name="detail" placeholder="INPUTBOX">
                     </div>
@@ -52,7 +63,7 @@
     import dayjs from 'dayjs'
 
     export default {
-        name: "OrderSearchInput",
+        name: "ConfirmPurchasingSearchInput",
         components: { ActionBtn , BasicBtn , dayjs },
         data() {
             return {
@@ -106,6 +117,22 @@
                         height: inherit;
                         display: flex;
                         align-items: center;
+
+                        .innerSelectbx {
+                            height: inherit;
+                            display: flex;
+                            align-items: center;
+                            select {
+                                width: 260px;
+                                margin-right: 5px;
+                                background: url('~@/assets/images/icons/search.svg') no-repeat 226px center;
+
+                                option {
+                                    height: 20px;
+                                    font-size: $font-20;
+                                }
+                            }
+                        }
 
                         .datebx {
                             display: inline-block;
