@@ -1,17 +1,30 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <v-container fluid class="containerLayout">
         <template>
-            <!--컨포넌트-->
+            <div class="content">
+                <div class="menuNav">
+                    <span>주문관리</span><v-icon class="pagingArrow">$pagingArrow</v-icon><span>클레임관리</span><v-icon class="actionPagingArrow">$actionPagingArrow</v-icon><span>주문취소 목록</span>
+                </div>
+                <div class="title">주문취소 목록</div>
+            </div>
         </template>
         <template>
-            <!--컨포넌트 추가 생성 ++ -->
+            <order-cancellation-list-search-input />
+        </template>
+        <template>
+            <order-cancellation-list-result />
         </template>
     </v-container>
 </template>
 
 <script>
+    import orderCancellationListSearchInput from '@/components/common/eachPageComponents/claimComponents/OrderCancellationListSearchInput'
+    import orderCancellationListResult from '@/components/common/eachPageComponents/claimComponents/OrderCancellationListResult'
+
     export default {
-        name: "OrderCancellationList"
+        name: "OrderCancellationList",
+        components:{ orderCancellationListSearchInput, orderCancellationListResult }
+
     }
 </script>
 
