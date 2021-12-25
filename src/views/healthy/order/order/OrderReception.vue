@@ -9,17 +9,21 @@
             </div>
         </template>
         <template>
-            <!--컨포넌트-->
+            <order-search-input />
         </template>
         <template>
-            <!--컨포넌트-->
+            <order-list />
         </template>
     </v-container>
 </template>
 
 <script>
+    import orderSearchInput from '@/components/common/eachPageComponents/orderComponents/OrderSearchInput'
+    import orderList from '@/components/common/eachPageComponents/orderComponents/OrderList'
+
     export default {
-        name: "OrderReception"
+        name: "OrderReception",
+        components: { orderSearchInput , orderList },
     }
 </script>
 
