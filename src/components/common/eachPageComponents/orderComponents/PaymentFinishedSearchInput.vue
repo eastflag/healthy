@@ -38,7 +38,7 @@
                 </td>
             </tr>
             <tr>
-                <th></th>
+                <th><span></span></th>
                 <td>
                     <div class="selectbx d-flex">
                         <select id="departure" name="departure">
@@ -165,6 +165,7 @@
                             }
                         }
                     }
+                    
                     .spot {
                         display:inline-block;
                         width:80px;
@@ -192,6 +193,7 @@
                         }
                         input {
                             width: 650px;
+                            height: 30px;
                             &:focus{
                                 border: 1px solid $color-sub;
                             }

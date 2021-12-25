@@ -15,12 +15,12 @@
             <colgroup>
                 <col width="4%">
                 <col width="15%">
+                <col width="11%">
                 <col width="10%">
-                <col width="10%">
-                <col width="10%">
-                <col width="12%">
                 <col width="18%">
                 <col width="6%">
+                <col width="10%">
+                <col width="11%">
                 <col width="10%">
                 <col width="7%">
             </colgroup>
@@ -34,11 +34,11 @@
                 <th><span>주문번호</span></th>
                 <th><span>상태</span></th>
                 <th><span>주문일</span></th>
-                <th><span>성명</span></th>
-                <th><span>휴대폰번호</span></th>
                 <th><span>제품명</span></th>
                 <th><span>주문수량</span></th>
-                <th><span>입금예정금액</span></th>
+                <th><span>주문금액</span></th>
+                <th><span>결제수단</span></th>
+                <th><span>결제일</span></th>
                 <th><span>비고</span></th>
             </tr>
             </thead>
@@ -46,18 +46,18 @@
             <tr>
                 <td>
                     <div class="spot">
-                        <input class="checkbx" type="checkbox" id="list2" name="list_check"><label for="list2"></label>
+                        <input class="checkbx" type="checkbox" id="list2" name="list_check"><label for="list1"></label>
                     </div>
                 </td>
                 <td><span><a>OD202111001-123456</a></span></td>
-                <td><span>주문접수</span></td>
+                <td><span>결재완료</span></td>
                 <td><span>2022-09-01</span></td>
-                <td><span>홍길동</span></td>
-                <td><span>010-1234-1234</span></td>
                 <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
                 <td><span>70,000</span></td>
-                <td><span><button class="btn sm bg_green">입금확인</button></span></td>
+                <td><span>카드결제</span></td>
+                <td><span>2022-09-01</span></td>
+                <td><span></span></td>
             </tr>
             <tr>
                 <td>
@@ -66,14 +66,30 @@
                     </div>
                 </td>
                 <td><span><a>OD202111001-123456</a></span></td>
-                <td><span>주문접수</span></td>
+                <td><span>결재완료</span></td>
                 <td><span>2022-09-01</span></td>
-                <td><span>홍길동</span></td>
-                <td><span>010-1234-1234</span></td>
                 <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
                 <td><span>70,000</span></td>
-                <td><span><button class="btn sm bg_green">입금확인</button></span></td>
+                <td><span>카드결제</span></td>
+                <td><span>2022-09-01</span></td>
+                <td><span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="list4" name="list_check"><label for="list4"></label>
+                    </div>
+                </td>
+                <td><span><a>OD202111001-123456</a></span></td>
+                <td><span>결재완료</span></td>
+                <td><span>2022-09-01</span></td>
+                <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
+                <td><span>1</span></td>
+                <td><span>70,000</span></td>
+                <td><span>카드결제</span></td>
+                <td><span>2022-09-01</span></td>
+                <td><span></span></td>
             </tr>
             </tbody>
         </table>
@@ -86,7 +102,7 @@
     import BasicBtn from '../../buttonComponents/BasicBtn'
 
     export default {
-        name: "OrderList",
+        name: "PaymentFinishedList",
         components: { PlusBtn, BasicBtn },
         data(){
             return{
@@ -116,7 +132,7 @@
                             }
                         }
                     }
-                    &:nth-child(7){
+                    &:nth-child(5){
                         height: inherit;
                         justify-content: center;
                         align-items: center;
@@ -129,6 +145,9 @@
                             white-space: nowrap;
                             margin-bottom: -7px;
                         }
+                    }
+                    &:nth-child(10){
+                        height: inherit;
                     }
                 }
             }

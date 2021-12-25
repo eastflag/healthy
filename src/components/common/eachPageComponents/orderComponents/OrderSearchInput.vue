@@ -178,6 +178,7 @@
                         }
                         input {
                             width: 650px;
+                            height: 30px;
                             &:focus{
                                 border: 1px solid $color-sub;
                             }
