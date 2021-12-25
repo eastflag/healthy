@@ -9,10 +9,10 @@
             </div>
         </template>
         <template>
-            <delivering-complete-search-input />
+            <delivery-complete-search-input />
         </template>
         <template>
-            <delivering-complete-list />
+            <delivery-complete-list />
         </template>
         <template>
             <div class="button d-flex align-center justify-end">

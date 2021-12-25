@@ -19,8 +19,8 @@
                 <col width="11%">
                 <col width="11%">
                 <col width="6%">
-                <col width="11%">
                 <col width="18%">
+                <col width="11%">
                 <col width="8%">
             </colgroup>
             <thead>
@@ -35,8 +35,8 @@
                 <th><span>스토어명</span></th>
                 <th><span>제품명</span></th>
                 <th><span>주문수량</span></th>
-                <th><span>배송구분</span></th>
                 <th><span>배송정보</span></th>
+                <th><span>배송완료일</span></th>
                 <th><span>비고</span></th>
             </tr>
             </thead>
@@ -52,8 +52,8 @@
                 <td><span>종근당</span></td>
                 <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
-                <td><span>스토어 직접배송</span></td>
                 <td><span>택배사:CJ대한동운<br/>운송장번호:123-4567-8234<br/>발송일자:2021-10-01</span></td>
+                <td><span>2021-10-05</span></td>
                 <td><span></span></td>
             </tr>
             <tr>
@@ -67,8 +67,8 @@
                 <td><span>종근당</span></td>
                 <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
-                <td><span>스토어 직접배송</span></td>
                 <td><span>택배사:CJ대한동운<br/>운송장번호:123-4567-8234<br/>발송일자:2021-10-01</span></td>
+                <td><span>2021-10-05</span></td>
                 <td><span></span></td>
             </tr>
             </tbody>

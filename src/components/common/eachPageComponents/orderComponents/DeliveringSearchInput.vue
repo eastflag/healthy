@@ -9,6 +9,14 @@
                 <th>기간</th>
                 <td>
                     <div class="dm_bx">
+                        <div class="innerSelectbx d-flex">
+                            <select id="orderDetailSelect" name="orderDetailSelect">
+                                <option value="date1">당일</option>
+                                <option value="date2">주문일</option>
+                                <option value="date3">결제일</option>
+                                <option value="date4">발송일</option>
+                            </select>
+                        </div>
                         <div class="datebx">
                             <input type="text" id="strtDate1" name="strtDate1" :placeholder=todate class="calen">
                             <label for="strtDate1"></label>
@@ -107,6 +115,22 @@
                         height: inherit;
                         display: flex;
                         align-items: center;
+
+                        .innerSelectbx {
+                            height: inherit;
+                            display: flex;
+                            align-items: center;
+                            select {
+                                width: 260px;
+                                margin-right: 5px;
+                                background: url('~@/assets/images/icons/search.svg') no-repeat 226px center;
+
+                                option {
+                                    height: 20px;
+                                    font-size: $font-20;
+                                }
+                            }
+                        }
 
                         .datebx {
                             display: inline-block;
