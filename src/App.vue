@@ -30,7 +30,7 @@
                 overflow: hidden;
 
                 .menuNav{
-                    width: 200px;
+                    width: 220px;
                     height: 25px;
                     display:flex;
                     justify-content: space-between;

@@ -14,16 +14,20 @@
         <template>
             <order-list />
         </template>
+        <template>
+            <order-reception-detail />
+        </template>
     </v-container>
 </template>
 
 <script>
     import orderSearchInput from '@/components/common/eachPageComponents/orderComponents/OrderSearchInput'
     import orderList from '@/components/common/eachPageComponents/orderComponents/OrderList'
+    import orderReceptionDetail from '@/views/healthy/order/order/details/OrderReceptionDetail'
 
     export default {
         name: "OrderReception",
-        components: { orderSearchInput , orderList },
+        components: { orderSearchInput , orderList, orderReceptionDetail },
     }
 </script>
 

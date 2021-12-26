@@ -122,7 +122,7 @@
                         text-align: center;
                         span{
                             display: inline-block;
-                            width: 140px;
+                            width: 160px;
                             overflow: hidden;
                             text-overflow: ellipsis;
                             white-space: nowrap;

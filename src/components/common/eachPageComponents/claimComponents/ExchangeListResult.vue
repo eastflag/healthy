@@ -4,28 +4,28 @@
             <div class="d-flex"><span>LIST</span> ('{{num}}'의 리스트가 조회되었습니다.)</div>
             <div class="selectbx">
                 <select id="departure" name="departure">
-                    <option value="num1" selected>주문일 최신 순</option>
-                    <option value="num2">주문일 과거 순</option>
-                    <option value="num3">주문금액 높은 순</option>
-                    <option value="num4">주문금액 낮은 순</option>
+                    <option value="num1" selected>교환신청일 최신 순</option>
+                    <option value="num2">교환신청일 과거 순</option>
                 </select>
                 <basic-btn class="ml-3">엑셀다운</basic-btn>
-                <basic-btn class="ml-3">일괄수정</basic-btn>
             </div>
         </div>
         <table>
             <colgroup>
                 <col width="4%">
-                <col width="14%">
-                <col width="9%">
-                <col width="10%">
-                <col width="10%">
-                <col width="5%">
+                <col width="12%">
                 <col width="8%">
-                <col width="15%">
-                <col width="9%">
-                <col width="9%">
-                <col width="5%">
+                <col width="7%">
+                <col width="8%">
+                <col width="11%">
+                <col width="4%">
+                <col width="4%">
+                <col width="7%">
+                <col width="7%">
+                <col width="7%">
+                <col width="7%">
+                <col width="7%">
+                <col width="4%">
             </colgroup>
             <thead>
             <tr>
@@ -36,13 +36,16 @@
                 </th>
                 <th><span>주문번호</span></th>
                 <th><span>상태</span></th>
+                <th><span>교환신청일</span></th>
                 <th><span>스토어명</span></th>
                 <th><span>제품명</span></th>
                 <th><span>주문수량</span></th>
-                <th><span>배송구분</span></th>
-                <th><span>배송정보</span></th>
-                <th><span>결제정보</span></th>
-                <th><span>결제완료일</span></th>
+                <th><span>교환수량</span></th>
+                <th><span>교환운송장번호</span></th>
+                <th><span>교환접수일</span></th>
+                <th><span>교환회수지시일</span></th>
+                <th><span>회수입고일</span></th>
+                <th><span>교환완료일</span></th>
                 <th><span>비고</span></th>
             </tr>
             </thead>
@@ -54,14 +57,17 @@
                     </div>
                 </td>
                 <td><span><a>OD202111001-123456</a></span></td>
-                <td><span>상품준비중</span></td>
+                <td><span>교환처리중</span></td>
+                <td><span>2021-09-01</span></td>
                 <td><span>종근당</span></td>
                 <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
-                <td><span>스토어 직접배송</span></td>
-                <td><span>택배사:CJ대한동운<br/>운송장번호:123-4567-8234<br/>발송일자:2021-10-01</span></td>
-                <td><span>카드결제</span></td>
-                <td><span>2021-10-05</span></td>
+                <td><span>1</span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
                 <td><span></span></td>
             </tr>
             <tr>
@@ -71,14 +77,37 @@
                     </div>
                 </td>
                 <td><span><a>OD202111001-123456</a></span></td>
-                <td><span>상품준비중</span></td>
+                <td><span>교환처리중</span></td>
+                <td><span>2021-09-01</span></td>
                 <td><span>종근당</span></td>
                 <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
-                <td><span>스토어 직접배송</span></td>
-                <td><span>택배사:CJ대한동운<br/>운송장번호:123-4567-8234<br/>발송일자:2021-10-01</span></td>
-                <td><span>카드결제</span></td>
-                <td><span>2021-10-05</span></td>
+                <td><span>1</span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="list4" name="list_check"><label for="list4"></label>
+                    </div>
+                </td>
+                <td><span><a>OD202111001-123456</a></span></td>
+                <td><span>교환처리중</span></td>
+                <td><span>2021-09-01</span></td>
+                <td><span>종근당</span></td>
+                <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
+                <td><span>1</span></td>
+                <td><span>1</span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
                 <td><span></span></td>
             </tr>
             </tbody>
@@ -92,11 +121,11 @@
     import BasicBtn from '../../buttonComponents/BasicBtn'
 
     export default {
-        name: "ProductIngList",
+        name: "ExchangeListResult",
         components: { PlusBtn, BasicBtn },
         data(){
             return{
-                num:'2'
+                num:'3'
             }
         }
     }
@@ -122,7 +151,7 @@
                             }
                         }
                     }
-                    &:nth-child(5){
+                    &:nth-child(6){
                         height: inherit;
                         justify-content: center;
                         align-items: center;
@@ -136,7 +165,12 @@
                             margin-bottom: -7px;
                         }
                     }
-                    &:nth-child(11){
+                    &:nth-child(9),
+                    &:nth-child(10), 
+                    &:nth-child(11),
+                    &:nth-child(12),
+                    &:nth-child(13),
+                    &:nth-child(14) {
                         height: inherit;
                     }
                 }

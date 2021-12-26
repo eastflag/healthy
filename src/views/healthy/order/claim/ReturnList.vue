@@ -1,17 +1,29 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <v-container fluid class="containerLayout">
         <template>
-            <!--컨포넌트-->
+            <div class="content">
+                <div class="menuNav">
+                    <span>주문관리</span><v-icon class="pagingArrow">$pagingArrow</v-icon><span>클레임관리</span><v-icon class="actionPagingArrow">$actionPagingArrow</v-icon><span>반품목록</span>
+                </div>
+                <div class="title">반품목록</div>
+            </div>
         </template>
         <template>
-            <!--컨포넌트 추가 생성 ++ -->
+            <return-list-search-input />
+        </template>
+        <template>
+            <return-list-result />
         </template>
     </v-container>
 </template>
 
 <script>
+    import returnListSearchInput from '@/components/common/eachPageComponents/claimComponents/ReturnListSearchInput'
+    import returnListResult from '@/components/common/eachPageComponents/claimComponents/ReturnListResult'
+
     export default {
-        name: "ReturnList"
+        name: "ReturnList",
+        components:{ returnListSearchInput, returnListResult }
     }
 </script>
 

@@ -9,6 +9,14 @@
                 <th>기간</th>
                 <td>
                     <div class="dm_bx">
+                        <div class="innerSelectbx d-flex">
+                            <select id="orderDetailSelect" name="orderDetailSelect">
+                                <option value="date1">반품요청일</option>
+                                <option value="date2">반품지시일</option>
+                                <option value="date3">반품입고일</option>
+                                <option value="date4">반품완료일</option>
+                            </select>
+                        </div>
                         <div class="datebx">
                             <input type="text" id="strtDate1" name="strtDate1" :placeholder=todate class="calen">
                             <label for="strtDate1"></label>
@@ -31,10 +39,16 @@
                         <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>전체</em></label>
                     </div>
                     <div class="spot">
-                        <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>배송대기</em></label>
+                        <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>반품신청</em></label>
                     </div>
                     <div class="spot">
-                        <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>배송지연</em></label>
+                        <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>반품처리중</em></label>
+                    </div>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state4" name="list_check"><label for="state4"><em>반품회수지시</em></label>
+                    </div>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state5" name="list_check"><label for="state5"><em>반품완료</em></label>
                     </div>
                 </td>
             </tr>
@@ -42,10 +56,11 @@
                 <th>상세검색</th>
                 <td>
                     <div class="selectbx d-flex">
-                        <select id="orderDetailSelect" name="orderDetailSelect">
+                        <select id="claimDetailSelect" name="claimDetailSelect">
                             <option value="">전체</option>
                             <option value="orderNum">주문번호</option>
-                            <option value="Name">상품명</option>
+                            <option value="storeNm">스토어명</option>
+                            <option value="productNm">제품명</option>
                         </select>
                         <input type="text" id="detail" name="detail" placeholder="INPUTBOX">
                     </div>
@@ -65,7 +80,7 @@
     import dayjs from 'dayjs'
 
     export default {
-        name: "WaitingDeliverySearchInput",
+        name: "ReturnListSearchInput",
         components: { ActionBtn , BasicBtn , dayjs },
         data() {
             return {
@@ -120,6 +135,22 @@
                         display: flex;
                         align-items: center;
 
+                        .innerSelectbx {
+                            height: inherit;
+                            display: flex;
+                            align-items: center;
+                            select {
+                                width: 260px;
+                                margin-right: 5px;
+                                background: url('~@/assets/images/icons/search.svg') no-repeat 226px center;
+
+                                option {
+                                    height: 20px;
+                                    font-size: $font-20;
+                                }
+                            }
+                        }
+                        
                         .datebx {
                             display: inline-block;
                             width: 260px;

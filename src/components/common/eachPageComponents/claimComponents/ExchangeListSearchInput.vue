@@ -31,10 +31,16 @@
                         <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>전체</em></label>
                     </div>
                     <div class="spot">
-                        <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>배송대기</em></label>
+                        <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>교환신청</em></label>
                     </div>
                     <div class="spot">
-                        <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>배송지연</em></label>
+                        <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>교환처리중</em></label>
+                    </div>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state4" name="list_check"><label for="state4"><em>교환회수지시</em></label>
+                    </div>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state5" name="list_check"><label for="state5"><em>교환완료</em></label>
                     </div>
                 </td>
             </tr>
@@ -42,10 +48,8 @@
                 <th>상세검색</th>
                 <td>
                     <div class="selectbx d-flex">
-                        <select id="orderDetailSelect" name="orderDetailSelect">
+                        <select id="claimDetailSelect" name="claimDetailSelect">
                             <option value="">전체</option>
-                            <option value="orderNum">주문번호</option>
-                            <option value="Name">상품명</option>
                         </select>
                         <input type="text" id="detail" name="detail" placeholder="INPUTBOX">
                     </div>
@@ -65,7 +69,7 @@
     import dayjs from 'dayjs'
 
     export default {
-        name: "WaitingDeliverySearchInput",
+        name: "ExchangeListSearchInput",
         components: { ActionBtn , BasicBtn , dayjs },
         data() {
             return {

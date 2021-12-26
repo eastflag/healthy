@@ -116,14 +116,14 @@
                             }
                         }
                     }
-                    &:nth-child(7){
+                    &:nth-child(7) {
                         height: inherit;
                         justify-content: center;
                         align-items: center;
                         text-align: center;
-                        span{
+                        span {
                             display: inline-block;
-                            width: 140px;
+                            width: 160px;
                             overflow: hidden;
                             text-overflow: ellipsis;
                             white-space: nowrap;

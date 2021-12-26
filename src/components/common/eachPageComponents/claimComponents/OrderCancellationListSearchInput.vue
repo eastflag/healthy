@@ -9,14 +9,6 @@
                 <th>기간</th>
                 <td>
                     <div class="dm_bx">
-                        <div class="innerSelectbx d-flex">
-                            <select id="orderDetailSelect" name="orderDetailSelect">
-                                <option value="date1">당일</option>
-                                <option value="date2">주문일</option>
-                                <option value="date3">결제일</option>
-                                <option value="date4">발송일</option>
-                            </select>
-                        </div>
                         <div class="datebx">
                             <input type="text" id="strtDate1" name="strtDate1" :placeholder=todate class="calen">
                             <label for="strtDate1"></label>
@@ -33,15 +25,28 @@
                 </td>
             </tr>
             <tr>
+                <th>상태</th>
+                <td>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>전체</em></label>
+                    </div>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>미입금취소</em></label>
+                    </div>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>취소처리중</em></label>
+                    </div>
+                    <div class="spot">
+                        <input class="checkbx" type="checkbox" id="state4" name="list_check"><label for="state4"><em>취소완료</em></label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
                 <th>상세검색</th>
                 <td>
                     <div class="selectbx d-flex">
-                        <select id="orderDetailSelect" name="orderDetailSelect">
+                        <select id="claimDetailSelect" name="claimDetailSelect">
                             <option value="">전체</option>
-                            <option value="name">성명</option>
-                            <option value="id">id</option>
-                            <option value="phoneNum">휴대폰번호</option>
-                            <option value="orderNum">주문번호</option>
                         </select>
                         <input type="text" id="detail" name="detail" placeholder="INPUTBOX">
                     </div>
@@ -116,22 +121,6 @@
                         display: flex;
                         align-items: center;
 
-                        .innerSelectbx {
-                            height: inherit;
-                            display: flex;
-                            align-items: center;
-                            select {
-                                width: 260px;
-                                margin-right: 5px;
-                                background: url('~@/assets/images/icons/search.svg') no-repeat 226px center;
-
-                                option {
-                                    height: 20px;
-                                    font-size: $font-20;
-                                }
-                            }
-                        }
-
                         .datebx {
                             display: inline-block;
                             width: 260px;
@@ -177,8 +166,8 @@
                         }
                     }
                     .spot {
-                        display:inline-block;
-                        width:80px;
+                        display: inline-flex;
+                        margin-right: 15px;
 
                         em {
                             width:100px;
