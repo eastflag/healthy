@@ -14,16 +14,20 @@
         <template>
             <return-list-result />
         </template>
+        <template>
+            <return-list-detail />
+        </template>
     </v-container>
 </template>
 
 <script>
     import returnListSearchInput from '@/components/common/eachPageComponents/claimComponents/ReturnListSearchInput'
     import returnListResult from '@/components/common/eachPageComponents/claimComponents/ReturnListResult'
+    import returnListDetail from '@/views/healthy/order/claim/details/ReturnListDetail'
 
     export default {
         name: "ReturnList",
-        components:{ returnListSearchInput, returnListResult }
+        components:{ returnListSearchInput, returnListResult, returnListDetail }
     }
 </script>
 

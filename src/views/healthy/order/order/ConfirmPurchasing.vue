@@ -15,23 +15,19 @@
             <confirm-purchasing-list />
         </template>
         <template>
-            <div class="button d-flex align-center justify-end">
-                <action-btn>히스토리</action-btn>
-                <basic-btn>목록</basic-btn>
-            </div>
+            <confirm-purchasing-detail />
         </template>
     </v-container>
 </template>
 
 <script>
-    import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
-    import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import confirmPurchasingSearchInput from '@/components/common/eachPageComponents/orderComponents/ConfirmPurchasingSearchInput'
     import confirmPurchasingList from '@/components/common/eachPageComponents/orderComponents/ConfirmPurchasingList'
+    import confirmPurchasingDetail from '@/views/healthy/order/order/details/ConfirmPurchasingDetail'
 
     export default {
         name: "ConfirmPurchasing",
-        components:{ BasicBtn , ActionBtn, confirmPurchasingSearchInput, confirmPurchasingList }
+        components:{ confirmPurchasingSearchInput, confirmPurchasingList, confirmPurchasingDetail }
     }
 </script>
 

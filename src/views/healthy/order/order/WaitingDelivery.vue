@@ -15,23 +15,19 @@
             <waiting-delivery-list />
         </template>
         <template>
-            <div class="button d-flex align-center justify-end">
-                <basic-btn>목록</basic-btn>
-                <action-btn>전체주문취소</action-btn>
-            </div>
+            <waiting-delivery-detail />
         </template>
     </v-container>
 </template>
 
 <script>
-    import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
-    import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import waitingDeliverySearchInput from '@/components/common/eachPageComponents/orderComponents/WaitingDeliverySearchInput'
     import waitingDeliveryList from '@/components/common/eachPageComponents/orderComponents/WaitingDeliveryList'
+    import waitingDeliveryDetail from '@/views/healthy/order/order/details/WaitingDeliveryDetail'
 
     export default {
         name: "WaitingDelivery",
-        components:{ BasicBtn , ActionBtn, waitingDeliverySearchInput, waitingDeliveryList }
+        components:{ waitingDeliverySearchInput, waitingDeliveryList, waitingDeliveryDetail }
     }
 </script>
 

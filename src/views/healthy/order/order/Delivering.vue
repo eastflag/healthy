@@ -15,24 +15,19 @@
             <delivering-list />
         </template>
         <template>
-            <div class="button d-flex align-center justify-end">
-                <basic-btn>히스토리</basic-btn>
-                <basic-btn>목록</basic-btn>
-                <action-btn>전체주문취소</action-btn>
-            </div>
+            <delivering-detail />
         </template>
     </v-container>
 </template>
 
 <script>
-    import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
-    import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import deliveringSearchInput from '@/components/common/eachPageComponents/orderComponents/DeliveringSearchInput'
     import deliveringList from '@/components/common/eachPageComponents/orderComponents/DeliveringList'
+    import deliveringDetail from '@/views/healthy/order/order/details/DeliveringDetail'
 
     export default {
         name: "Delivering",
-        components:{ BasicBtn , ActionBtn, deliveringSearchInput, deliveringList }
+        components:{ deliveringSearchInput, deliveringList, deliveringDetail }
     }
 </script>
 

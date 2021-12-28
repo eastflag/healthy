@@ -15,24 +15,20 @@
             <delivery-complete-list />
         </template>
         <template>
-            <div class="button d-flex align-center justify-end">
-                <basic-btn>히스토리</basic-btn>
-                <basic-btn>목록</basic-btn>
-                <action-btn>전체주문취소</action-btn>
-            </div>
+            <delivery-complete-detail />
         </template>
     </v-container>
 </template>
 
 <script>
-    import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
-    import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import deliveryCompleteSearchInput from '@/components/common/eachPageComponents/orderComponents/DeliveryCompleteSearchInput'
     import deliveryCompleteList from '@/components/common/eachPageComponents/orderComponents/DeliveryCompleteList'
+    import deliveryCompleteDetail from '@/views/healthy/order/order/details/DeliveryCompleteDetail'
+
 
     export default {
         name: "DeliveryComplete",
-        components:{ BasicBtn , ActionBtn, deliveryCompleteSearchInput, deliveryCompleteList }
+        components:{ deliveryCompleteSearchInput, deliveryCompleteList, deliveryCompleteDetail }
     }
 </script>
 

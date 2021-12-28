@@ -67,7 +67,7 @@
   
 
     export default {
-        name: "OrderUserInfo",
+        name: "ReturnProdInfo",
     }
 </script>
 

@@ -15,24 +15,19 @@
             <product-ing-list />
         </template>
         <template>
-            <div class="button d-flex align-center justify-end">
-                <basic-btn>히스토리</basic-btn>
-                <basic-btn>목록</basic-btn>
-                <action-btn>전체주문취소</action-btn>
-            </div>
+            <product-ing-detail />
         </template>
     </v-container>
 </template>
 
 <script>
-    import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
-    import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import productIngSearchInput from '@/components/common/eachPageComponents/orderComponents/ProductIngSearchInput'
     import productIngList from '@/components/common/eachPageComponents/orderComponents/ProductIngList'
+    import productIngDetail from '@/views/healthy/order/order/details/ProductIngDetail'
 
     export default {
         name: "ProductIng",
-        components:{ BasicBtn , ActionBtn, productIngSearchInput, productIngList }
+        components:{ productIngSearchInput, productIngList, productIngDetail }
     }
 </script>
 

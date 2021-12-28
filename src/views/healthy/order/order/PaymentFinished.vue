@@ -15,23 +15,19 @@
             <payment-finished-list />
         </template>
         <template>
-            <div class="button d-flex align-center justify-end">
-                <basic-btn>목록</basic-btn>
-                <action-btn>전체주문취소</action-btn>
-            </div>
+            <opayment-finished-detail />
         </template>
     </v-container>
 </template>
 
 <script>
-    import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
-    import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import paymentFinishedSearchInput from '@/components/common/eachPageComponents/orderComponents/PaymentFinishedSearchInput'
     import paymentFinishedList from '@/components/common/eachPageComponents/orderComponents/PaymentFinishedList'
+    import paymentFinishedDetail from '@/views/healthy/order/order/details/PaymentFinishedDetail'
 
     export default {
         name: "PaymentFinished",
-        components:{ BasicBtn , ActionBtn, paymentFinishedSearchInput, paymentFinishedList}
+        components:{ paymentFinishedSearchInput, paymentFinishedList, paymentFinishedDetail}
     }
 </script>
 

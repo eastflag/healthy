@@ -14,16 +14,20 @@
         <template>
             <exchange-list-result />
         </template>
+        <template>
+            <exchange-list-detail />
+        </template>
     </v-container>
 </template>
 
 <script>
     import exchangeListSearchInput from '@/components/common/eachPageComponents/claimComponents/ExchangeListSearchInput'
     import exchangeListResult from '@/components/common/eachPageComponents/claimComponents/ExchangeListResult'
+    import exchangeListDetail from '@/views/healthy/order/claim/details/ExchangeListDetail'
 
     export default {
         name: "ExchangeList",
-        components:{ exchangeListSearchInput, exchangeListResult }
+        components:{ exchangeListSearchInput, exchangeListResult, exchangeListDetail }
     }
 </script>
 

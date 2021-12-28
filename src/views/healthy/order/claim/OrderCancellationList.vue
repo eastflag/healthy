@@ -14,16 +14,20 @@
         <template>
             <order-cancellation-list-result />
         </template>
+        <template>
+            <order-cancellation-list-detail />
+        </template>
     </v-container>
 </template>
 
 <script>
     import orderCancellationListSearchInput from '@/components/common/eachPageComponents/claimComponents/OrderCancellationListSearchInput'
     import orderCancellationListResult from '@/components/common/eachPageComponents/claimComponents/OrderCancellationListResult'
+    import orderCancellationListDetail from '@/views/healthy/order/claim/details/OrderCancellationListDetail'
 
     export default {
         name: "OrderCancellationList",
-        components:{ orderCancellationListSearchInput, orderCancellationListResult }
+        components:{ orderCancellationListSearchInput, orderCancellationListResult, orderCancellationListDetail }
 
     }
 </script>

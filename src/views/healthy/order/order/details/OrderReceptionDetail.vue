@@ -34,7 +34,7 @@
     import cashReceipt from '@/components/common/eachPageComponents/orderComponents/orderDetails/CashReceipt'
 
     export default {
-        name: "OrderList",
+        name: "OrderReceptionDetail",
         components: { ActionBtn, BasicBtn, orderUserInfo, orderProdInfo, orderPaymentAmtInfo, deliveryInfo, cashReceipt },
         
     }

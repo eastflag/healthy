@@ -28,10 +28,8 @@
 </template>
 
 <script>
-  
-
     export default {
-        name: "OrderUserInfo",
+        name: "CashReceipt",
     }
 </script>
 
