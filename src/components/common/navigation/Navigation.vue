@@ -90,6 +90,87 @@
                 ]
               }
             ]
+          } else if (to.fullPath.startsWith('/super')) {
+            this.title = "슈퍼관리";
+            this.items = [
+              {
+                'title':'대시보드',
+                'children':[
+                  {
+                    'title':'대시보드',
+                    'path': '/super/main/dash-board'
+                  }
+                ]
+              },
+              {
+                'title':'환경설정',
+                'children':[
+                  {
+                    'title':'관리자리스트',
+                    'path': '/super/admin-member/items'
+                  },
+                  {
+                    'title':'관리자등록',
+                    'path': '/super/admin-member/join-items'
+                  },
+                  {
+                    'title':'관리자이력관리',
+                    'path': '/super/admin-member/path-histories'
+                  },
+                ]
+              },
+              {
+                'title':'통합배너관리',
+                'children':[
+                  {
+                    'title':'배너리스트',
+                    'path': '/super/banner/items'
+                  },
+                  {
+                    'title':'배너등록/수정',
+                    'path': '/super/banner/add-items'
+                  }
+                ]
+              },
+              {
+                'title':'팝업관리',
+                'children':[
+                  {
+                    'title':'팝업리스트',
+                    'path': '/super/pop-up/items'
+                  },
+                  {
+                    'title':'팝업등록/수정',
+                    'path': '/super/pop-up/add-items'
+                  },
+                ]
+              },
+              {
+                'title':'운영정책관리',
+                'children':[
+                  {
+                    'title':'이용약관관리',
+                    'path': '/super/service-policy/services'
+                  },
+                  {
+                    'title':'개인정보처리방침',
+                    'path': '/super/service-policy/personal-proceddings'
+                  },
+                  {
+                    'title':'고유식별정보수집',
+                    'path': '/super/service-policy/identifications'
+                  },
+                  {
+                    'title':'마케팅및광고수신',
+                    'path': '/super/service-policy/ad-receptions'
+                  },
+                  {
+                    'title':'개인정보취급위탁',
+                    'path': '/super/service-policy/personal-consignments'
+                  },
+                ]
+              },
+            ]
           } else if (to.fullPath.startsWith('/order')) {
             this.title = "주문관리";
             this.items = [

@@ -12,6 +12,11 @@
         <template>
             <!--컨포넌트 추가생성 ++ -->
             <!--기획서상 3장이 각각 페이지가아닌, UI상  height: auto 로 보여짐-->
+
+          <!--버튼 컴포넌트 예시-->
+          <action-btn class="upLoad">보기</action-btn>
+          <delete-btn>삭제</delete-btn>
+          <basic-btn class="upLoad">파일불러오기</basic-btn>
         </template>
     </v-container>
 </template>
@@ -19,9 +24,10 @@
 <script>
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
+    import DeleteBtn from "../../../../components/common/buttonComponents/DeleteBtn";
     export default {
         name: "ProductUpLoad",
-        components:{ BasicBtn , ActionBtn }
+        components:{ BasicBtn , ActionBtn, DeleteBtn }
     }
 </script>
 
