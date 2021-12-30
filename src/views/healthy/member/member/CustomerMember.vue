@@ -1,16 +1,20 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <v-container fluid class="containerLayout">
         <template>
-            <!--컨포넌트-->
+            <customer-member-input/>
         </template>
         <template>
-            <!--컨포넌트 추가 생성 ++ -->
-            <template>
-                <customer-member-input/>
-            </template>
-            <template>
-                <member-list/>
-            </template>
+            <member-list/>
+        </template>
+
+        <template>
+          <div class="button d-flex justify-end mt-5">
+            <basic-btn class="mr-2">취소</basic-btn>
+            <action-btn>저장</action-btn>
+          </div>
+        </template>
+        <template>
+          <member-edit></member-edit>
         </template>
     </v-container>
 </template>
@@ -18,9 +22,13 @@
 <script>
     import CustomerMemberInput from '@/components/common/eachPageComponents/memberComponents/CustomerMemberInput'
     import MemberList from '@/components/common/eachPageComponents/memberComponents/MemberList'
+    import ActionBtn from "../../../../components/common/buttonComponents/ActionBtn";
+    import BasicBtn from "../../../../components/common/buttonComponents/BasicBtn";
+    import MemberEdit from "../../../../components/common/eachPageComponents/memberComponents/MemberEdit";
+
     export default {
         name: "CustomerMember",
-        components: { CustomerMemberInput, MemberList } 
+        components: { CustomerMemberInput, MemberList, ActionBtn, BasicBtn, MemberEdit },
     }
 </script>
 
