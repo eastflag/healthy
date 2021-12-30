@@ -1,4 +1,8 @@
 <template>
+    <v-main>
+        <div class="title d-flex justify-space-between">
+            <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>배송지정보</span></div>
+        </div>
         <table>
             <colgroup>
                 <col width="20%">
@@ -30,6 +34,7 @@
                 </tr>
             </tbody>
         </table>
+    </v-main>
 </template>
 
 <script>
@@ -43,6 +48,16 @@
 <style lang="scss" scoped>
     @import '~@/assets/scss/_index.scss';
     #app {
+        .title{
+            width: 1612px;
+            margin: 40px auto 0;
+            font-size: $font-16;
+            font-weight: bold;
+
+            .titleIcon{
+                margin-right: 10px;
+            }
+        }
         table {
             width: 1612px;
             max-width: 1612px;

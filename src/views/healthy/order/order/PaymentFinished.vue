@@ -15,7 +15,7 @@
             <payment-finished-list />
         </template>
         <template>
-            <opayment-finished-detail />
+            <payment-finished-detail />
         </template>
     </v-container>
 </template>
