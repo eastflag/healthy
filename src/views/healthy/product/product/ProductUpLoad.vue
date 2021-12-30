@@ -8,6 +8,7 @@
         </template>
         <template>
             <!--컨포넌트-->
+            <product-upload-category/>
         </template>
         <template>
             <!--컨포넌트 추가생성 ++ -->
@@ -25,9 +26,10 @@
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import DeleteBtn from "../../../../components/common/buttonComponents/DeleteBtn";
+    import ProductUploadCategory from '@/components/common/eachPageComponents/productComponents/ProductUploadCategory'
     export default {
         name: "ProductUpLoad",
-        components:{ BasicBtn , ActionBtn, DeleteBtn }
+        components:{ BasicBtn , ActionBtn, DeleteBtn, ProductUploadCategory }
     }
 </script>
 
