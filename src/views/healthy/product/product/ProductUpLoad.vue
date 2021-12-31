@@ -15,6 +15,10 @@
             <product-upload-basic-info/>
         </template>
         <template>
+            <!--컨포넌트-->
+            <product-upload-sales-info/>
+        </template>
+        <template>
             <!--컨포넌트 추가생성 ++ -->
             <!--기획서상 3장이 각각 페이지가아닌, UI상  height: auto 로 보여짐-->
 
@@ -32,10 +36,11 @@
     import DeleteBtn from "../../../../components/common/buttonComponents/DeleteBtn";
     import ProductUploadCategory from '@/components/common/eachPageComponents/productComponents/ProductUploadCategory'
     import ProductUploadBasicInfo from '@/components/common/eachPageComponents/productComponents/ProductUploadBasicInfo'
+    import ProductUploadSalesInfo from '../../../../components/common/eachPageComponents/productComponents/ProductUploadSalesInfo.vue'
 
     export default {
         name: "ProductUpLoad",
-        components:{ BasicBtn , ActionBtn, DeleteBtn, ProductUploadCategory, ProductUploadBasicInfo }
+        components:{ BasicBtn , ActionBtn, DeleteBtn, ProductUploadCategory, ProductUploadBasicInfo, ProductUploadSalesInfo }
     }
 </script>
 
