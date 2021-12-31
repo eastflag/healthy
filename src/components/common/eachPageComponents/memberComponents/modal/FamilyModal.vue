@@ -1,15 +1,64 @@
 <template>
-  <v-dialog  content-class="rounded-0 elevation-0" width="400px">
-    <!--value="true"-->
-    <v-card class="rounded-0 elevation-0 modalLayout">
-      <div class="and_popup_bx">
-        <p>작성한 내용이 저장되지 않습니다.
-          <br>약관목록 페이지로 이동 하시겠습니까?</p>
-        <div class="button d-flex align-center justify-center">
-          <basic-btn>취소</basic-btn>
-          <action-btn>확인</action-btn>
+  <v-dialog v-model="dialogs.showFamilyModal" width="1280">
+    <v-card class="modalLayout">
+      <v-card-title class="modalTitle d-flex justify-space-between">
+        <div>
+          가족 정보 보기
         </div>
-      </div>
+        <v-icon>$closeBtn</v-icon>
+      </v-card-title>
+      <v-card-text>
+        <p class="tableTitle">계정: user1</p>
+        <v-container class="modalTableLayout">
+          <table>
+            <colgroup>
+              <col width="8%">
+              <col width="8%">
+              <col width="14%">
+              <col width="14%">
+              <col width="20%">
+              <col width="18%">
+              <col width="18%">
+            </colgroup>
+            <thead>
+            <tr>
+              <th><span>구분</span></th>
+              <th><span>명칭</span></th>
+              <th><span>생년월일_성별</span></th>
+              <th><span>등록일자</span></th>
+              <th><span>증상</span></th>
+              <th><span>주문번호</span></th>
+              <th><span>상담번호</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><span>가족</span></td>
+              <td><span>엄마</span></td>
+              <td><span>1962-09-09(여)</span></td>
+              <td><span>2021-09-01</span></td>
+              <td><span>#두통#치통#근육통</span></td>
+              <td><span>OD21211001-123456</span></td>
+              <td><span>SC123456789</span></td>
+            </tr>
+            <tr>
+              <td><span>가족</span></td>
+              <td><span>엄마</span></td>
+              <td><span>1962-09-09(여)</span></td>
+              <td><span>2021-09-01</span></td>
+              <td><span>#두통#치통#근육통</span></td>
+              <td><span>OD21211001-123456</span></td>
+              <td><span>SC123456789</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </v-container>
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <delete-btn>닫기</delete-btn>
+        <v-spacer></v-spacer>
+      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
@@ -17,22 +66,22 @@
 <script>
 import ActionBtn from "../../../buttonComponents/ActionBtn";
 import BasicBtn from "../../../buttonComponents/BasicBtn";
+import DeleteBtn from "../../../buttonComponents/DeleteBtn";
 
 export default {
   name: "FamilyModal",
-  components: { ActionBtn , BasicBtn }
+  props: [
+      "dialogs"
+  ],
+  components: { ActionBtn , BasicBtn, DeleteBtn }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/scss/popUpModal/popUpCommon.scss';
-#app{
-  .button{
-    button{
-      &:first-child{
-        margin-right: 15px;
-      }
-    }
-  }
-}
+@import '~@/assets/scss/_index.scss';
+// ListForm Common SCSS
+//@import '~@/assets/scss/listFormCommon.scss';
+
+
+
 </style>

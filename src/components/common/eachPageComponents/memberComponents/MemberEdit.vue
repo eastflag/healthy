@@ -145,7 +145,7 @@
             <th>가족회원</th>
             <td>
               <span class="mr-3">Y</span>
-              <basic-btn onclick="showFamilyModal = true">가족정보</basic-btn>
+              <basic-btn @click="dialogs.showFamilyModal = true">가족정보</basic-btn>
             </td>
             <th>상담내역</th>
             <td>
@@ -155,7 +155,7 @@
           </tr>
         </table>
 
-        <family-modal v-if="showFamilyModal"></family-modal>
+        <family-modal :dialogs="dialogs"></family-modal>
     </v-container>
 </template>
 
@@ -168,7 +168,9 @@
         components: {BasicBtn, FamilyModal},
         data() {
             return {
-              showFamilyModal: false,
+              dialogs: {
+                showFamilyModal: false
+              },
               smsConsent: [
                 {
                   idx: 'smsConsent1',
