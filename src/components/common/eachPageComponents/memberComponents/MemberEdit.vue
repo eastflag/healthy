@@ -150,26 +150,75 @@
             <th>상담내역</th>
             <td>
               <span class="mr-3">10회</span>
-              <basic-btn>상담내역보기</basic-btn>
+              <basic-btn @click="dialogs.showConsultListModal = true">상담내역보기</basic-btn>
+            </td>
+          </tr>
+          <tr>
+            <th>구매내역</th>
+            <td>
+              <span class="mr-3">125,000원</span>
+              <basic-btn @click="dialogs.showBuyListModal = true">구매내역보기</basic-btn>
+            </td>
+            <th>포인트</th>
+            <td>
+              <span class="mr-3">3,000점</span>
+              <basic-btn @click="dialogs.showPointListModal = true">포인트 내역 보기</basic-btn>
+            </td>
+          </tr>
+          <tr>
+            <th>방문횟수</th>
+            <td>
+              <span class="mr-3">23회</span>
+              <basic-btn @click="dialogs.showVisitHistoryModal = true">방문 기록 보기</basic-btn>
+            </td>
+            <th>가입일</th>
+            <td>
+              <span>2021-09-01 12:30:20</span>
+            </td>
+          </tr>
+          <tr>
+            <th>휴면회원</th>
+            <td>
+              <span  class="mr-3">Y</span>
+              <basic-btn @click="dialogs.showDormantMemberModal = true">이력 보기</basic-btn>
+            </td>
+            <th>회원정보</th>
+            <td>
+              <span>영구회원</span>
             </td>
           </tr>
         </table>
 
         <family-modal :dialogs="dialogs"></family-modal>
+        <consult-list-modal :dialogs="dialogs"></consult-list-modal>
+        <buy-list-modal :dialogs="dialogs"></buy-list-modal>
+        <point-list-modal :dialogs="dialogs"></point-list-modal>
+        <visit-history-modal :dialogs="dialogs"></visit-history-modal>
+        <dormant-member-modal :dialogs="dialogs"></dormant-member-modal>
     </v-container>
 </template>
 
 <script>
     import BasicBtn from "../../buttonComponents/BasicBtn";
     import FamilyModal from "./modal/FamilyModal";
+    import ConsultListModal from "./modal/ConsultListModal";
+    import BuyListModal from "./modal/BuyListModal";
+    import PointListModal from "./modal/PointListModal";
+    import VisitHistoryModal from "./modal/VisitHistoryModal";
+    import DormantMemberModal from "./modal/DormantMemberModal";
 
     export default {
         name: "MemberEdit",
-        components: {BasicBtn, FamilyModal},
+        components: {BasicBtn, FamilyModal, ConsultListModal, BuyListModal, PointListModal, VisitHistoryModal, DormantMemberModal},
         data() {
             return {
               dialogs: {
-                showFamilyModal: false
+                showFamilyModal: false,
+                showConsultListModal: false,
+                showBuyListModal: false,
+                showPointListModal: false,
+                showVisitHistoryModal: false,
+                showDormantMemberModal: false,
               },
               smsConsent: [
                 {
