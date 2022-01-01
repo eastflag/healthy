@@ -20,8 +20,8 @@
                 </div>
             </div>
         </v-card>
-        <!--<success-modal/>-->
-        <!--<not-approved-modal/>-->
+        <!--<success-customerModal/>-->
+        <!--<not-approved-customerModal/>-->
     </v-dialog>
 </template>
 
