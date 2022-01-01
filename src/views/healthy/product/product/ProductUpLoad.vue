@@ -8,6 +8,23 @@
         </template>
         <template>
             <!--컨포넌트-->
+            <product-upload-category/>
+        </template>
+        <template>
+            <!--컨포넌트-->
+            <product-upload-basic-info/>
+        </template>
+        <template>
+            <!--컨포넌트-->
+            <product-upload-sales-info/>
+        </template>
+        <template>
+            <!--컨포넌트-->
+            <product-upload-detail-and-additional-info/>
+        </template>
+        <template>
+            <!--컨포넌트-->
+            <product-upload-etc-info/>
         </template>
         <template>
             <!--컨포넌트 추가생성 ++ -->
@@ -25,9 +42,15 @@
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import DeleteBtn from "../../../../components/common/buttonComponents/DeleteBtn";
+    import ProductUploadCategory from '@/components/common/eachPageComponents/productComponents/ProductUploadCategory'
+    import ProductUploadBasicInfo from '@/components/common/eachPageComponents/productComponents/ProductUploadBasicInfo'
+    import ProductUploadSalesInfo from '../../../../components/common/eachPageComponents/productComponents/ProductUploadSalesInfo.vue'
+    import ProductUploadDetailAndAdditionalInfo from '../../../../components/common/eachPageComponents/productComponents/ProductUploadDetailAndAdditionalInfo.vue'
+    import ProductUploadEtcInfo from '../../../../components/common/eachPageComponents/productComponents/ProductUploadEtcInfo.vue'
+
     export default {
         name: "ProductUpLoad",
-        components:{ BasicBtn , ActionBtn, DeleteBtn }
+        components:{ BasicBtn , ActionBtn, DeleteBtn, ProductUploadCategory, ProductUploadBasicInfo, ProductUploadSalesInfo, ProductUploadEtcInfo, ProductUploadDetailAndAdditionalInfo }
     }
 </script>
 

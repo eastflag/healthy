@@ -1,20 +1,26 @@
-<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+<template>
     <v-container fluid class="boardLayout">
         <table>
             <colgroup>
+                <col width="200px">
+                <col width="600px">
                 <col width="200px">
                 <col width="*">
             </colgroup>
             <tr style="border-top: 1px solid #E5E5E5">
                 <th>이름</th>
                 <td>
-                    <span>홍길동</span>
+                    <span>김프로</span>
                 </td>
             </tr>
             <tr>
                 <th>아이디</th>
                 <td>
-                    <span>user1</span>
+                    <span>pro01</span>
+                </td>
+                <th>추천인ID</th>
+                <td>
+                    <span>masterpro01</span>
                 </td>
             </tr>
             <tr>
@@ -108,6 +114,65 @@
             </tr>
         </table>
 
+        <!-- 전문인 정보 -->
+        <div class="title d-flex justify-space-between">
+          <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>전문인 정보</span></div>
+        </div>
+
+        <table>
+          <colgroup>
+            <col width="200px">
+            <col width="*">
+          </colgroup>
+          <tr style="border-top: 1px solid #E5E5E5">
+            <th>전문인 유형</th>
+            <td>
+              <span>약사</span>
+            </td>
+          </tr>
+          <tr>
+            <th>사업장 소개</th>
+            <td>
+              전문인이 회원가입시 등록한 내용이 표시됩니다.
+            </td>
+          </tr>
+          <tr class="addr">
+            <th>사업장 주소</th>
+            <td>
+              <div class="dm_bx mb-2">
+                <div class="bx">
+                  <input type="text" id="business_post" name="business_post" placeholder="07769">
+                  <label for="post"></label>
+                </div>
+                <basic-btn>우편번호 검색</basic-btn>
+              </div>
+              <div class="dm_bx">
+                <div class="addr1">
+                  <input type="text" id="business_address1" name="business_address1" placeholder="서울 강서구 마곡중앙">
+                  <label for="address1"></label>
+                </div>
+                <div class="bx">
+                  <input type="text" id="business_address2" name="business_address2" placeholder="장흥빌딩">
+                  <label for="address2"></label>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>프로필 관리</th>
+            <td>
+              전문인이등록한 내용이 표시됩니다.
+            </td>
+          </tr>
+          <tr>
+            <th>전문인 소개</th>
+            <td>
+              Profile.jpg(500kb)_20210901
+            </td>
+          </tr>
+        </table>
+
+        <!-- 이용/운영 정보 -->
         <div class="title d-flex justify-space-between">
           <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>이용/운영 정보</span></div>
         </div>
@@ -130,7 +195,7 @@
                 </select>
               </div>
             </td>
-            <th>고객등급</th>
+            <th>전문인등급</th>
             <td>
               <div class="selectbx">
                 <select id="customer_grade" name="customer_grade">
@@ -142,28 +207,40 @@
             </td>
           </tr>
           <tr>
-            <th>가족회원</th>
+            <th>가상계좌</th>
             <td>
-              <span class="mr-3">Y</span>
-              <basic-btn @click="dialogs.showFamilyModal = true">가족정보</basic-btn>
+              <span class="mr-3">신한 110-333-3333333</span>
             </td>
-            <th>상담내역</th>
+            <th>출금계좌</th>
             <td>
-              <span class="mr-3">10회</span>
-              <basic-btn @click="dialogs.showConsultListModal = true">상담내역보기</basic-btn>
+<!--              <div class="selectbx d-flex">
+                <select id="claimDetailSelect" name="claimDetailSelect">
+                  <option value="">전체</option>
+                </select>
+                <input type="text" id="detail" name="detail" placeholder="INPUTBOX">
+              </div>-->
             </td>
           </tr>
           <tr>
-            <th>구매내역</th>
+            <th>정산내역</th>
             <td>
-              <span class="mr-3">125,000원</span>
-              <basic-btn @click="dialogs.showBuyListModal = true">구매내역보기</basic-btn>
+              <span class="mr-3">1,125,000원</span>
+              <basic-btn @click="dialogs.showCalculationListModal = true">정산내역보기</basic-btn>
             </td>
-            <th>포인트</th>
+            <th>정산금관리</th>
             <td>
-              <span class="mr-3">3,000점</span>
-              <basic-btn @click="dialogs.showPointListModal = true">포인트 내역 보기</basic-btn>
+              <span class="mr-3">1,000,000원</span>
+              <basic-btn @click="dialogs.showBalanceModal = true">정산금 내역 보기</basic-btn>
             </td>
+          </tr>
+          <tr>
+            <th>상담내역</th>
+            <td>
+              <span class="mr-3">10회</span>
+              <basic-btn @click="dialogs.showVisitHistoryModal = true">상담 내역 보기</basic-btn>
+            </td>
+            <th>&nbsp;</th>
+            <td>&nbsp;</td>
           </tr>
           <tr>
             <th>방문횟수</th>
@@ -179,20 +256,19 @@
           <tr>
             <th>휴면회원</th>
             <td>
-              <span  class="mr-3">Y</span>
+              <span  class="mr-3">N</span>
               <basic-btn @click="dialogs.showDormantMemberModal = true">이력 보기</basic-btn>
             </td>
             <th>회원정보</th>
             <td>
-              <span>영구회원</span>
+              <span>1년 회원</span>
             </td>
           </tr>
         </table>
 
-        <family-modal :dialogs="dialogs"></family-modal>
+        <calculation-list-modal :dialogs="dialogs"></calculation-list-modal>
+        <balance-modal :dialogs="dialogs"></balance-modal>
         <consult-list-modal :dialogs="dialogs"></consult-list-modal>
-        <buy-list-modal :dialogs="dialogs"></buy-list-modal>
-        <point-list-modal :dialogs="dialogs"></point-list-modal>
         <visit-history-modal :dialogs="dialogs"></visit-history-modal>
         <dormant-member-modal :dialogs="dialogs"></dormant-member-modal>
     </v-container>
@@ -200,23 +276,21 @@
 
 <script>
     import BasicBtn from "../../buttonComponents/BasicBtn";
-    import FamilyModal from "./customerModal/FamilyModal";
-    import ConsultListModal from "./customerModal/ConsultListModal";
-    import BuyListModal from "./customerModal/BuyListModal";
-    import PointListModal from "./customerModal/PointListModal";
-    import VisitHistoryModal from "./customerModal/VisitHistoryModal";
-    import DormantMemberModal from "./customerModal/DormantMemberModal";
+    import CalculationListModal from "./trchnicalModal/CalculationListModal";
+    import BalanceModal from "./trchnicalModal/BalanceModal";
+    import VisitHistoryModal from "./trchnicalModal/VisitHistoryModal";
+    import DormantMemberModal from "./trchnicalModal/DormantMemberModal";
+    import ConsultListModal from "./trchnicalModal/ConsultListModal";
 
     export default {
         name: "MemberEdit",
-        components: {BasicBtn, FamilyModal, ConsultListModal, BuyListModal, PointListModal, VisitHistoryModal, DormantMemberModal},
+        components: {BasicBtn, CalculationListModal, BalanceModal, ConsultListModal, VisitHistoryModal, DormantMemberModal},
         data() {
             return {
               dialogs: {
-                showFamilyModal: false,
+                showCalculationListModal: false,
+                showBalanceModal: false,
                 showConsultListModal: false,
-                showBuyListModal: false,
-                showPointListModal: false,
                 showVisitHistoryModal: false,
                 showDormantMemberModal: false,
               },
