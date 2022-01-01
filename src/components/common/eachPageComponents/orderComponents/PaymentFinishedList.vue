@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid class="boardLayout">
+    <v-container fluid class="listBoardLayout">
         <div class="title d-flex justify-space-between">
             <div class="d-flex"><span>LIST</span> ('{{num}}'의 리스트가 조회되었습니다.)</div>
             <div class="selectbx">
@@ -52,7 +52,7 @@
                 <td><span><a>OD202111001-123456</a></span></td>
                 <td><span>결재완료</span></td>
                 <td><span>2022-09-01</span></td>
-                <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
+                <td class="letterLimit"><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
                 <td><span>70,000</span></td>
                 <td><span>카드결제</span></td>
@@ -68,7 +68,7 @@
                 <td><span><a>OD202111001-123456</a></span></td>
                 <td><span>결재완료</span></td>
                 <td><span>2022-09-01</span></td>
-                <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
+                <td class="letterLimit"><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
                 <td><span>70,000</span></td>
                 <td><span>카드결제</span></td>
@@ -84,7 +84,7 @@
                 <td><span><a>OD202111001-123456</a></span></td>
                 <td><span>결재완료</span></td>
                 <td><span>2022-09-01</span></td>
-                <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
+                <td class="letterLimit"><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
                 <td><span>70,000</span></td>
                 <td><span>카드결제</span></td>
@@ -116,42 +116,5 @@
     @import '~@/assets/scss/_index.scss';
     // ListForm Common SCSS
     @import '~@/assets/scss/listFormCommon.scss';
-
-    #app{
-        .boardLayout {
-            min-height: 675px;
-        }
-        table{
-            tbody{
-                td{ 
-                    &:nth-child(2){
-                        span{
-                            a {
-                                text-decoration: underline;
-                                color: $color-basic;
-                            }
-                        }
-                    }
-                    &:nth-child(5){
-                        height: inherit;
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                        span{
-                            display: inline-block;
-                            width: 160px;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            margin-bottom: -7px;
-                        }
-                    }
-                    &:nth-child(10){
-                        height: inherit;
-                    }
-                }
-            }
-        }
-    }
 </style>
 

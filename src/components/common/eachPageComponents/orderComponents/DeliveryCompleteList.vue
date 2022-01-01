@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid class="boardLayout">
+    <v-container fluid class="listBoardLayout">
         <div class="title d-flex justify-space-between">
             <div class="d-flex"><span>LIST</span> ('{{num}}'의 리스트가 조회되었습니다.)</div>
             <div class="selectbx">
@@ -50,7 +50,7 @@
                 <td><span><a>OD202111001-123456</a></span></td>
                 <td><span>배송중</span></td>
                 <td><span>종근당</span></td>
-                <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
+                <td class="letterLimit"><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
                 <td><span>택배사:CJ대한동운<br/>운송장번호:123-4567-8234<br/>발송일자:2021-10-01</span></td>
                 <td><span>2021-10-05</span></td>
@@ -65,7 +65,7 @@
                 <td><span><a>OD202111001-123456</a></span></td>
                 <td><span>배송중</span></td>
                 <td><span>종근당</span></td>
-                <td><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
+                <td class="letterLimit"><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
                 <td><span>택배사:CJ대한동운<br/>운송장번호:123-4567-8234<br/>발송일자:2021-10-01</span></td>
                 <td><span>2021-10-05</span></td>
@@ -96,42 +96,5 @@
     @import '~@/assets/scss/_index.scss';
     // ListForm Common SCSS
     @import '~@/assets/scss/listFormCommon.scss';
-
-    #app{
-        .boardLayout {
-            min-height: 675px;
-        }
-        table{
-            tbody{
-                td{ 
-                    &:nth-child(2){
-                        span{
-                            a {
-                                text-decoration: underline;
-                                color: $color-basic;
-                            }
-                        }
-                    }
-                    &:nth-child(5){
-                        height: inherit;
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                        span{
-                            display: inline-block;
-                            width: 160px;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            margin-bottom: -7px;
-                        }
-                    }
-                    &:nth-child(9){
-                        height: inherit;
-                    }
-                }
-            }
-        }
-    }
 </style>
 
