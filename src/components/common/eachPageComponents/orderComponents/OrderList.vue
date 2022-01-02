@@ -8,7 +8,7 @@
                     <option value="num2">주문일 과거 순</option>
                 </select>
                 <basic-btn class="ml-3">엑셀다운</basic-btn>
-                <basic-btn class="ml-3">일괄수정</basic-btn>
+                <basic-btn class="ml-3" @click="dialogs.showBundleProcessingModal = true">일괄수정</basic-btn>
             </div>
         </div>
         <table>
@@ -57,7 +57,7 @@
                 <td class="letterLimit"><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
                 <td><span>70,000</span></td>
-                <td><span><button class="btn sm bg_green">입금확인</button></span></td>
+                <td><span><button class="btn sm bg_green" @click="dialogs.showAdminSettingModal = true">입금확인</button></span></td>
             </tr>
             <tr>
                 <td>
@@ -73,24 +73,32 @@
                 <td class="letterLimit"><span>종근당활력 홍삼파워 10글자 이상테스트</span></td>
                 <td><span>1</span></td>
                 <td><span>70,000</span></td>
-                <td><span><button class="btn sm bg_green">입금확인</button></span></td>
+                <td><span><button class="btn sm bg_green" @click="dialogs.showAdminSettingModal = true">입금확인</button></span></td>
             </tr>
             </tbody>
         </table>
         <plus-btn>더보기</plus-btn>
+        <admin-setting-modal :dialogs="dialogs" />
+        <bundle-processing-modal :dialogs="dialogs" />
     </v-container>
 </template>
 
 <script>
     import PlusBtn from '../../buttonComponents/PlusBtn'
     import BasicBtn from '../../buttonComponents/BasicBtn'
+    import AdminSettingModal from '@/views/healthy/order/order/Modal/AdminSettingModal'
+    import BundleProcessingModal from '@/views/healthy/order/order/Modal/BundleProcessingModal'
 
     export default {
         name: "OrderList",
-        components: { PlusBtn, BasicBtn },
+        components: { PlusBtn, BasicBtn, AdminSettingModal, BundleProcessingModal },
         data(){
             return{
-                num:'3'
+                num:'3',
+                dialogs: {
+                    showAdminSettingModal: false,
+                    showBundleProcessingModal: false,
+                }
             }
         }
     }
