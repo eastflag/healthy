@@ -202,6 +202,7 @@
       }
 
       .button{
+          margin: 20px auto;
           button:first-child{
               margin-right: 15px;
           }
