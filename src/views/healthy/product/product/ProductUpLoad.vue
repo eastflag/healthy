@@ -1,6 +1,14 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <v-container fluid class="containerLayout">
         <template>
+            <div class="content">
+                <div class="menuNav">
+                    <span>상품관리</span><v-icon class="pagingArrow">$pagingArrow</v-icon><span>상품관리</span><v-icon class="actionPagingArrow">$actionPagingArrow</v-icon><span>상품등록/수정</span>
+                </div>
+                <div class="title">상품등록/수정</div>
+            </div>
+        </template>
+        <template>
             <div class="button d-flex align-center justify-end">
                 <basic-btn>취소</basic-btn>
                 <action-btn>등록</action-btn>

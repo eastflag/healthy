@@ -1,6 +1,14 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <v-container fluid class="containerLayout">
         <template>
+            <div class="content">
+                <div class="menuNav">
+                    <span>게시판관리</span><v-icon class="pagingArrow">$pagingArrow</v-icon><span>FAQ</span><v-icon class="actionPagingArrow">$actionPagingArrow</v-icon><span>FAQ등록/수정</span>
+                </div>
+                <div class="title">FAQ등록/수정</div>
+            </div>
+        </template>
+        <template>
             <div class="content d-flex align-center justify-end">
                 <g-button>저장</g-button>
             </div>

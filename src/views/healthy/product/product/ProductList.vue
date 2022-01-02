@@ -1,6 +1,14 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <v-container fluid class="containerLayout">
         <template>
+            <div class="content">
+                <div class="menuNav">
+                    <span>상품관리</span><v-icon class="pagingArrow">$pagingArrow</v-icon><span>상품관리</span><v-icon class="actionPagingArrow">$actionPagingArrow</v-icon><span>상품목록</span>
+                </div>
+                <div class="title">상품목록</div>
+            </div>
+        </template>
+        <template>
             <!--컨포넌트-->
           <product-search-input/>
         </template>
