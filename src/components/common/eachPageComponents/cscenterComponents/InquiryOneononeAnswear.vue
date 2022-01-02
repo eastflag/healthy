@@ -116,6 +116,7 @@ export default {
         border-bottom: 1px solid $color-border;
 
         th{
+          display: flex;
           align-items: center;
           height: 52px;
           padding-left:16px;
@@ -127,6 +128,16 @@ export default {
           padding:0 32px;
           font-size: $font-12;
           text-align:left;
+
+          .spot {
+            display:inline-block;
+            width:80px;
+
+            em{
+              width:100px;
+              padding-left:26px;
+            }
+          }
         }
       }
     }

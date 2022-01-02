@@ -16,12 +16,14 @@
         </td>
         <th>게시여부</th>
             <td>
+              <div>
                 <div class="spot">
-                    <input class="radiobx" type="radio" id="radio" name="radio"><label for="radio"><em>게시</em></label>
+                  <input class="radiobx" type="radio" id="radio" name="radio"><label for="radio"><em>게시</em></label>
                 </div>
                 <div class="spot">
-                    <input class="radiobx" type="radio" id="radio1" name="radio"><label for="radio1"><em>미게시</em></label>
+                  <input class="radiobx" type="radio" id="radio1" name="radio"><label for="radio1"><em>미게시</em></label>
                 </div>
+              </div>
           </td>
       </tr>
       <tr>
@@ -82,12 +84,12 @@
 <script>
 import ActionBtn from '../../buttonComponents/ActionBtn'
 import BasicBtn from '../../buttonComponents/BasicBtn'
+import FaqUploadEditor from './FaqUploadEditor'
 import dayjs from 'dayjs'
-import CsFaqUploadEditor from './FaqUploadEditor.vue'
 
 export default {
   name: "FaqUploadReviseEditor",
-  components: { ActionBtn , BasicBtn , dayjs, CsFaqUploadEditor },
+  components: { ActionBtn , BasicBtn , dayjs, FaqUploadEditor },
   data() {
     return {
       todate: dayjs().format("YYYY-MM-DD"),
@@ -127,6 +129,7 @@ export default {
         border-bottom: 1px solid $color-border;
 
         th{
+          display: flex;
           align-items: center;
           height: 52px;
           padding-left:16px;
@@ -138,6 +141,16 @@ export default {
           padding:0 32px;
           font-size: $font-12;
           text-align:left;
+
+          .spot {
+            display:inline-block;
+            width:80px;
+
+            em{
+              width:100px;
+              padding-left:26px;
+            }
+          }
         }
       }
     }
