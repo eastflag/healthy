@@ -45,27 +45,72 @@
               <div class="spot">
                 <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>대분류</em></label>
               </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state4" name="list_check"><label for="state4"><em>대분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state5" name="list_check"><label for="state5"><em>대분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state6" name="list_check"><label for="state6"><em>대분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state7" name="list_check"><label for="state7"><em>대분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state8" name="list_check"><label for="state8"><em>대분류</em></label>
+              </div>
           </div>
           <div class="product-category">
               <div class="spot">
-                <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>대분류</em></label>
+                <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>중분류</em></label>
               </div>
               <div class="spot">
-                <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>대분류</em></label>
+                <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>중분류</em></label>
               </div>
               <div class="spot">
-                <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>대분류</em></label>
+                <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>중분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state4" name="list_check"><label for="state4"><em>중분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state5" name="list_check"><label for="state5"><em>중분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state6" name="list_check"><label for="state6"><em>중분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state7" name="list_check"><label for="state7"><em>중분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state8" name="list_check"><label for="state8"><em>중분류</em></label>
               </div>
           </div>
           <div class="product-category">
               <div class="spot">
-                <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>대분류</em></label>
+                <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>소분류</em></label>
               </div>
               <div class="spot">
-                <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>대분류</em></label>
+                <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>소분류</em></label>
               </div>
               <div class="spot">
-                <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>대분류</em></label>
+                <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>소분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state4" name="list_check"><label for="state4"><em>중분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state5" name="list_check"><label for="state5"><em>중분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state6" name="list_check"><label for="state6"><em>중분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state7" name="list_check"><label for="state7"><em>중분류</em></label>
+              </div>
+              <div class="spot">
+                <input class="checkbx" type="checkbox" id="state8" name="list_check"><label for="state8"><em>중분류</em></label>
               </div>
           </div>
         </td>
@@ -228,7 +273,9 @@ export default {
           padding: 6px 12px;
           margin-right: 10px;
           margin-top: 10px;
-          border: 1px solid $color-border;;
+          border: 1px solid $color-border;
+          height: 155px;
+          overflow: scroll;
 
           .spot {
             display: block;
