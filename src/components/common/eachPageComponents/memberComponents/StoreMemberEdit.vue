@@ -94,7 +94,7 @@
         <!-- 이용/운영 정보 -->
         <div class="title d-flex justify-space-between">
           <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>이용/운영 정보</span></div>
-          <basic-btn>첨부서류</basic-btn>
+          <basic-btn @click="dialogs.showAttachedDocumentModal = true">첨부서류</basic-btn>
         </div>
 
         <table>
@@ -128,7 +128,7 @@
             <th>상품정보</th>
             <td>
               <span class="mr-3">2개</span>
-              <basic-btn @click="dialogs.showBalanceModal = true">상품 정보 보기</basic-btn>
+              <basic-btn @click="dialogs.showProductInfoModal = true">상품 정보 보기</basic-btn>
             </td>
           </tr>
           <tr>
@@ -153,6 +153,7 @@
           </tr>
         </table>
 
+        <attached-document-modal :dialogs="dialogs"></attached-document-modal>
         <calculation-list-modal :dialogs="dialogs"></calculation-list-modal>
         <product-info-modal :dialogs="dialogs"></product-info-modal>
         <visit-history-modal :dialogs="dialogs"></visit-history-modal>
@@ -166,13 +167,15 @@
     import VisitHistoryModal from "./storeModal/VisitHistoryModal";
     import DormantMemberModal from "./storeModal/DormantMemberModal";
     import ProductInfoModal from "./storeModal/ProductInfoModal";
+    import AttachedDocumentModal from "./storeModal/AttachedDocumentModal";
 
     export default {
         name: "StoreMemberEdit",
-        components: {BasicBtn, CalculationListModal, ProductInfoModal, VisitHistoryModal, DormantMemberModal},
+        components: {BasicBtn, AttachedDocumentModal, CalculationListModal, ProductInfoModal, VisitHistoryModal, DormantMemberModal},
         data() {
             return {
               dialogs: {
+                showAttachedDocumentModal: false,
                 showCalculationListModal: false,
                 showProductInfoModal: false,
                 showVisitHistoryModal: false,

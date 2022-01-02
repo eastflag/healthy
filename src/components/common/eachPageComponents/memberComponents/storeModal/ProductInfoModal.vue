@@ -3,48 +3,56 @@
     <v-card class="modalLayout">
       <v-card-title class="modalTitle d-flex justify-space-between">
         <div>
-          정산금 내역 보기
+          상품 정보 보기
         </div>
         <v-icon>$closeBtn</v-icon>
       </v-card-title>
       <v-card-text>
-        <p class="tableTitle">계정: pro01</p>
+        <p class="tableTitle">계정: store1</p>
         <v-container class="modalTableLayout">
           <table>
             <colgroup>
+              <col width="12%">
+              <col width="12%">
+              <col width="12%">
               <col width="14%">
               <col width="14%">
-              <col width="22%">
-              <col width="14%">
-              <col width="16%">
-              <col width="20%">
+              <col width="12%">
+              <col width="12%">
+              <col width="12%">
             </colgroup>
             <thead>
             <tr>
-              <th><span>구분</span></th>
-              <th><span>일자</span></th>
-              <th><span>내용</span></th>
-              <th><span>금액</span></th>
-              <th><span>잔액</span></th>
-              <th><span>비고</span></th>
+              <th><span>등록일자</span></th>
+              <th><span>카테고리</span></th>
+              <th><span>상품명</span></th>
+              <th><span>상품금액</span></th>
+              <th><span>등록 상품 수</span></th>
+              <th><span>주문 상품 수</span></th>
+              <th><span>재고</span></th>
+              <th><span>판매여부</span></th>
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td><span>입금</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>정산금입금(21.03월 정산금)</span></td>
-              <td><span>+1500원</span></td>
-              <td><span>1,000,000원</span></td>
-              <td></td>
+              <td><span>영양제</span></td>
+              <td><span>종근당 비타민</span></td>
+              <td><span>100,000원</span></td>
+              <td><span>999</span></td>
+              <td><span>100</span></td>
+              <td><span>899</span></td>
+              <td><span>판매중</span></td>
             </tr>
             <tr>
-              <td><span>입금</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>정산금입금(21.03월 정산금)</span></td>
-              <td><span>+1500원</span></td>
-              <td><span>1,000,000원</span></td>
-              <td></td>
+              <td><span>영양제</span></td>
+              <td><span>종근당 비타민</span></td>
+              <td><span>100,000원</span></td>
+              <td><span>999</span></td>
+              <td><span>100</span></td>
+              <td><span>899</span></td>
+              <td><span>판매중</span></td>
             </tr>
             </tbody>
           </table>

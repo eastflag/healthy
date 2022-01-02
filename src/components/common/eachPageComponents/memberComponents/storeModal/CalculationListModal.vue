@@ -52,7 +52,7 @@
               <td><span>2021-09-01</span></td>
               <td><span>5,000,000</span></td>
               <td><span>1,000,000</span></td>
-              <td>-</td>
+              <td><span>-</span></td>
             </tr>
             </tbody>
           </table>
