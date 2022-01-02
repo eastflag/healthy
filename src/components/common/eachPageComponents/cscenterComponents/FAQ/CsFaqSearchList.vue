@@ -5,9 +5,8 @@
             <div class="selectbx">
                 <select id="departure" name="departure">
                   <option value="num1">조회수 순</option>
-                  <option value="num2">조회수 순</option>
-                  <option value="num3">접수일 최근 순</option>
-                  <option value="num4">접수일 과거 순</option>
+                  <option value="num2">접수일 최근 순</option>
+                  <option value="num3">접수일 과거 순</option>
                 </select>
             </div>
         </div>
