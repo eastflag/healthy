@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialogs.showVisitHistoryModal" width="400">
+  <v-dialog v-model="dialogs.showCustomerVisitHistoryModal" width="400">
     <v-card class="modalLayout">
       <v-card-title class="modalTitle d-flex justify-space-between">
         <div>
@@ -35,7 +35,7 @@ import BasicBtn from "../../../buttonComponents/BasicBtn";
 import DeleteBtn from "../../../buttonComponents/DeleteBtn";
 
 export default {
-  name: "VisitHistoryModal",
+  name: "CustomerVisitHistoryModal",
   props: [
       "dialogs"
   ],

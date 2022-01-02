@@ -1,34 +1,30 @@
 <template>
-  <v-dialog v-model="dialogs.showCalculationListModal" width="1280">
+  <v-dialog v-model="dialogs.showTrchnicalBalanceModal" width="1280">
     <v-card class="modalLayout">
       <v-card-title class="modalTitle d-flex justify-space-between">
         <div>
-          정산 내역 보기
+          정산금 내역 보기
         </div>
         <v-icon>$closeBtn</v-icon>
       </v-card-title>
       <v-card-text>
-        <p class="tableTitle">계정: store1</p>
+        <p class="tableTitle">계정: pro01</p>
         <v-container class="modalTableLayout">
           <table>
             <colgroup>
-              <col width="10%">
-              <col width="12%">
-              <col width="12%">
-              <col width="12%">
-              <col width="12%">
-              <col width="12%">
-              <col width="12%">
-              <col width="*">
+              <col width="14%">
+              <col width="14%">
+              <col width="22%">
+              <col width="14%">
+              <col width="16%">
+              <col width="20%">
             </colgroup>
             <thead>
             <tr>
               <th><span>구분</span></th>
-              <th><span>주문번호</span></th>
-              <th><span>정산기준일</span></th>
-              <th><span>정산금액</span></th>
-              <th><span>지급기준일</span></th>
-              <th><span>지급금액</span></th>
+              <th><span>일자</span></th>
+              <th><span>내용</span></th>
+              <th><span>금액</span></th>
               <th><span>잔액</span></th>
               <th><span>비고</span></th>
             </tr>
@@ -36,23 +32,19 @@
             <tbody>
             <tr>
               <td><span>입금</span></td>
-              <td><span>OD20211001-12345</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>5,000,000</span></td>
-              <td><span>2021-09-01</span></td>
-              <td><span>5,000,000</span></td>
-              <td><span>1,000,000</span></td>
-              <td><span>-</span></td>
+              <td><span>정산금입금(21.03월 정산금)</span></td>
+              <td><span>+1500원</span></td>
+              <td><span>1,000,000원</span></td>
+              <td></td>
             </tr>
             <tr>
               <td><span>입금</span></td>
-              <td><span>OD20211001-12345</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>5,000,000</span></td>
-              <td><span>2021-09-01</span></td>
-              <td><span>5,000,000</span></td>
-              <td><span>1,000,000</span></td>
-              <td><span>-</span></td>
+              <td><span>정산금입금(21.03월 정산금)</span></td>
+              <td><span>+1500원</span></td>
+              <td><span>1,000,000원</span></td>
+              <td></td>
             </tr>
             </tbody>
           </table>
@@ -73,7 +65,7 @@ import BasicBtn from "../../../buttonComponents/BasicBtn";
 import DeleteBtn from "../../../buttonComponents/DeleteBtn";
 
 export default {
-  name: "CalculationListModal",
+  name: "BalanceModal",
   props: [
       "dialogs"
   ],

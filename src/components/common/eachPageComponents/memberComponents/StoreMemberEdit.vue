@@ -94,7 +94,7 @@
         <!-- 이용/운영 정보 -->
         <div class="title d-flex justify-space-between">
           <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>이용/운영 정보</span></div>
-          <basic-btn @click="dialogs.showAttachedDocumentModal = true">첨부서류</basic-btn>
+          <basic-btn @click="dialogs.showStoreAttachedDocumentModal = true">첨부서류</basic-btn>
         </div>
 
         <table>
@@ -115,27 +115,26 @@
                 </select>
               </div>
             </td>
-            <th></th>
-            <td>
-            </td>
+            <th><span>&nbsp;</span></th>
+            <td><span>&nbsp;</span></td>
           </tr>
           <tr>
             <th>누적정산</th>
             <td>
               <span class="mr-3">10,000,000원</span>
-              <basic-btn @click="dialogs.showCalculationListModal = true">정산내역보기</basic-btn>
+              <basic-btn @click="dialogs.showStoreCalculationListModal = true">정산내역보기</basic-btn>
             </td>
             <th>상품정보</th>
             <td>
               <span class="mr-3">2개</span>
-              <basic-btn @click="dialogs.showProductInfoModal = true">상품 정보 보기</basic-btn>
+              <basic-btn @click="dialogs.showStoreProductInfoModal = true">상품 정보 보기</basic-btn>
             </td>
           </tr>
           <tr>
             <th>방문횟수</th>
             <td>
               <span class="mr-3">23회</span>
-              <basic-btn @click="dialogs.showVisitHistoryModal = true">방문 기록 보기</basic-btn>
+              <basic-btn @click="dialogs.showStoreVisitHistoryModal = true">방문 기록 보기</basic-btn>
             </td>
             <th>가입일</th>
             <td><span>2021-09-01 12:30:20</span></td>
@@ -144,7 +143,7 @@
             <th>휴면회원</th>
             <td>
               <span  class="mr-3">N</span>
-              <basic-btn @click="dialogs.showDormantMemberModal = true">이력 보기</basic-btn>
+              <basic-btn @click="dialogs.showStoreDormantMemberModal = true">이력 보기</basic-btn>
             </td>
             <th>회원정보</th>
             <td>
@@ -153,33 +152,33 @@
           </tr>
         </table>
 
-        <attached-document-modal :dialogs="dialogs"></attached-document-modal>
-        <calculation-list-modal :dialogs="dialogs"></calculation-list-modal>
-        <product-info-modal :dialogs="dialogs"></product-info-modal>
-        <visit-history-modal :dialogs="dialogs"></visit-history-modal>
-        <dormant-member-modal :dialogs="dialogs"></dormant-member-modal>
+        <store-attached-document-modal :dialogs="dialogs"></store-attached-document-modal>
+        <store-calculation-list-modal :dialogs="dialogs"></store-calculation-list-modal>
+        <store-product-info-modal :dialogs="dialogs"></store-product-info-modal>
+        <store-visit-history-modal :dialogs="dialogs"></store-visit-history-modal>
+        <store-dormant-member-modal :dialogs="dialogs"></store-dormant-member-modal>
     </v-container>
 </template>
 
 <script>
     import BasicBtn from "../../buttonComponents/BasicBtn";
-    import CalculationListModal from "./storeModal/CalculationListModal";
-    import VisitHistoryModal from "./storeModal/VisitHistoryModal";
-    import DormantMemberModal from "./storeModal/DormantMemberModal";
-    import ProductInfoModal from "./storeModal/ProductInfoModal";
-    import AttachedDocumentModal from "./storeModal/AttachedDocumentModal";
+    import StoreCalculationListModal from "./storeModal/StoreCalculationListModal";
+    import StoreVisitHistoryModal from "./storeModal/StoreVisitHistoryModal";
+    import StoreDormantMemberModal from "./storeModal/StoreDormantMemberModal";
+    import StoreProductInfoModal from "./storeModal/StoreProductInfoModal";
+    import StoreAttachedDocumentModal from "./storeModal/StoreAttachedDocumentModal";
 
     export default {
         name: "StoreMemberEdit",
-        components: {BasicBtn, AttachedDocumentModal, CalculationListModal, ProductInfoModal, VisitHistoryModal, DormantMemberModal},
+        components: {BasicBtn, StoreAttachedDocumentModal, StoreCalculationListModal, StoreProductInfoModal, StoreVisitHistoryModal, StoreDormantMemberModal},
         data() {
             return {
               dialogs: {
-                showAttachedDocumentModal: false,
-                showCalculationListModal: false,
-                showProductInfoModal: false,
-                showVisitHistoryModal: false,
-                showDormantMemberModal: false,
+                showStoreAttachedDocumentModal: false,
+                showStoreCalculationListModal: false,
+                showStoreProductInfoModal: false,
+                showStoreVisitHistoryModal: false,
+                showStoreDormantMemberModal: false,
               }
             }
         },

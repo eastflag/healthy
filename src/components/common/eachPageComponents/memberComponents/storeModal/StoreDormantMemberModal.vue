@@ -1,9 +1,9 @@
 <template>
-  <v-dialog v-model="dialogs.showPointListModal" width="1280">
+  <v-dialog v-model="dialogs.showStoreDormantMemberModal" width="1280">
     <v-card class="modalLayout">
       <v-card-title class="modalTitle d-flex justify-space-between">
         <div>
-          포인트 내역 보기
+          휴면회원 이력보기
         </div>
         <v-icon>$closeBtn</v-icon>
       </v-card-title>
@@ -12,39 +12,31 @@
         <v-container class="modalTableLayout">
           <table>
             <colgroup>
-              <col width="10%">
-              <col width="18%">
-              <col width="18%">
-              <col width="18%">
-              <col width="18%">
-              <col width="18%">
+              <col width="20%">
+              <col width="20%">
+              <col width="35%">
+              <col width="25%">
             </colgroup>
             <thead>
             <tr>
               <th><span>구분</span></th>
               <th><span>일자</span></th>
-              <th><span>타이틀</span></th>
-              <th><span>금액</span></th>
-              <th><span>잔액</span></th>
-              <th><span>비고</span></th>
+              <th><span>설명</span></th>
+              <th><span>휴면여부</span></th>
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td><span>적립</span></td>
+              <td><span>휴면회원전환</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>제품구매</span></td>
-              <td><span>+2000</span></td>
-              <td><span>3000</span></td>
-              <td></td>
+              <td><span>1년간 로그인 이력없음</span></td>
+              <td><span>Y</span></td>
             </tr>
             <tr>
-              <td><span>적립</span></td>
+              <td><span>휴면회원전환</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>제품구매</span></td>
-              <td><span>+2000</span></td>
-              <td><span>3000</span></td>
-              <td></td>
+              <td><span>1년간 로그인 이력없음</span></td>
+              <td><span>Y</span></td>
             </tr>
             </tbody>
           </table>
@@ -65,7 +57,7 @@ import BasicBtn from "../../../buttonComponents/BasicBtn";
 import DeleteBtn from "../../../buttonComponents/DeleteBtn";
 
 export default {
-  name: "PointListModal",
+  name: "DormantMemberModal",
   props: [
       "dialogs"
   ],
@@ -75,6 +67,5 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/scss/_index.scss';
-
 
 </style>

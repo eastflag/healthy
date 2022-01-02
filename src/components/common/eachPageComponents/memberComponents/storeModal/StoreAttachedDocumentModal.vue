@@ -1,46 +1,50 @@
 <template>
-  <v-dialog v-model="dialogs.showBuyListModal" width="1280">
+  <v-dialog v-model="dialogs.showStoreAttachedDocumentModal" width="800">
     <v-card class="modalLayout">
       <v-card-title class="modalTitle d-flex justify-space-between">
         <div>
-          구매 내역 보기
+          첨부서류
         </div>
         <v-icon>$closeBtn</v-icon>
       </v-card-title>
       <v-card-text>
-        <p class="tableTitle">계정: user1</p>
+        <p class="tableTitle">계정: store1</p>
         <v-container class="modalTableLayout">
           <table>
             <colgroup>
-              <col width="20%">
-              <col width="20%">
-              <col width="20%">
-              <col width="20%">
-              <col width="20%">
+              <col width="15%">
+              <col width="60%">
+              <col width="*%">
             </colgroup>
             <thead>
             <tr>
-              <th><span>주문일자</span></th>
-              <th><span>주문번호</span></th>
-              <th><span>주문상품</span></th>
-              <th><span>결제금액</span></th>
-              <th><span>상태</span></th>
+              <th><span>구분</span></th>
+              <th><span>파일명</span></th>
+              <th><span>관리</span></th>
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td><span>2021-09-01</span></td>
-              <td><span>OD20211001-123456</span></td>
-              <td><span>종근당 외 3건</span></td>
-              <td><span>110,000</span></td>
-              <td><span>배송진행중</span></td>
+              <td><span>법인등록증</span></td>
+              <td><span>file.jpg(500kb)_20210901</span></td>
+              <td>
+                <div class="d-flex justify-space-around">
+                  <span>보기</span>
+                  <span>등록</span>
+                  <span>삭제</span>
+                </div>
+              </td>
             </tr>
             <tr>
-              <td><span>2021-09-01</span></td>
-              <td><span>OD20211001-123456</span></td>
-              <td><span>종근당 외 3건</span></td>
-              <td><span>110,000</span></td>
-              <td><span>배송완료</span></td>
+              <td><span>법인등록증</span></td>
+              <td><span>file.jpg(500kb)_20210901</span></td>
+              <td>
+                <div class="d-flex justify-space-around">
+                  <span>보기</span>
+                  <span>등록</span>
+                  <span>삭제</span>
+                </div>
+              </td>
             </tr>
             </tbody>
           </table>
@@ -61,7 +65,7 @@ import BasicBtn from "../../../buttonComponents/BasicBtn";
 import DeleteBtn from "../../../buttonComponents/DeleteBtn";
 
 export default {
-  name: "BuyListModal",
+  name: "AttachedDocumentModal",
   props: [
       "dialogs"
   ],

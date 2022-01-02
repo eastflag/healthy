@@ -1,50 +1,50 @@
 <template>
-  <v-dialog v-model="dialogs.showAttachedDocumentModal" width="800">
+  <v-dialog v-model="dialogs.showCustomerPointListModal" width="1280">
     <v-card class="modalLayout">
       <v-card-title class="modalTitle d-flex justify-space-between">
         <div>
-          첨부서류
+          포인트 내역 보기
         </div>
         <v-icon>$closeBtn</v-icon>
       </v-card-title>
       <v-card-text>
-        <p class="tableTitle">계정: store1</p>
+        <p class="tableTitle">계정: user1</p>
         <v-container class="modalTableLayout">
           <table>
             <colgroup>
-              <col width="15%">
-              <col width="60%">
-              <col width="*%">
+              <col width="10%">
+              <col width="18%">
+              <col width="18%">
+              <col width="18%">
+              <col width="18%">
+              <col width="18%">
             </colgroup>
             <thead>
             <tr>
               <th><span>구분</span></th>
-              <th><span>파일명</span></th>
-              <th><span>관리</span></th>
+              <th><span>일자</span></th>
+              <th><span>타이틀</span></th>
+              <th><span>금액</span></th>
+              <th><span>잔액</span></th>
+              <th><span>비고</span></th>
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td><span>법인등록증</span></td>
-              <td><span>file.jpg(500kb)_20210901</span></td>
-              <td>
-                <div class="d-flex justify-space-around">
-                  <span>보기</span>
-                  <span>등록</span>
-                  <span>삭제</span>
-                </div>
-              </td>
+              <td><span>적립</span></td>
+              <td><span>2021-09-01</span></td>
+              <td><span>제품구매</span></td>
+              <td><span>+2000</span></td>
+              <td><span>3000</span></td>
+              <td></td>
             </tr>
             <tr>
-              <td><span>법인등록증</span></td>
-              <td><span>file.jpg(500kb)_20210901</span></td>
-              <td>
-                <div class="d-flex justify-space-around">
-                  <span>보기</span>
-                  <span>등록</span>
-                  <span>삭제</span>
-                </div>
-              </td>
+              <td><span>적립</span></td>
+              <td><span>2021-09-01</span></td>
+              <td><span>제품구매</span></td>
+              <td><span>+2000</span></td>
+              <td><span>3000</span></td>
+              <td></td>
             </tr>
             </tbody>
           </table>
@@ -65,7 +65,7 @@ import BasicBtn from "../../../buttonComponents/BasicBtn";
 import DeleteBtn from "../../../buttonComponents/DeleteBtn";
 
 export default {
-  name: "AttachedDocumentModal",
+  name: "CustomerPointListModal",
   props: [
       "dialogs"
   ],
@@ -75,5 +75,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/scss/_index.scss';
+
 
 </style>

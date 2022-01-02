@@ -225,19 +225,19 @@
             <th>정산내역</th>
             <td>
               <span class="mr-3">1,125,000원</span>
-              <basic-btn @click="dialogs.showCalculationListModal = true">정산내역보기</basic-btn>
+              <basic-btn @click="dialogs.showTrchnicalCalculationListModal = true">정산내역보기</basic-btn>
             </td>
             <th>정산금관리</th>
             <td>
               <span class="mr-3">1,000,000원</span>
-              <basic-btn @click="dialogs.showBalanceModal = true">정산금 내역 보기</basic-btn>
+              <basic-btn @click="dialogs.showTrchnicalBalanceModal = true">정산금 내역 보기</basic-btn>
             </td>
           </tr>
           <tr>
             <th>상담내역</th>
             <td>
               <span class="mr-3">10회</span>
-              <basic-btn @click="dialogs.showVisitHistoryModal = true">상담 내역 보기</basic-btn>
+              <basic-btn @click="dialogs.showTrchnicalConsultListModal = true">상담 내역 보기</basic-btn>
             </td>
             <th>&nbsp;</th>
             <td>&nbsp;</td>
@@ -246,7 +246,7 @@
             <th>방문횟수</th>
             <td>
               <span class="mr-3">23회</span>
-              <basic-btn @click="dialogs.showVisitHistoryModal = true">방문 기록 보기</basic-btn>
+              <basic-btn @click="dialogs.showTrchnicalVisitHistoryModal = true">방문 기록 보기</basic-btn>
             </td>
             <th>가입일</th>
             <td>
@@ -257,7 +257,7 @@
             <th>휴면회원</th>
             <td>
               <span  class="mr-3">N</span>
-              <basic-btn @click="dialogs.showDormantMemberModal = true">이력 보기</basic-btn>
+              <basic-btn @click="dialogs.showTrchnicalDormantMemberModal = true">이력 보기</basic-btn>
             </td>
             <th>회원정보</th>
             <td>
@@ -266,64 +266,34 @@
           </tr>
         </table>
 
-        <calculation-list-modal :dialogs="dialogs"></calculation-list-modal>
-        <balance-modal :dialogs="dialogs"></balance-modal>
-        <consult-list-modal :dialogs="dialogs"></consult-list-modal>
-        <visit-history-modal :dialogs="dialogs"></visit-history-modal>
-        <dormant-member-modal :dialogs="dialogs"></dormant-member-modal>
+        <trchnical-calculation-list-modal :dialogs="dialogs"></trchnical-calculation-list-modal>
+        <trchnical-balance-modal :dialogs="dialogs"></trchnical-balance-modal>
+        <trchnical-consult-list-modal :dialogs="dialogs"></trchnical-consult-list-modal>
+        <trchnical-visit-history-modal :dialogs="dialogs"></trchnical-visit-history-modal>
+        <trchnical-dormant-member-modal :dialogs="dialogs"></trchnical-dormant-member-modal>
     </v-container>
 </template>
 
 <script>
     import BasicBtn from "../../buttonComponents/BasicBtn";
-    import CalculationListModal from "./trchnicalModal/CalculationListModal";
-    import BalanceModal from "./trchnicalModal/BalanceModal";
-    import VisitHistoryModal from "./trchnicalModal/VisitHistoryModal";
-    import DormantMemberModal from "./trchnicalModal/DormantMemberModal";
-    import ConsultListModal from "./trchnicalModal/ConsultListModal";
+    import TrchnicalCalculationListModal from "./trchnicalModal/TrchnicalCalculationListModal";
+    import TrchnicalBalanceModal from "./trchnicalModal/TrchnicalBalanceModal";
+    import TrchnicalVisitHistoryModal from "./trchnicalModal/TrchnicalVisitHistoryModal";
+    import TrchnicalDormantMemberModal from "./trchnicalModal/TrchnicalDormantMemberModal";
+    import TrchnicalConsultListModal from "./trchnicalModal/TrchnicalConsultListModal";
 
     export default {
         name: "TrchnicalMemberEdit",
-        components: {BasicBtn, CalculationListModal, BalanceModal, ConsultListModal, VisitHistoryModal, DormantMemberModal},
+        components: {BasicBtn, TrchnicalCalculationListModal, TrchnicalBalanceModal, TrchnicalConsultListModal, TrchnicalVisitHistoryModal, TrchnicalDormantMemberModal},
         data() {
             return {
               dialogs: {
-                showCalculationListModal: false,
-                showBalanceModal: false,
-                showConsultListModal: false,
-                showVisitHistoryModal: false,
-                showDormantMemberModal: false,
+                showTrchnicalCalculationListModal: false,
+                showTrchnicalBalanceModal: false,
+                showTrchnicalConsultListModal: false,
+                showTrchnicalVisitHistoryModal: false,
+                showTrchnicalDormantMemberModal: false,
               },
-              smsConsent: [
-                {
-                  idx: 'smsConsent1',
-                  title: '동의',
-                },
-                {
-                  idx: 'smsConsent2',
-                  title: '미동의',
-                },
-              ],
-              emailConsent: [
-                {
-                  idx: 'emailConsent1',
-                  title: '동의',
-                },
-                {
-                  idx: 'emailConsent2',
-                  title: '미동의',
-                },
-              ],
-              pushConsent: [
-                {
-                  idx: 'pushConsent1',
-                  title: '동의',
-                },
-                {
-                  idx: 'pushConsent2',
-                  title: '미동의',
-                },
-              ],
             }
         },
         methods:{

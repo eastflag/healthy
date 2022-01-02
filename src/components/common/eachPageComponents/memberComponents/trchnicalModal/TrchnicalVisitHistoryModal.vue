@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialogs.showVisitHistoryModal" width="400">
+  <v-dialog v-model="dialogs.showTrchnicalVisitHistoryModal" width="400">
     <v-card class="modalLayout">
       <v-card-title class="modalTitle d-flex justify-space-between">
         <div>
@@ -8,7 +8,7 @@
         <v-icon>$closeBtn</v-icon>
       </v-card-title>
       <v-card-text>
-        <p class="tableTitle">계정: store1</p>
+        <p class="tableTitle">계정: pro01</p>
         <v-container class="modalTableLayout">
           <div class="logBox">
             <p class="log">2021-09-01 12:30:20</p>

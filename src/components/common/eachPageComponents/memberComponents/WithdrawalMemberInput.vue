@@ -6,19 +6,47 @@
                 <col width="*">
             </colgroup>
             <tr style="border-top: 1px solid #E5E5E5">
-              <th>상태</th>
-              <td>
-                <div class="selectbx d-flex">
-                  <select id="status" name="status">
-                    <option value="num1">전체</option>
-                    <option value="num2">정상</option>
-                    <option value="num3">이용정지</option>
-                  </select>
-                </div>
-              </td>
+                <th>회원구분</th>
+                <td>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="kind1" name="list_check"><label for="kind1"><em>전체</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="kind2" name="list_check"><label for="kind2"><em>고객</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="kind3" name="list_check"><label for="kind3"><em>전문인</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="kind4" name="list_check"><label for="kind4"><em>입점업체</em></label>
+                  </div>
+                </td>
+            </tr>
+            <tr>
+                <th>탈퇴사유</th>
+                <td>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="reason1" name="list_check"><label for="reason1"><em>전체</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="reason2" name="list_check"><label for="reason2"><em>서비스불만</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="reason3" name="list_check"><label for="reason3"><em>상담불만</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="reason4" name="list_check"><label for="reason4"><em>불만</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="reason5" name="list_check"><label for="reason5"><em>불만</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="reason6" name="list_check"><label for="reason6"><em>불만</em></label>
+                  </div>
+                </td>
             </tr>
             <tr class="calendarLayout">
-                <th>가입일</th>
+                <th>탈퇴일</th>
                 <td>
                     <div class="dm_bx">
                         <div class="datebx">
@@ -36,19 +64,6 @@
                     </div>
                 </td>
             </tr>
-            <tr>
-                <th>조건검색</th>
-                <td>
-                    <div class="selectbx d-flex">
-                        <select id="departure" name="departure">
-                            <option value="num1">구분</option>
-                            <option value="num2">검색2</option>
-                            <option value="num3">검색3</option>
-                        </select>
-                        <input type="text" id="cont" name="info1" placeholder="INPUTBOX">
-                    </div>
-                </td>
-            </tr>
         </table>
         <div class="button d-flex justify-center mb-5">
             <action-btn>조회</action-btn>
@@ -63,7 +78,7 @@
     import dayjs from 'dayjs'
 
     export default {
-        name: "TrchnicalMemberInput",
+        name: "WithdrawalMemberInput",
         components: { ActionBtn , BasicBtn , dayjs },
         data() {
             return {
@@ -116,7 +131,7 @@
 
                         .spot {
                             display:inline-block;
-                            width:80px;
+                            width: 90px;
 
                             em{
                                 width:100px;

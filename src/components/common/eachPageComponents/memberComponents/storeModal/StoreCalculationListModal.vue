@@ -1,9 +1,9 @@
 <template>
-  <v-dialog v-model="dialogs.showProductInfoModal" width="1280">
+  <v-dialog v-model="dialogs.showStoreCalculationListModal" width="1280">
     <v-card class="modalLayout">
       <v-card-title class="modalTitle d-flex justify-space-between">
         <div>
-          상품 정보 보기
+          정산 내역 보기
         </div>
         <v-icon>$closeBtn</v-icon>
       </v-card-title>
@@ -12,47 +12,47 @@
         <v-container class="modalTableLayout">
           <table>
             <colgroup>
+              <col width="10%">
               <col width="12%">
               <col width="12%">
               <col width="12%">
-              <col width="14%">
-              <col width="14%">
               <col width="12%">
               <col width="12%">
               <col width="12%">
+              <col width="*">
             </colgroup>
             <thead>
             <tr>
-              <th><span>등록일자</span></th>
-              <th><span>카테고리</span></th>
-              <th><span>상품명</span></th>
-              <th><span>상품금액</span></th>
-              <th><span>등록 상품 수</span></th>
-              <th><span>주문 상품 수</span></th>
-              <th><span>재고</span></th>
-              <th><span>판매여부</span></th>
+              <th><span>구분</span></th>
+              <th><span>주문번호</span></th>
+              <th><span>정산기준일</span></th>
+              <th><span>정산금액</span></th>
+              <th><span>지급기준일</span></th>
+              <th><span>지급금액</span></th>
+              <th><span>잔액</span></th>
+              <th><span>비고</span></th>
             </tr>
             </thead>
             <tbody>
             <tr>
+              <td><span>입금</span></td>
+              <td><span>OD20211001-12345</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>영양제</span></td>
-              <td><span>종근당 비타민</span></td>
-              <td><span>100,000원</span></td>
-              <td><span>999</span></td>
-              <td><span>100</span></td>
-              <td><span>899</span></td>
-              <td><span>판매중</span></td>
+              <td><span>5,000,000</span></td>
+              <td><span>2021-09-01</span></td>
+              <td><span>5,000,000</span></td>
+              <td><span>1,000,000</span></td>
+              <td><span>-</span></td>
             </tr>
             <tr>
+              <td><span>입금</span></td>
+              <td><span>OD20211001-12345</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>영양제</span></td>
-              <td><span>종근당 비타민</span></td>
-              <td><span>100,000원</span></td>
-              <td><span>999</span></td>
-              <td><span>100</span></td>
-              <td><span>899</span></td>
-              <td><span>판매중</span></td>
+              <td><span>5,000,000</span></td>
+              <td><span>2021-09-01</span></td>
+              <td><span>5,000,000</span></td>
+              <td><span>1,000,000</span></td>
+              <td><span>-</span></td>
             </tr>
             </tbody>
           </table>
@@ -73,7 +73,7 @@ import BasicBtn from "../../../buttonComponents/BasicBtn";
 import DeleteBtn from "../../../buttonComponents/DeleteBtn";
 
 export default {
-  name: "ProductInfoModal",
+  name: "CalculationListModal",
   props: [
       "dialogs"
   ],

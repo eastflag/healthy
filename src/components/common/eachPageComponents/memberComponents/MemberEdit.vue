@@ -145,31 +145,31 @@
             <th>가족회원</th>
             <td>
               <span class="mr-3">Y</span>
-              <basic-btn @click="dialogs.showFamilyModal = true">가족정보</basic-btn>
+              <basic-btn @click="dialogs.showCustomerFamilyModal = true">가족정보</basic-btn>
             </td>
             <th>상담내역</th>
             <td>
               <span class="mr-3">10회</span>
-              <basic-btn @click="dialogs.showConsultListModal = true">상담내역보기</basic-btn>
+              <basic-btn @click="dialogs.showCustomerConsultListModal = true">상담내역보기</basic-btn>
             </td>
           </tr>
           <tr>
             <th>구매내역</th>
             <td>
               <span class="mr-3">125,000원</span>
-              <basic-btn @click="dialogs.showBuyListModal = true">구매내역보기</basic-btn>
+              <basic-btn @click="dialogs.showCustomerBuyListModal = true">구매내역보기</basic-btn>
             </td>
             <th>포인트</th>
             <td>
               <span class="mr-3">3,000점</span>
-              <basic-btn @click="dialogs.showPointListModal = true">포인트 내역 보기</basic-btn>
+              <basic-btn @click="dialogs.showCustomerPointListModal = true">포인트 내역 보기</basic-btn>
             </td>
           </tr>
           <tr>
             <th>방문횟수</th>
             <td>
               <span class="mr-3">23회</span>
-              <basic-btn @click="dialogs.showVisitHistoryModal = true">방문 기록 보기</basic-btn>
+              <basic-btn @click="dialogs.showCustomerVisitHistoryModal = true">방문 기록 보기</basic-btn>
             </td>
             <th>가입일</th>
             <td>
@@ -180,7 +180,7 @@
             <th>휴면회원</th>
             <td>
               <span  class="mr-3">Y</span>
-              <basic-btn @click="dialogs.showDormantMemberModal = true">이력 보기</basic-btn>
+              <basic-btn @click="dialogs.showCustomerDormantMemberModal = true">이력 보기</basic-btn>
             </td>
             <th>회원정보</th>
             <td>
@@ -189,36 +189,43 @@
           </tr>
         </table>
 
-        <family-modal :dialogs="dialogs"></family-modal>
-        <consult-list-modal :dialogs="dialogs"></consult-list-modal>
-        <buy-list-modal :dialogs="dialogs"></buy-list-modal>
-        <point-list-modal :dialogs="dialogs"></point-list-modal>
-        <visit-history-modal :dialogs="dialogs"></visit-history-modal>
-        <dormant-member-modal :dialogs="dialogs"></dormant-member-modal>
+        <customer-family-modal :dialogs="dialogs"></customer-family-modal>
+        <customer-consult-list-modal :dialogs="dialogs"></customer-consult-list-modal>
+        <customer-buy-list-modal :dialogs="dialogs"></customer-buy-list-modal>
+        <customer-point-list-modal :dialogs="dialogs"></customer-point-list-modal>
+        <customer-visit-history-modal :dialogs="dialogs"></customer-visit-history-modal>
+        <customer-dormant-member-modal :dialogs="dialogs"></customer-dormant-member-modal>
     </v-container>
 </template>
 
 <script>
-    import BasicBtn from "../../buttonComponents/BasicBtn";
-    import FamilyModal from "./customerModal/FamilyModal";
-    import ConsultListModal from "./customerModal/ConsultListModal";
-    import BuyListModal from "./customerModal/BuyListModal";
-    import PointListModal from "./customerModal/PointListModal";
-    import VisitHistoryModal from "./customerModal/VisitHistoryModal";
-    import DormantMemberModal from "./customerModal/DormantMemberModal";
+import BasicBtn from "../../buttonComponents/BasicBtn";
+import CustomerFamilyModal from "./customerModal/CustomerFamilyModal";
+import CustomerConsultListModal from "./customerModal/CustomerConsultListModal";
+import CustomerBuyListModal from "./customerModal/CustomerBuyListModal";
+import CustomerPointListModal from "./customerModal/CustomerPointListModal";
+import CustomerVisitHistoryModal from "./customerModal/CustomerVisitHistoryModal";
+import CustomerDormantMemberModal from "./customerModal/CustomerDormantMemberModal";
 
-    export default {
+export default {
         name: "MemberEdit",
-        components: {BasicBtn, FamilyModal, ConsultListModal, BuyListModal, PointListModal, VisitHistoryModal, DormantMemberModal},
+        components: {BasicBtn,
+          CustomerFamilyModal,
+          CustomerConsultListModal,
+          CustomerBuyListModal,
+          CustomerPointListModal,
+          CustomerVisitHistoryModal,
+          CustomerDormantMemberModal
+        },
         data() {
             return {
               dialogs: {
-                showFamilyModal: false,
-                showConsultListModal: false,
-                showBuyListModal: false,
-                showPointListModal: false,
-                showVisitHistoryModal: false,
-                showDormantMemberModal: false,
+                showCustomerFamilyModal: false,
+                showCustomerConsultListModal: false,
+                showCustomerBuyListModal: false,
+                showCustomerPointListModal: false,
+                showCustomerVisitHistoryModal: false,
+                showCustomerDormantMemberModal: false,
               },
               smsConsent: [
                 {

@@ -1,42 +1,50 @@
 <template>
-  <v-dialog v-model="dialogs.showDormantMemberModal" width="1280">
+  <v-dialog v-model="dialogs.showTrchnicalCalculationListModal" width="1280">
     <v-card class="modalLayout">
       <v-card-title class="modalTitle d-flex justify-space-between">
         <div>
-          휴면회원 이력보기
+          정산 내역 보기
         </div>
         <v-icon>$closeBtn</v-icon>
       </v-card-title>
       <v-card-text>
-        <p class="tableTitle">계정: user1</p>
+        <p class="tableTitle">계정: pro01</p>
         <v-container class="modalTableLayout">
           <table>
             <colgroup>
+              <col width="14%">
+              <col width="22%">
+              <col width="14%">
+              <col width="14%">
+              <col width="16%">
               <col width="20%">
-              <col width="20%">
-              <col width="35%">
-              <col width="25%">
             </colgroup>
             <thead>
             <tr>
-              <th><span>구분</span></th>
               <th><span>일자</span></th>
-              <th><span>설명</span></th>
-              <th><span>휴면여부</span></th>
+              <th><span>정산내역</span></th>
+              <th><span>정산기준일</span></th>
+              <th><span>정산금액</span></th>
+              <th><span>지급기준일</span></th>
+              <th><span>비고</span></th>
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td><span>휴면회원전환</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>1년간 로그인 이력없음</span></td>
-              <td><span>Y</span></td>
+              <td><span>상담 적립(상담번호:SC123456789)</span></td>
+              <td><span>2021-09-01</span></td>
+              <td><span>+1500원</span></td>
+              <td><span>2021-09-01</span></td>
+              <td></td>
             </tr>
             <tr>
-              <td><span>휴면회원전환</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>1년간 로그인 이력없음</span></td>
-              <td><span>Y</span></td>
+              <td><span>상담 적립(상담번호:SC123456789)</span></td>
+              <td><span>2021-09-01</span></td>
+              <td><span>+1500원</span></td>
+              <td><span>2021-09-01</span></td>
+              <td></td>
             </tr>
             </tbody>
           </table>
@@ -57,7 +65,7 @@ import BasicBtn from "../../../buttonComponents/BasicBtn";
 import DeleteBtn from "../../../buttonComponents/DeleteBtn";
 
 export default {
-  name: "DormantMemberModal",
+  name: "CalculationListModal",
   props: [
       "dialogs"
   ],

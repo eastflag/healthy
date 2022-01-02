@@ -1,9 +1,9 @@
 <template>
-  <v-dialog v-model="dialogs.showDormantMemberModal" width="1280">
+  <v-dialog v-model="dialogs.showCustomerBuyListModal" width="1280">
     <v-card class="modalLayout">
       <v-card-title class="modalTitle d-flex justify-space-between">
         <div>
-          휴면회원 이력보기
+          구매 내역 보기
         </div>
         <v-icon>$closeBtn</v-icon>
       </v-card-title>
@@ -14,29 +14,33 @@
             <colgroup>
               <col width="20%">
               <col width="20%">
-              <col width="35%">
-              <col width="25%">
+              <col width="20%">
+              <col width="20%">
+              <col width="20%">
             </colgroup>
             <thead>
             <tr>
-              <th><span>구분</span></th>
-              <th><span>일자</span></th>
-              <th><span>설명</span></th>
-              <th><span>휴면여부</span></th>
+              <th><span>주문일자</span></th>
+              <th><span>주문번호</span></th>
+              <th><span>주문상품</span></th>
+              <th><span>결제금액</span></th>
+              <th><span>상태</span></th>
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td><span>휴면회원전환</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>1년간 로그인 이력없음</span></td>
-              <td><span>Y</span></td>
+              <td><span>OD20211001-123456</span></td>
+              <td><span>종근당 외 3건</span></td>
+              <td><span>110,000</span></td>
+              <td><span>배송진행중</span></td>
             </tr>
             <tr>
-              <td><span>휴면회원전환</span></td>
               <td><span>2021-09-01</span></td>
-              <td><span>1년간 로그인 이력없음</span></td>
-              <td><span>Y</span></td>
+              <td><span>OD20211001-123456</span></td>
+              <td><span>종근당 외 3건</span></td>
+              <td><span>110,000</span></td>
+              <td><span>배송완료</span></td>
             </tr>
             </tbody>
           </table>
@@ -57,7 +61,7 @@ import BasicBtn from "../../../buttonComponents/BasicBtn";
 import DeleteBtn from "../../../buttonComponents/DeleteBtn";
 
 export default {
-  name: "DormantMemberModal",
+  name: "CustomerBuyListModal",
   props: [
       "dialogs"
   ],

@@ -1,5 +1,13 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <v-container fluid class="containerLayout">
+      <template>
+        <div class="content">
+          <div class="menuNav">
+            <span>회원관리</span><v-icon class="pagingArrow">$pagingArrow</v-icon><span>회원관리</span><v-icon class="actionPagingArrow">$actionPagingArrow</v-icon><span>고객회원</span>
+          </div>
+          <div class="title">고객회원</div>
+        </div>
+      </template>
         <template>
             <customer-member-input/>
         </template>
