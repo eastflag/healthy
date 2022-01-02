@@ -14,6 +14,7 @@
 <script>
     import ProductSearchInput from '@/components/common/eachPageComponents/productComponents/ProductSearchInput'
     import ProductSearchList from '@/components/common/eachPageComponents/productComponents/ProductSearchList'
+
     export default {
       name: "ProductList",
       components: { ProductSearchInput, ProductSearchList }
