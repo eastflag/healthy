@@ -6,6 +6,7 @@
             </div>
         </template>
         <template>
+            <cs-faq-upload-revise-editor/>
             <!--컴포넌트-->
         </template>
         <template>
@@ -15,11 +16,12 @@
 </template>
 
 <script>
+import CsFaqUploadReviseEditor from '../../../../components/common/eachPageComponents/cscenterComponents/FAQ/CsFaqUploadReviseEditor';
 
     //견본('@/views/healthy/cscenter/notice/NoticeUploadRevise') 와 비슷한 폼
     export default {
         name: "FAQUploadRevise",
-        components: {  },
+        components: { CsFaqUploadReviseEditor },
         data() {
             return {
 
