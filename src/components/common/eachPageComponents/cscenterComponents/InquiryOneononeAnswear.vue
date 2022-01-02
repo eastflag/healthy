@@ -1,149 +1,135 @@
-<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <v-container fluid class="boardLayout">
-        <div class="title d-flex justify-space-between">
-            <div class="d-flex"><span>LIST</span> ('{{num}}'의 리스트가 조회되었습니다.)</div>
-            <div class="selectbx">
-                <select id="departure" name="departure">
-                  <option value="num1">조회수 순</option>
-                  <option value="num2">접수일 최근 순</option>
-                  <option value="num3">접수일 과거 순</option>
-                </select>
-            </div>
-        </div>
-        <table>
-            <colgroup>
-                <col width="2%">
-                <col width="5%">
-                <col width="5%">
-                <col width="5%">
-                <col width="5%">
-                <col width="10%">
-                <col width="5%">
-                <col width="5%">
-                <col width="5%">
-            </colgroup>
-            <thead>
-            <tr>
-                <th>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
-                    </div>
-                </th>
-                <th><span>상태</span></th>
-                <th><span>분류</span></th>
-                <th><span>상담/주문번호</span></th>
-                <th><span>제목</span></th>
-                <th><span>등록ID</span></th>
-                <th><span>담당자</span></th>
-                <th><span>접수일자</span></th>
-                <th><span>비고</span></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
-                    </div>
-                </td>
-                <td><span>답변</span></td>
-                <td><span>상담문의</span></td>
-                <td><span>C20211524</span></td>
-                <td><span>제목</span></td>
-                <td><span>scn3002</span></td>
-                <td><span>SCN345</span></td>
-                <td><span>2021-10-30</span></td>
-                <td><span><basic-btn>답변완료</basic-btn></span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
-                    </div>
-                </td>
-                <td><span>답변</span></td>
-                <td><span>상담문의</span></td>
-                <td><span>C20211524</span></td>
-                <td><span>제목</span></td>
-                <td><span>scn3002</span></td>
-                <td><span>SCN345</span></td>
-                <td><span>2021-10-30</span></td>
-                <td><span><basic-btn>답변완료</basic-btn></span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
-                    </div>
-                </td>
-                <td><span>답변</span></td>
-                <td><span>주문/결제</span></td>
-                <td><span>C20211524</span></td>
-                <td><span>제목</span></td>
-                <td><span>scn3002</span></td>
-                <td><span>SCN345</span></td>
-                <td><span>2021-10-30</span></td>
-                <td><span><basic-btn>답변완료</basic-btn></span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
-                    </div>
-                </td>
-                <td><span>미답변</span></td>
-                <td><span>교환/반품/환불</span></td>
-                <td><span>C20211524</span></td>
-                <td><span>제목</span></td>
-                <td><span>scn3002</span></td>
-                <td><span>SCN345</span></td>
-                <td><span>2021-10-30</span></td>
-                <td><span><action-btn>답변하기</action-btn></span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="spot">
-                        <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
-                    </div>
-                </td>
-                <td><span>답변</span></td>
-                <td><span>상담문의</span></td>
-                <td><span>C20211524</span></td>
-                <td><span>제목</span></td>
-                <td><span>scn3002</span></td>
-                <td><span>SCN345</span></td>
-                <td><span>2021-10-30</span></td>
-                <td><span><basic-btn>답변완료</basic-btn></span></td>
-            </tr>
-            </tbody>
-        </table>
-        <plus-btn>더보기</plus-btn>
-    </v-container>
+<template>
+  <v-container fluid class="boardLayout">
+    <table>
+      <colgroup>
+        <col width="200px">
+        <col width="600px">
+        <col width="200px">
+        <col width="*">
+      </colgroup>
+      <tr style="border-top: 1px solid #E5E5E5;">
+        <th>작성자</th>
+        <td>
+          asdakj
+        </td>
+        <th>처리상태</th>
+        <td>
+          문의 중
+        </td>
+      </tr>
+      <tr>
+          <th>분류</th>
+          <td>
+              주문/결제
+          </td>
+          <th>분류상세</th>
+          <td>
+              O20210512
+          </td>
+      </tr>
+      <tr>
+        <th>제목</th>
+        <td>
+            제목
+        </td>
+        <th>알림설정</th>
+        <td>
+            <span class="alertSetting">PUSH</span>
+            <span class="alertSetting">SMS</span>
+            <span class="alertSetting">mail</span>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="4" style="text-align: center;">내용</th>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center; height: 300px;">내용</td>
+      </tr>
+      <tr>
+        <th>처리상태</th>
+        <td>
+          <select class="smallSelect" id="departure" name="departure">
+              <option value="num1">답변확인</option>
+              <option value="num2">답변완료</option>
+          </select>
+        </td>
+        <th>담당자</th>
+        <td>
+          SCN3002
+        </td>
+      </tr>
+      <tr>
+        <th>답변</th>
+        <td style="vertical-align: middle;" colspan="3">
+            <faq-upload-editor/>
+        </td>
+      </tr>
+    </table>
+  </v-container>
 </template>
 
 <script>
-    import PlusBtn from '../../buttonComponents/PlusBtn'
-    import BasicBtn from '../../buttonComponents/BasicBtn'
-    import ActionBtn from '../../buttonComponents/ActionBtn'
+import ActionBtn from '../../buttonComponents/ActionBtn'
+import BasicBtn from '../../buttonComponents/BasicBtn'
+import dayjs from 'dayjs'
+import FaqUploadEditor from './FaqUploadEditor'
 
-    export default {
-        name: "InquiryOneononeAnswear",
-        components: { PlusBtn, BasicBtn, ActionBtn },
-        data(){
-            return{
-                num:'2'
-            }
-        }
+export default {
+  name: "FaqUploadReviseEditor",
+  components: { ActionBtn , BasicBtn , dayjs, FaqUploadEditor },
+  data() {
+    return {
+      todate: dayjs().format("YYYY-MM-DD"),
     }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-    @import '~@/assets/scss/_index.scss';
-    // ListForm Common SCSS
-    @import '~@/assets/scss/listFormCommon.scss';
-    #app {
-        .boardLayout {
-            min-height: 675px;
-        }
+@import '~@/assets/scss/_index.scss';
+#app{
+  .boardLayout{
+    max-width: 1680px;
+    height: 930px;
+    margin: 15px auto 0 auto;
+    border: 1px solid $color-bg-border;
+    border-radius:  $border-radius-root;
+    background-color: $color-white;
+
+    .smallSelect {
+      width: 150px;
+      margin-right: 10px;
     }
+
+    .alertSetting {
+      border: 1px solid $color-bg-border;
+      padding: 6px 12px;
+      margin-right: 3px;
+    }
+
+    table{
+      width: 1612px;
+      max-width: 1612px;
+      margin: 30px 0 30px 30px;
+
+      tr{
+        border-bottom: 1px solid $color-border;
+
+        th{
+          align-items: center;
+          height: 52px;
+          padding-left:16px;
+          font-size: $font-13;
+          background: $color-table-bg;
+        }
+
+        td{
+          padding:0 32px;
+          font-size: $font-12;
+          text-align:left;
+        }
+      }
+    }
+  }
+}
 </style>

@@ -15,10 +15,11 @@
 <script>
     import InquiryListInput from '@/components/common/eachPageComponents/cscenterComponents/InquiryListInput'
     import InquiryListList from '@/components/common/eachPageComponents/cscenterComponents/InquiryListList'
+    import InquiryOneononeAnswear from '../../../../components/common/eachPageComponents/cscenterComponents/InquiryOneononeAnswear.vue'
 
     export default {
         name: "InquiryList",
-        components: { InquiryListInput , InquiryListList }
+        components: { InquiryListInput , InquiryListList, InquiryOneononeAnswear }
     }
 </script>
 
