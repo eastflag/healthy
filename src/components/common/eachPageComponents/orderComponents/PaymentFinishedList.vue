@@ -8,7 +8,7 @@
                     <option value="num2">주문일 과거 순</option>
                 </select>
                 <basic-btn class="ml-3">엑셀다운</basic-btn>
-                <basic-btn class="ml-3">일괄수정</basic-btn>
+                <basic-btn class="ml-3" @click="dialogs.showBundleProcessingModal = true">일괄수정</basic-btn>
             </div>
         </div>
         <table>
@@ -94,21 +94,26 @@
             </tbody>
         </table>
         <plus-btn>더보기</plus-btn>
+        <bundle-processing-modal :dialogs="dialogs" />
     </v-container>
 </template>
 
 <script>
     import PlusBtn from '../../buttonComponents/PlusBtn'
     import BasicBtn from '../../buttonComponents/BasicBtn'
+    import BundleProcessingModal from '@/views/healthy/order/order/Modal/BundleProcessingModal'
 
     export default {
         name: "PaymentFinishedList",
-        components: { PlusBtn, BasicBtn },
+        components: { PlusBtn, BasicBtn, BundleProcessingModal },
         data(){
             return{
-                num:'3'
+                num:'3',
+                dialogs: {
+                    showBundleProcessingModal: false,
+                }
             }
-        }
+        },
     }
 </script>
 

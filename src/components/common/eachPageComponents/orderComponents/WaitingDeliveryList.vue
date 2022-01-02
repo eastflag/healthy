@@ -9,7 +9,7 @@
                 </select>
                 <basic-btn class="ml-3">엑셀다운</basic-btn>
                 <basic-btn class="ml-3">운송장일괄등록</basic-btn>
-                <basic-btn class="ml-3">일괄수정</basic-btn>
+                <basic-btn class="ml-3" @click="dialogs.showBundleProcessingModal = true">일괄수정</basic-btn>
             </div>
         </div>
         <table>
@@ -79,19 +79,24 @@
             </tbody>
         </table>
         <plus-btn>더보기</plus-btn>
+        <bundle-processing-modal :dialogs="dialogs" />
     </v-container>
 </template>
 
 <script>
     import PlusBtn from '../../buttonComponents/PlusBtn'
     import BasicBtn from '../../buttonComponents/BasicBtn'
+    import BundleProcessingModal from '@/views/healthy/order/order/Modal/BundleProcessingModal'
 
     export default {
         name: "WaitingDeliveryList",
-        components: { PlusBtn, BasicBtn },
+        components: { PlusBtn, BasicBtn, BundleProcessingModal},
         data(){
             return{
-                num:'2'
+                num:'2',
+                dialogs: {
+                    showBundleProcessingModal: false,
+                }
             }
         }
     }
