@@ -17,16 +17,16 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>반는사람</td>
+                    <td>받는사람</td>
                     <td>홍길동</td>
                     <td>연락처</td>
                     <td>010-1234-1234</td>
                 </tr>
                 <tr>
-                    <td>박는주소</td>
+                    <td>받는주소</td>
                     <td>(07769) 서울시 강서구 마곡중앙 6로 40/10층</td>
                     <td rowspan="2">배송정보수정</td>
-                    <td rowspan="2">배송정보수정</td>
+                    <td rowspan="2"><basic-btn>배송정보수정</basic-btn></td>
                 </tr>
                 <tr>
                     <td>배송요청사항</td>
@@ -38,10 +38,12 @@
 </template>
 
 <script>
-  
+    import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
 
     export default {
         name: "DeliveryInfo",
+        components: { BasicBtn },
+
     }
 </script>
 
@@ -64,6 +66,10 @@
             margin-top: 20px;
 
             thead {
+                border: 1px solid $color-border;
+                border-left: none;
+                border-right: none;
+
                 tr {
                     th {
                         text-align: left;
@@ -72,7 +78,6 @@
                         padding-left: 16px;
                         font-size: $font-15;
                         background: $color-table-bg;
-                        border: 1px solid $color-border;
                     }
                 }
             }
@@ -98,7 +103,10 @@
                         border: 1px solid $color-border;
 
                         &:first-child {
-                            border-bottom: none;
+                            border-left: none;
+                        }
+                        &:last-child {
+                            border-right: none;
                         }
                     }
                 }

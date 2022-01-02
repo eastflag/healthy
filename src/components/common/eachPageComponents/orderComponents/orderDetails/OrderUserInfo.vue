@@ -52,7 +52,9 @@
 
             thead {
                 tr {
-                    border-bottom: 1px solid $color-border;
+                    border: 1px solid $color-border;
+                    border-left: none;
+                    border-right: none;
                     th {
                         text-align: left;
                         vertical-align: middle;
@@ -71,7 +73,6 @@
                         text-align: center;
                         vertical-align: middle;
                         height: 52px;
-                        padding-left: 16px;
                         font-size: $font-13;
                         background: $color-table-bg;
                     }

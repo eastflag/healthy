@@ -5,10 +5,10 @@
         </div>
         <table>
             <colgroup>
-                <col width="20%">
-                <col width="28.5%">
-                <col width="20%">
-                <col width="28.5%">
+                <col width="15%">
+                <col width="33.5%">
+                <col width="15%">
+                <col width="33.5%">
             </colgroup>
             <tbody>
                 <tr>
@@ -21,20 +21,42 @@
                     <th>신청일자</th>
                     <td>2021-09-01 13:11:25</td>
                     <th>발급상태</th>
-                    <td>발급신청 발급하기</td>
+                    <td>{{aprvState}}<basic-btn class="button upBtn" @click="getIssueInfo" v-if="showIssueBtn">발급하기</basic-btn><span v-else>{{aprvNum}}</span></td>
                 </tr>
                 <tr>
                     <th>발급일자</th>
-                    <td colspan="3"></td>
+                    <td colspan="3">{{issueDate}}</td>
                 </tr>
             </tbody>
         </table>
+        <div class="footerInfo">
+            <p>&#8251; 입금전 상태에서는 현금영수증을 발급할 수 없습니다. 입금확인 후 이용해 주십시요.</p>
+        </div>
     </v-main>
 </template>
 
 <script>
+    import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
+
     export default {
         name: "CashReceipt",
+        components: { BasicBtn },
+        data() {
+            return {
+                showIssueBtn: true,
+                aprvState: '발급신청',
+                aprvNum: '',
+                issueDate: ''
+            }
+        },
+        methods: {
+            getIssueInfo() {
+                this.showIssueBtn = false;
+                this.aprvState = '발급완료';
+                this.aprvNum = '(승인번호 : 12345678)';
+                this.issueDate = '2021-09-01 13:05:21';
+            }
+        }
     }
 </script>
 
@@ -57,28 +79,15 @@
             max-width: 1612px;
             margin-top: 20px;
 
-            thead {
-                tr {
-                    border-bottom: 1px solid $color-border;
-                    th {
-                        text-align: left;
-                        vertical-align: middle;
-                        height: 52px;
-                        padding-left: 16px;
-                        font-size: $font-15;
-                        background: $color-table-bg;
-                    }
-                }
-            }
-
             tbody {
                 tr {
-                    border-bottom: 1px solid $color-border;
+                    border: 1px solid $color-border;
+                    border-left: none;
+                    border-right: none;
                     th {
-                        text-align: left;
+                        text-align: center;
                         vertical-align: middle;
                         height: 52px;
-                        padding-left: 16px;
                         font-size: $font-13;
                         background: $color-table-bg;
                     }
@@ -89,18 +98,20 @@
                         height: 52px;
                         padding-left: 16px;
                         font-size: $font-12;
-
-                        &:first-child {
-                            border-bottom: none;
-                        }
                     }
                 }
             }
         }
 
         .button{
-            button:first-child{
-                margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        .footerInfo {
+            margin: 15px 0 10px 15px;
+            p {
+                font-size: $font-13;
+                color: red;
             }
         }
     }

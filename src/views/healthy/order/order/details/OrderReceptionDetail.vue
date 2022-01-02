@@ -43,11 +43,47 @@
 <style lang="scss" scoped>
     @import '~@/assets/scss/_index.scss';
     #app {
-        .button{
-                margin: 30px;
+        .boardLayout {
+            max-width: 1680px;
+            margin: 15px auto 0 auto;
+            border: 1px solid $color-bg-border;
+            border-radius:  $border-radius-root;
+            background-color: $color-white;
+            padding: 40px 30px;
+
+            table {
+                width: 1612px;
+                max-width: 1612px;
+
+                tr {
+                    border-bottom: 1px solid $color-border;
+                }
+
+                th {
+                    display: flex;
+                    align-items: center;
+                    height: 52px;
+                    padding-left: 16px;
+                    font-size: $font-13;
+                    background: $color-table-bg;
+                }
+
+                td {
+                    padding:0 32px;
+                    font-size: $font-12;
+                    text-align: left;
+
+                    &:first-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            .button{
                 button:first-child{
                     margin-right: 15px;
                 }
+            }
         }
     }
 </style>
