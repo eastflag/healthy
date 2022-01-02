@@ -51,7 +51,7 @@
     }
   }
 
-  .boardLayout {
+  .searchBoardLayout {
       max-width: 1680px;
       min-height: 300px;
       margin: 15px auto 0 auto;

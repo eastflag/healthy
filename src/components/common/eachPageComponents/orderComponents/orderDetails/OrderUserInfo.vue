@@ -1,10 +1,10 @@
 <template>
         <table>
             <colgroup>
-                <col width="20%">
-                <col width="28.5%">
-                <col width="20%">
-                <col width="28.5%">
+                <col width="15%">
+                <col width="33.5%">
+                <col width="15%">
+                <col width="33.5%">
             </colgroup>
             <thead>
                 <tr>
@@ -68,7 +68,7 @@
                 tr {
                     border-bottom: 1px solid $color-border;
                     th {
-                        text-align: left;
+                        text-align: center;
                         vertical-align: middle;
                         height: 52px;
                         padding-left: 16px;
@@ -88,12 +88,6 @@
                         }
                     }
                 }
-            }
-        }
-
-        .button{
-            button:first-child{
-                margin-right: 15px;
             }
         }
     }

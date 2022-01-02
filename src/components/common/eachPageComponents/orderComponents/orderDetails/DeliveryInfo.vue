@@ -5,10 +5,10 @@
         </div>
         <table>
             <colgroup>
-                <col width="20%">
-                <col width="28.5%">
-                <col width="20%">
-                <col width="28.5%">
+                <col width="15%">
+                <col width="33.5%">
+                <col width="15%">
+                <col width="33.5%">
             </colgroup>
             <thead>
                 <tr>
@@ -65,7 +65,6 @@
 
             thead {
                 tr {
-                    border-bottom: 1px solid $color-border;
                     th {
                         text-align: left;
                         vertical-align: middle;
@@ -73,13 +72,13 @@
                         padding-left: 16px;
                         font-size: $font-15;
                         background: $color-table-bg;
+                        border: 1px solid $color-border;
                     }
                 }
             }
 
             tbody {
                 tr {
-                    border-bottom: 1px solid $color-border;
                     th {
                         text-align: left;
                         vertical-align: middle;
@@ -87,6 +86,7 @@
                         padding-left: 16px;
                         font-size: $font-13;
                         background: $color-table-bg;
+                        border: 1px solid $color-border;
                     }
 
                     td {
@@ -95,18 +95,13 @@
                         height: 52px;
                         padding-left: 16px;
                         font-size: $font-12;
+                        border: 1px solid $color-border;
 
                         &:first-child {
                             border-bottom: none;
                         }
                     }
                 }
-            }
-        }
-
-        .button{
-            button:first-child{
-                margin-right: 15px;
             }
         }
     }

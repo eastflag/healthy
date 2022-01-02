@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid class="boardLayout">
+    <v-container fluid class="searchBoardLayout">
         <table>
             <colgroup>
                 <col width="200px">
