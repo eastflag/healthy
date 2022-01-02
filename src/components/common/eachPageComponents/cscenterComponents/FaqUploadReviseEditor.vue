@@ -72,7 +72,7 @@
       <tr>
         <th style="height: 330px;">상품 상세정보</th>
         <td style="vertical-align: middle;" colspan="3">
-            <cs-faq-upload-editor/>
+            <faq-upload-editor/>
         </td>
       </tr>
     </table>
@@ -80,13 +80,13 @@
 </template>
 
 <script>
-import ActionBtn from '../../../buttonComponents/ActionBtn'
-import BasicBtn from '../../../buttonComponents/BasicBtn'
+import ActionBtn from '../../buttonComponents/ActionBtn'
+import BasicBtn from '../../buttonComponents/BasicBtn'
 import dayjs from 'dayjs'
-import CsFaqUploadEditor from './CsFaqUploadEditor.vue'
+import CsFaqUploadEditor from './FaqUploadEditor.vue'
 
 export default {
-  name: "CsFaqUploadReviseEditor",
+  name: "FaqUploadReviseEditor",
   components: { ActionBtn , BasicBtn , dayjs, CsFaqUploadEditor },
   data() {
     return {
@@ -127,7 +127,6 @@ export default {
         border-bottom: 1px solid $color-border;
 
         th{
-          // display: flex;
           align-items: center;
           height: 52px;
           padding-left:16px;

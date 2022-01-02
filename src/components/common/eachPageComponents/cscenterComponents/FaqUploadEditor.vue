@@ -9,7 +9,7 @@
     import TipTap from './editorComponents/TipTap'
 
     export default {
-        name: "CsFaqUploadEditor",
+        name: "FaqUploadEditor",
         components: {
             TipTap
         },

@@ -46,7 +46,7 @@
                         <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
                     </div>
                 </td>
-                <td><span>답변완료</span></td>
+                <td><span>답변</span></td>
                 <td><span>상담문의</span></td>
                 <td><span>C20211524</span></td>
                 <td><span>제목</span></td>
@@ -61,7 +61,7 @@
                         <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
                     </div>
                 </td>
-                <td><span>답변완료</span></td>
+                <td><span>답변</span></td>
                 <td><span>상담문의</span></td>
                 <td><span>C20211524</span></td>
                 <td><span>제목</span></td>
@@ -76,8 +76,8 @@
                         <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
                     </div>
                 </td>
-                <td><span>답변완료</span></td>
-                <td><span>상담문의</span></td>
+                <td><span>답변</span></td>
+                <td><span>주문/결제</span></td>
                 <td><span>C20211524</span></td>
                 <td><span>제목</span></td>
                 <td><span>scn3002</span></td>
@@ -92,7 +92,7 @@
                     </div>
                 </td>
                 <td><span>미답변</span></td>
-                <td><span>상담문의</span></td>
+                <td><span>교환/반품/환불</span></td>
                 <td><span>C20211524</span></td>
                 <td><span>제목</span></td>
                 <td><span>scn3002</span></td>
@@ -106,7 +106,7 @@
                         <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
                     </div>
                 </td>
-                <td><span>답변완료</span></td>
+                <td><span>답변</span></td>
                 <td><span>상담문의</span></td>
                 <td><span>C20211524</span></td>
                 <td><span>제목</span></td>
@@ -122,12 +122,12 @@
 </template>
 
 <script>
-    import PlusBtn from '../../../buttonComponents/PlusBtn'
-    import BasicBtn from '../../../buttonComponents/BasicBtn'
-    import ActionBtn from '../../../buttonComponents/ActionBtn'
+    import PlusBtn from '../../buttonComponents/PlusBtn'
+    import BasicBtn from '../../buttonComponents/BasicBtn'
+    import ActionBtn from '../../buttonComponents/ActionBtn'
 
     export default {
-        name: "CsFaqSearchList",
+        name: "InquiryOneononeAnswear",
         components: { PlusBtn, BasicBtn, ActionBtn },
         data(){
             return{

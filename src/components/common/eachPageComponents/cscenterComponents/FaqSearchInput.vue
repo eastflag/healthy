@@ -74,11 +74,11 @@
 
 <script>
     import dayjs from 'dayjs'
-    import ActionBtn from '../../../buttonComponents/ActionBtn'
-    import BasicBtn from '../../../buttonComponents/BasicBtn.vue'
+    import ActionBtn from '../../buttonComponents/ActionBtn'
+    import BasicBtn from '../../buttonComponents/BasicBtn.vue'
 
     export default {
-        name: "CsFaqSearchInput",
+        name: "FaqSearchInput",
         components: { dayjs, ActionBtn, BasicBtn },
         data() {
             return {
