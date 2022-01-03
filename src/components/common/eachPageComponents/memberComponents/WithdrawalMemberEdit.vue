@@ -134,7 +134,7 @@
               <th>상태</th>
               <td>
                 <div class="selectbx">
-                  <select id="status" name="status">
+                  <select id="status" name="status" :disabled="isDisabledUser">
                     <option value="num1">정상</option>
                     <option value="num2">정상2</option>
                     <option value="num3">정상3</option>
@@ -144,7 +144,7 @@
               <th>고객등급</th>
               <td>
                 <div class="selectbx">
-                  <select id="customer_grade" name="customer_grade">
+                  <select id="customer_grade" name="customer_grade" :disabled="isDisabledUser">
                     <option value="num1">1등급</option>
                     <option value="num2">2등급</option>
                     <option value="num3">3등급</option>
@@ -213,17 +213,16 @@
               <th>상태</th>
               <td>
                 <div class="selectbx">
-                  <select id="status" name="status">
-                    <option value="num1">정상</option>
-                    <option value="num2">정상2</option>
-                    <option value="num3">정상3</option>
+                  <select id="status" name="status" v-model="userStatus" :disabled="isDisabledUser">
+                    <option value="정상">정상</option>
+                    <option value="탈퇴">탈퇴</option>
                   </select>
                 </div>
               </td>
               <th>전문인등급</th>
               <td>
                 <div class="selectbx">
-                  <select id="customer_grade" name="customer_grade">
+                  <select id="customer_grade" name="customer_grade" :disabled="isDisabledUser">
                     <option value="num1">1등급</option>
                     <option value="num2">2등급</option>
                     <option value="num3">3등급</option>
@@ -238,12 +237,12 @@
               </td>
               <th>출금계좌</th>
               <td>
-                <!--              <div class="selectbx d-flex">
-                                <select id="claimDetailSelect" name="claimDetailSelect">
-                                  <option value="">전체</option>
-                                </select>
-                                <input type="text" id="detail" name="detail" placeholder="INPUTBOX">
-                              </div>-->
+                <div class="selectbx d-flex">
+                  <select id="bankSelect" name="bankSelect" style="width: 100px;" :disabled="isDisabledUser">
+                    <option value="">은행선택</option>
+                  </select>
+                  <input type="text" id="detail" name="detail" placeholder="110-333-333333" style="width: 400px;" :disabled="isDisabledUser">
+                </div>
               </td>
             </tr>
             <tr>
@@ -304,7 +303,7 @@
               <th>상태</th>
               <td>
                 <div class="selectbx">
-                  <select id="status" name="status">
+                  <select id="status" name="status" :disabled="isDisabledUser">
                     <option value="num1">정상</option>
                     <option value="num2">정상2</option>
                     <option value="num3">정상3</option>
@@ -389,6 +388,7 @@
 
     export default {
         name: "WithdrawalMemberEdit",
+        props: ['userStatus'],
         components: {BasicBtn,
           CustomerFamilyModal,
           CustomerConsultListModal,
@@ -398,6 +398,11 @@
           CustomerDormantMemberModal,
           TrchnicalCalculationListModal, TrchnicalBalanceModal, TrchnicalConsultListModal, TrchnicalVisitHistoryModal, TrchnicalDormantMemberModal,
           StoreAttachedDocumentModal, StoreCalculationListModal, StoreProductInfoModal, StoreVisitHistoryModal, StoreDormantMemberModal
+        },
+        computed: {
+          isDisabledUser: function() {
+            return this.userStatus === '탈퇴'
+          }
         },
         data() {
             return {

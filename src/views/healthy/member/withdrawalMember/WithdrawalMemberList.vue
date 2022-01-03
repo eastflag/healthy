@@ -15,7 +15,7 @@
             <withdrawal-members-list></withdrawal-members-list>
         </template>
         <template>
-            <withdrawal-member-edit></withdrawal-member-edit>
+            <withdrawal-member-edit userStatus="탈퇴"></withdrawal-member-edit>
         </template>
     </v-container>
 </template>
