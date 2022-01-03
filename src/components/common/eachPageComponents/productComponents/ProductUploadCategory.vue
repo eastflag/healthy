@@ -33,7 +33,7 @@
         </td>
       </tr>
       <tr class="product-category-row">
-        <td rowspan="2" style="height: 150px; border-bottom: 0">상품분류</td>
+        <td rowspan="2" style="height: 150px; border-bottom: 0; vertical-align: middle;">상품분류</td>
         <td>
           <div class="product-category">
               <div class="spot">
