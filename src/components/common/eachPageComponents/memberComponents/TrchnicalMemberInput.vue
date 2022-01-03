@@ -81,10 +81,47 @@
                     </div>
                 </td>
             </tr>
-          <tr>
-            <th>지역</th>
-            <td>
-
+          <tr class="location-row">
+            <td rowspan="2" style="height: 150px; vertical-align: middle;">지역</td>
+            <td style="display: flex;">
+              <div class="location-list">
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>전체</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>서울특별시</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>부산광역시</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state4" name="list_check"><label for="state4"><em>대구광역시</em></label>
+                  </div>
+              </div>
+              <v-icon class="pagingArrow">$pagingArrow</v-icon>
+              <div class="location-list">
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>전체</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>강서구</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>강동구</em></label>
+                  </div>
+              </div>
+              <v-icon class="pagingArrow">$pagingArrow</v-icon>
+              <div class="location-list">
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>전체</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>마곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+              </div>
             </td>
           </tr>
         </table>
@@ -122,6 +159,36 @@
             border-radius:  $border-radius-root;
             background-color: $color-white;
 
+            .location-row {
+              height: 200px;
+              vertical-align: middle;
+
+              td:first-child {
+                align-items: center;
+                height: 52px;
+                padding-left:16px;
+                font-size: $font-13;
+                background: $color-table-bg;
+                font-weight: bolder;
+              }
+
+              .location-list{
+                display: inline-block;
+                padding: 6px 12px;
+                width: 150px;
+                margin: 10px;
+                border: 1px solid $color-border;
+                height: 200px;
+                overflow: scroll;
+
+                .spot {
+                  display: block;
+                  margin-bottom: 5px;
+                }
+              }
+            }
+
+
             table{
                 width: 1612px;
                 max-width: 1612px;
@@ -154,7 +221,7 @@
 
                         .spot {
                             display:inline-block;
-                            width:80px;
+                            width:90px;
 
                             em{
                                 width:100px;
