@@ -58,7 +58,7 @@
                     </td>
                     <td><span>2021-10-01</span></td>
                     <td><span>pro01</span></td>
-                    <td><span>3회</span></td>
+                    <td style="text-decoration: underline; color: blue"><span>3회</span></td>
                     <td><span>자동</span></td>
                     <td><span>PC</span></td>
                     <td><span>회원가입쿠폰</span></td>
@@ -79,7 +79,7 @@
                     </td>
                     <td><span>2021-10-01</span></td>
                     <td><span>pro01</span></td>
-                    <td><span>3회</span></td>
+                    <td style="text-decoration: underline; color: blue"><span>3회</span></td>
                     <td><span>자동</span></td>
                     <td><span>PC</span></td>
                     <td><span>회원가입쿠폰</span></td>
