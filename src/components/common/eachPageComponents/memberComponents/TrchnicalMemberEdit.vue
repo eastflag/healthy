@@ -213,12 +213,12 @@
             </td>
             <th>출금계좌</th>
             <td>
-<!--              <div class="selectbx d-flex">
-                <select id="claimDetailSelect" name="claimDetailSelect">
-                  <option value="">전체</option>
+             <div class="selectbx d-flex">
+                <select id="claimDetailSelect" name="claimDetailSelect" style="width: 100px;">
+                  <option value="">은행선택</option>
                 </select>
-                <input type="text" id="detail" name="detail" placeholder="INPUTBOX">
-              </div>-->
+                <input type="text" id="detail" name="detail" placeholder="110-333-333333" style="width: 400px;">
+              </div>
             </td>
           </tr>
           <tr>
