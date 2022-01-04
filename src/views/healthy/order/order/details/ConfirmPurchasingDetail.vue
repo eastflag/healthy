@@ -4,11 +4,13 @@
             <div class="button d-flex align-center justify-end">
                 <basic-btn>히스토리</basic-btn>
                 <basic-btn>목록</basic-btn>
-                <action-btn>전체주문취소</action-btn>
             </div>
         </template>
         <template>
-            <order-prod-info />
+            <order-user-info :showOrderUserInfoTable="false" />
+        </template>
+        <template>
+            <order-prod-info-with-delivery-date :orderState = "'confirmPurchasing'" />
         </template>
         <template>
             <order-payment-amt-info />
@@ -22,13 +24,14 @@
 <script>
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
-    import orderProdInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderProdInfo'
+    import orderUserInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderUserInfo'
+    import OrderProdInfoWithDeliveryDate from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderProdInfoWithDeliveryDate'
     import orderPaymentAmtInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderPaymentAmtInfo'
     import deliveryInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/DeliveryInfo'
 
     export default {
         name: "ConfirmPurchasingDetail",
-        components: { ActionBtn, BasicBtn, orderProdInfo, orderPaymentAmtInfo, deliveryInfo },
+        components: { ActionBtn, BasicBtn, orderUserInfo, OrderProdInfoWithDeliveryDate, orderPaymentAmtInfo, deliveryInfo },
         
     }
 </script>

@@ -85,7 +85,7 @@
         </table>
         <exchange-req-modal :dialogs="dialogs" />
         <ship-complete-modal :dialogs="dialogs" />
-        <order-cancel-confirm-modal :dialogs="dialogs" />
+        <member-issue-point-modal :dialogs="dialogs" />
     </v-main>
 </template>
 
@@ -93,11 +93,11 @@
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ExchangeReqModal from '@/views/healthy/order/order/Modal/ExchangeReqModal'
     import ShipCompleteModal from '@/views/healthy/order/order/Modal/ShipCompleteModal'
-    import OrderCancelConfirmModal from '@/views/healthy/order/order/Modal/OrderCancelConfirmModal'
+    import MemberIssuePointModal from '@/views/healthy/member/member/Modal/MemberIssuePointModal'
 
     export default {
         name: "OrderProdInfoWithDelivery",
-        components:{ BasicBtn, ExchangeReqModal, ShipCompleteModal, OrderCancelConfirmModal },
+        components:{ BasicBtn, ExchangeReqModal, ShipCompleteModal, MemberIssuePointModal },
         props: {
             orderState: {
                 type: String,
@@ -108,7 +108,7 @@
             return {
                 dialogs: {
                     showExchangeReqModal: false,
-                    showOrderCancelConfirmModal: false,
+                    showMemberIssuePointModal: false,
                     showShipCompleteModal: false,
                 },
             }
