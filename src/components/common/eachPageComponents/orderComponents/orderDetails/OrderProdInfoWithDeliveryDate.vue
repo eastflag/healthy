@@ -63,7 +63,7 @@
                             <basic-btn>구매확정</basic-btn>
                         </div>
                         <div>
-                            <basic-btn @click="dialogs.showShipCompleteModal = true">반품신청</basic-btn>
+                            <basic-btn @click="dialogs.showReturnReqModal = true">반품신청</basic-btn>
                         </div>
                         <div>
                             <basic-btn @click="dialogs.showExchangeReqModal = true">교환신청</basic-btn>
@@ -84,7 +84,7 @@
             </tbody>
         </table>
         <exchange-req-modal :dialogs="dialogs" />
-        <ship-complete-modal :dialogs="dialogs" />
+        <return-req-modal :dialogs="dialogs" />
         <member-issue-point-modal :dialogs="dialogs" />
     </v-main>
 </template>
@@ -92,12 +92,12 @@
 <script>
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ExchangeReqModal from '@/views/healthy/order/order/Modal/ExchangeReqModal'
-    import ShipCompleteModal from '@/views/healthy/order/order/Modal/ShipCompleteModal'
+    import ReturnReqModal from '@/views/healthy/order/order/Modal/ReturnReqModal'
     import MemberIssuePointModal from '@/views/healthy/member/member/Modal/MemberIssuePointModal'
 
     export default {
         name: "OrderProdInfoWithDelivery",
-        components:{ BasicBtn, ExchangeReqModal, ShipCompleteModal, MemberIssuePointModal },
+        components:{ BasicBtn, ExchangeReqModal, ReturnReqModal, MemberIssuePointModal },
         props: {
             orderState: {
                 type: String,
@@ -109,7 +109,7 @@
                 dialogs: {
                     showExchangeReqModal: false,
                     showMemberIssuePointModal: false,
-                    showShipCompleteModal: false,
+                    showReturnReqModal: false,
                 },
             }
         },

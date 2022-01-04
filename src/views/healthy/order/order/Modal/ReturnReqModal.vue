@@ -1,8 +1,8 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <v-dialog v-model="dialogs.showExchangeReqModal" content-class="rounded-0 elevation-0" width="800px">
+    <v-dialog v-model="dialogs.showReturnReqModal" content-class="rounded-0 elevation-0" width="800px">
         <v-card class="rounded-0 elevation-0 modalLayout">
             <div class="and_popup_input">
-                <div class="modalTitle"><span>교환 신청</span></div>
+                <div class="modalTitle"><span>반품 신청</span></div>
                 <p class="tableTitle">주문정보</p>
                 <div class="modalBody">
                     <table>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="reasonForExchange">
                     <div class="exchangeSelectbx d-flex">
-                        <span>교환사유선택</span>
+                        <span>반품사유선택</span>
                         <select id="exchangeReason" name="exchangeReason">
                             <option value="val1">단순변심</option>
                             <option value="val2">상품불만족</option>
@@ -189,73 +189,86 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="tableTitle">배송지 정보</p>
+                <p class="tableTitle">환불예정금액</p>
                 <div  class="modalBody">
                     <table>
                         <colgroup>
                             <col width="15%">
-                            <col width="*">
+                            <col width="33%">
+                            <col width="1%">
+                            <col width="15%">
+                            <col width="33%">
                         </colgroup>
-                        <thead>
-                            <tr style="border-top: 1px solid #E5E5E5">
-                                <th colspan="2">회수지 입력</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th style="background: none">회수지 선택</th>
-                                <td>
-                                    <div class="selectbx d-flex">
-                                        <select id="returnPlace" name="returnPlace">
-                                            <option value="home">집</option>
-                                            <option value="comp">회사</option>
-                                        </select>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="background: none">보내는분</th>
-                                <td>
-                                    (07769)서울시 강서구 마곡중앙6로40/10층
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="background: none">연락처1</th>
-                                <td>
-                                   010-1234-1234
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="background: none">연락처2</th>
-                                <td>
-                                   
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="background: none">주소</th>
-                                <td style="height: 70px">
-                                    <div class="leftRightSort">
-                                        <span>
-                                            (우편번호)
-                                            <br />
-                                            서울시 강서구 마곡중앙6로40
-                                            <br />
-                                            세부주소
-                                        </span>
-                                        <basic-btn class="upBtn">주소 찾기</basic-btn>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tr>
+                            <th>취소상품금액</th>
+                            <td style="border-right: none">100,000원</td>
+                            <td style="border: none"></td>
+                            <th style="border-left: none">총 환불예정금액</th>
+                            <td>70,000</td>
+                        </tr>
+                        <tr>
+                            <th>취소배송비</th>
+                            <td style="border-right: none">3,000원</td>
+                            <td style="border: none"></td>
+                            <th style="border-left: none">반환적립금</th>
+                            <td>700원</td>
+                        </tr>
+                        <tr>
+                            <th>할인금액</th>
+                            <td style="border-right: none">33,000원</td>
+                            <td style="border: none"></td>
+                            <th style="border-left: none">환불금액</th>
+                            <td>70,000원</td>
+                        </tr>
                     </table>
+                </div>
+                <p class="tableTitle">환불계좌</p>
+                <div  class="modalBody">
+                    <table>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="25%">
+                            <col width="52%">
+                        </colgroup>
+                        <tr>
+                            <th rowspan="3">환불계좌정보 입력</th>
+                            <th>은행</th>
+                            <td>
+                                <div class="backListSelectbx d-flex">
+                                    <select id="backList" name="backList">
+                                        <option value="val1">은행1</option>
+                                        <option value="val2">은행2</option>
+                                        <option value="val3">은행3</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>계좌번호</th>
+                            <td>
+                                <input type="text" id="accountNum" name="accountNum" placeholder="INPUTBOX">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>예금주명</th>
+                            <td>
+                                <input type="text" id="accountNm" name="accountNm" placeholder="INPUTBOX">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="returnAccountMsg">
+                        <span>&#183; 무통장입금, 가상계좌 결제인 경우에만 환불계좌를 입력해 주세요.</span><br />
+                        <span>&#183; 신용카드 / 실시간 계좌이체 / 적립금 / 포인트 결제인 경우 환불계좌로 환불되지 않습니다.</span><br />
+                        <span style="color: red">&#183; 신용카드 결제 시 환불계좌 정보 숨김</span>
+                    </div>
                 </div>
                 <div class="button d-flex justify-center">
                     <delete-btn>닫기</delete-btn>
-                    <action-btn class="upBtn" @click="showExchangeReqCompleteModal = true">교환신청</action-btn>
+                    <action-btn class="upBtn" @click="showReturnReqCompleteModal = true">반품신청</action-btn>
                 </div>
             </div>
         </v-card>
-    <exchange-req-complete-modal :showExchangeReqCompleteModal="showExchangeReqCompleteModal" />
+    <return-req-complete-modal :showReturnReqCompleteModal="showReturnReqCompleteModal" />
     </v-dialog>
 </template>
 
@@ -263,18 +276,18 @@
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import DeleteBtn from '@/components/common/buttonComponents/DeleteBtn'
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
-    import ExchangeReqCompleteModal from './ExchangeReqCompleteModal'
+    import ReturnReqCompleteModal from './ReturnReqCompleteModal'
 
     export default {
-        name: "ExchangeReqModal",
+        name: "ReturnReqModal",
         props: [
             "dialogs"
         ],
-        components:{ ActionBtn, DeleteBtn, BasicBtn, ExchangeReqCompleteModal },
+        components:{ ActionBtn, DeleteBtn, BasicBtn, ReturnReqCompleteModal },
         data() {
             return {
                 orderNum: 'OD202111001-123456',
-                showExchangeReqCompleteModal: false,
+                showReturnReqCompleteModal: false,
             }
         }
     }
@@ -347,6 +360,20 @@
                             select {
                                 width: 35%;
                                 background: url('~@/assets/images/icons/search.svg') no-repeat 200px center;
+
+                                option {
+                                    height: 20px;
+                                    font-size: $font-20;
+                                }
+                            }
+                        }
+                        .backListSelectbx {
+                            height: inherit;
+                            display: flex;
+                            align-items: center;
+                            select {
+                                width: 50%;
+                                background: url('~@/assets/images/icons/search.svg') no-repeat 170px center;
 
                                 option {
                                     height: 20px;
@@ -473,6 +500,10 @@
                     border: 1px solid $color-sub;
                 }
             }
+        }
+        .returnAccountMsg {
+            margin: 10px;
+            font-size: $font-12;
         }
     }
 </style>
