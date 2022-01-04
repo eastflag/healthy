@@ -1,8 +1,8 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <v-dialog v-model="dialogs.showReturnReqModal" content-class="rounded-0 elevation-0" width="800px">
+    <v-dialog v-model="dialogs.showCancelReqModal" content-class="rounded-0 elevation-0" width="800px">
         <v-card class="rounded-0 elevation-0 modalLayout">
             <div class="and_popup_input">
-                <div class="modalTitle"><span>반품 신청</span></div>
+                <div class="modalTitle"><span>취소 신청</span></div>
                 <p class="tableTitle">주문정보</p>
                 <div class="modalBody">
                     <table>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="reasonForExchange">
                     <div class="exchangeSelectbx d-flex">
-                        <span>반품사유선택</span>
+                        <span>취소사유선택</span>
                         <select id="exchangeReason" name="exchangeReason">
                             <option value="val1">단순변심</option>
                             <option value="val2">상품불만족</option>
@@ -128,67 +128,9 @@
                         </select>
                     </div>
                     <textarea name="" id="" cols="15" rows="5" placeholder="-직접입력 시 활성화"></textarea>
+                    <action-btn class="upBtn button">계산하기</action-btn>
                 </div>
-                <p class="tableTitle">회수지 정보</p>
-                <div  class="modalBody">
-                    <table>
-                        <colgroup>
-                            <col width="15%">
-                            <col width="*">
-                        </colgroup>
-                        <thead>
-                            <tr style="border-top: 1px solid #E5E5E5">
-                                <th colspan="2">회수지 입력</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th style="background: none">회수지 선택</th>
-                                <td>
-                                    <div class="selectbx d-flex">
-                                        <select id="returnPlace" name="returnPlace">
-                                            <option value="home">집</option>
-                                            <option value="comp">회사</option>
-                                        </select>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="background: none">보내는분</th>
-                                <td>
-                                    (07769)서울시 강서구 마곡중앙6로40/10층
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="background: none">연락처1</th>
-                                <td>
-                                   010-1234-1234
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="background: none">연락처2</th>
-                                <td>
-                                   
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="background: none">주소</th>
-                                <td style="height: 70px">
-                                    <div class="leftRightSort">
-                                        <span>
-                                            (우편번호)
-                                            <br />
-                                            서울시 강서구 마곡중앙6로40
-                                            <br />
-                                            세부주소
-                                        </span>
-                                        <basic-btn class="upBtn">주소 찾기</basic-btn>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="midLine"></div>
                 <p class="tableTitle">환불예정금액</p>
                 <div  class="modalBody">
                     <table>
@@ -204,7 +146,7 @@
                             <td style="border-right: none; text-align: right">100,000원</td>
                             <td style="border: none"></td>
                             <th style="border-left: none">총 환불예정금액</th>
-                            <td style="text-align: right">70,000</td>
+                            <td style="text-align: right">70,000원</td>
                         </tr>
                         <tr>
                             <th>취소배송비</th>
@@ -246,29 +188,28 @@
                         <tr>
                             <th>계좌번호</th>
                             <td>
-                                <input type="text" id="accountNum" name="accountNum" placeholder="INPUTBOX">
+                                <input type="text" id="accountNum" name="accountNum" placeholder="123352434">
                             </td>
                         </tr>
                         <tr>
                             <th>예금주명</th>
                             <td>
-                                <input type="text" id="accountNm" name="accountNm" placeholder="INPUTBOX">
+                                <input type="text" id="accountNm" name="accountNm" placeholder="홍길동">
                             </td>
                         </tr>
                     </table>
                     <div class="returnAccountMsg">
                         <span>&#183; 무통장입금, 가상계좌 결제인 경우에만 환불계좌를 입력해 주세요.</span><br />
-                        <span>&#183; 신용카드 / 실시간 계좌이체 / 적립금 / 포인트 결제인 경우 환불계좌로 환불되지 않습니다.</span><br />
-                        <span style="color: red">&#183; 신용카드 결제 시 환불계좌 정보 숨김</span>
+                        <span>&#183; 신용카드 / 실시간 계좌이체 / 적립금 / 포인트 결제인 경우 환불계좌로 환불되지 않습니다.</span>
                     </div>
                 </div>
                 <div class="button d-flex justify-center">
                     <delete-btn>닫기</delete-btn>
-                    <action-btn class="upBtn" @click="showReturnReqCompleteModal = true">반품신청</action-btn>
+                    <action-btn class="upBtn" @click="showCancelReqCompleteModal = true">취소신청</action-btn>
                 </div>
             </div>
         </v-card>
-    <return-req-complete-modal :showReturnReqCompleteModal="showReturnReqCompleteModal" />
+    <cancel-req-complete-modal :showCancelReqCompleteModal="showCancelReqCompleteModal" />
     </v-dialog>
 </template>
 
@@ -276,18 +217,18 @@
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import DeleteBtn from '@/components/common/buttonComponents/DeleteBtn'
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
-    import ReturnReqCompleteModal from './ReturnReqCompleteModal'
+    import CancelReqCompleteModal from './CancelReqCompleteModal'
 
     export default {
         name: "ReturnReqModal",
         props: [
             "dialogs"
         ],
-        components:{ ActionBtn, DeleteBtn, BasicBtn, ReturnReqCompleteModal },
+        components:{ ActionBtn, DeleteBtn, BasicBtn, CancelReqCompleteModal },
         data() {
             return {
                 orderNum: 'OD202111001-123456',
-                showReturnReqCompleteModal: false,
+                showCancelReqCompleteModal: false,
             }
         }
     }
@@ -468,6 +409,7 @@
             padding: 20px;
             width: 100%;
             font-size: $font-12;
+            text-align: center;
             .exchangeSelectbx {
                 height: inherit;
                 display: flex;
@@ -500,10 +442,21 @@
                     border: 1px solid $color-sub;
                 }
             }
+
+            .button {
+            margin: 20px 0 5px 0;
+        }
         }
         .returnAccountMsg {
             margin: 10px;
             font-size: $font-12;
+            color: red;
+        }
+        .midLine {
+            height: 1px;
+            width: 100%;
+            background: $color-bg-border;
+            margin-bottom: 5px;
         }
     }
 </style>

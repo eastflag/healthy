@@ -49,12 +49,15 @@
                             <basic-btn>입금확인</basic-btn>
                         </div>
                     </td>
-                    <td v-else-if="orderState === 'asd'">
+                    <td v-else-if="orderState === 'orderCancellationList'">
                         <div>
                             {{ getState }}
                         </div>
                         <div>
                             <basic-btn @click="dialogs.showOrderCancelCompleteModal = true">취소완료</basic-btn>
+                        </div>
+                        <div>
+                            <basic-btn @click="dialogs.showCancelReqModal = true">주문취소</basic-btn>
                         </div>
                     </td>
                 </tr>
@@ -62,6 +65,7 @@
         </table>
         <order-cancel-complete-modal :dialogs="dialogs" />
         <order-cancel-confirm-modal :dialogs="dialogs" />
+        <cancel-req-modal :dialogs="dialogs" />
     </v-main>
 </template>
 
@@ -69,10 +73,11 @@
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import OrderCancelCompleteModal from '@/views/healthy/order/claim/Modal/OrderCancelCompleteModal'
     import OrderCancelConfirmModal from '@/views/healthy/order/order/Modal/OrderCancelConfirmModal'
+    import CancelReqModal from '@/views/healthy/order/order/Modal/CancelReqModal'
 
     export default {
         name: "OrderProdInfo",
-        components:{ BasicBtn, OrderCancelCompleteModal, OrderCancelConfirmModal },
+        components:{ BasicBtn, OrderCancelCompleteModal, OrderCancelConfirmModal, CancelReqModal },
         props: {
             orderState: {
                 type: String,
@@ -83,14 +88,17 @@
             return {
                 dialogs: {
                     showOrderCancelCompleteModal: false,
-                    showOrderCancelConfirmModal: false
+                    showOrderCancelConfirmModal: false,
+                    showCancelReqModal: false
                 },
             }
         },
         computed: {
             getState() {
-                if ( this.orderState === 'orderReception') {
+                if ( this.orderState === 'orderReception' ) {
                     return '주문접수'
+                } else if ( this.orderState === 'orderCancellationList' ) {
+                    return '취소처리중'
                 }
             }
         }
