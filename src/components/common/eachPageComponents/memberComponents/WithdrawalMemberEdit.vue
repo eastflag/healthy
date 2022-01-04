@@ -199,6 +199,9 @@
               </td>
             </tr>
           </table>
+          <div v-if="isDisabledUser" style="margin: 0 32px;">
+              <action-btn @click="dialogs.showCustomerMemberWithdrawalInfoModal = true">탈퇴내역보기</action-btn>
+          </div>
         </template>
 
         <template v-else-if="memberKind == 'trchnical'">
@@ -289,6 +292,9 @@
               </td>
             </tr>
           </table>
+          <div v-if="isDisabledUser" style="margin: 0 32px;">
+              <action-btn @click="dialogs.showTrchnicalMemberWithdrawalInfoModal = true">탈퇴내역보기</action-btn>
+          </div>
         </template>
 
         <template v-else>
@@ -346,6 +352,9 @@
               </td>
             </tr>
           </table>
+          <div v-if="isDisabledUser" style="margin: 0 32px;">
+              <action-btn @click="dialogs.showStoreDormantMemberWithdrawalInfoModal = true">탈퇴내역보기</action-btn>
+          </div>
         </template>
 
         <customer-family-modal :dialogs="dialogs"></customer-family-modal>
@@ -364,6 +373,9 @@
         <store-product-info-modal :dialogs="dialogs"></store-product-info-modal>
         <store-visit-history-modal :dialogs="dialogs"></store-visit-history-modal>
         <store-dormant-member-modal :dialogs="dialogs"></store-dormant-member-modal>
+        <customer-withdrawal-info-modal :dialogs="dialogs"></customer-withdrawal-info-modal>
+        <store-withdrawal-info-modal :dialogs="dialogs"></store-withdrawal-info-modal>
+        <trchnical-withdrawal-info-modal :dialogs="dialogs"></trchnical-withdrawal-info-modal>
     </v-container>
 </template>
 
@@ -385,6 +397,10 @@
     import StoreProductInfoModal from "./storeModal/StoreProductInfoModal";
     import StoreVisitHistoryModal from "./storeModal/StoreVisitHistoryModal";
     import StoreDormantMemberModal from "./storeModal/StoreDormantMemberModal";
+    import ActionBtn from '../../buttonComponents/ActionBtn';
+    import CustomerWithdrawalInfoModal from './customerModal/CustomerWithdrawalInfoModal';
+    import StoreWithdrawalInfoModal from './storeModal/StoreWithdrawalInfoModal';
+    import TrchnicalWithdrawalInfoModal from './trchnicalModal/TrchnicalWithdrawalInfoModal';
 
     export default {
         name: "WithdrawalMemberEdit",
@@ -397,7 +413,8 @@
           CustomerVisitHistoryModal,
           CustomerDormantMemberModal,
           TrchnicalCalculationListModal, TrchnicalBalanceModal, TrchnicalConsultListModal, TrchnicalVisitHistoryModal, TrchnicalDormantMemberModal,
-          StoreAttachedDocumentModal, StoreCalculationListModal, StoreProductInfoModal, StoreVisitHistoryModal, StoreDormantMemberModal
+          StoreAttachedDocumentModal, StoreCalculationListModal, StoreProductInfoModal, StoreVisitHistoryModal, StoreDormantMemberModal,
+          ActionBtn,CustomerWithdrawalInfoModal, StoreWithdrawalInfoModal, TrchnicalWithdrawalInfoModal
         },
         computed: {
           isDisabledUser: function() {
@@ -424,6 +441,9 @@
                 showStoreProductInfoModal: false,
                 showStoreVisitHistoryModal: false,
                 showStoreDormantMemberModal: false,
+                showCustomerMemberWithdrawalInfoModal: false,
+                showTrchnicalMemberWithdrawalInfoModal: false,
+                showStoreDormantMemberWithdrawalInfoModal: false,
               },
             }
         },
