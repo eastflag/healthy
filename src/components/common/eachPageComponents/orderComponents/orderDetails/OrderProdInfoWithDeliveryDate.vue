@@ -35,7 +35,7 @@
             <tbody>
                 <tr>
                     <td>종근당</td>
-                    <td valign="middle"><img src="./hangleImg.jpg" width="150" height="150" alt="이미지" align="center"/></td>
+                    <td valign="middle"><img src="" width="150" height="150" alt="이미지" align="center"/></td>
                     <td>종근당 슈퍼활력업 파워</td>
                     <td>-</td>
                     <td>100,000원</td>
