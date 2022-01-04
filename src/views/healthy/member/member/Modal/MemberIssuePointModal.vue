@@ -1,11 +1,11 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <v-dialog content-class="rounded-0 elevation-0" width="500px">
+    <v-dialog v-model="dialogs.showMemberIssuePointModal" content-class="rounded-0 elevation-0" width="500px">
         <!--value="true"-->
         <v-card class="rounded-0 elevation-0 modalLayout">
-            <div class="and_popup_input">
+            <div class="and_popup_input" style="height: 380px;">
                 <div class="modalTitle"><span>포인트 적립/차감</span></div>
                 <div class="inputLayoutContent">
-                    <div class="modalTitle"><span>계정</span></div>
+                    <span>계정</span>
                     <input class="fullWidthInput" type="text" id="detail" name="detail" placeholder="INPUTBOX">
                     <div>
                         포인트 <input class="smallInput" type="number" id="detail" name="detail"> 원
@@ -29,7 +29,11 @@
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     export default {
         name: "MemberIssuePointModal",
+        props: [
+            "dialogs"
+        ],
         components:{ BasicBtn, ActionBtn }
+
     }
 </script>
 
@@ -43,6 +47,9 @@
             }
         }
         .inputLayoutContent{
+            margin: 0 24px;
+            padding: 20px 0;
+
             .fullWidthInput{
               width: 100%;
               margin-bottom: 10px;
@@ -50,9 +57,13 @@
             .halfWidthInput{
               width: 50%;
               margin-bottom: 10px;
+              margin: 0 0 10px;
             }
             .smallInput{
-              width: 300px;
+              width: 280px;
+              height: 31px;
+              border: 1px solid $color-bg-border;
+              margin: 0 0 10px;
             }
         }
     }

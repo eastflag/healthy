@@ -8,7 +8,7 @@
                     <option value="num2">가입일 과거 순</option>
                 </select>
                 <basic-btn class="ml-3">엑셀다운</basic-btn>
-                <basic-btn class="ml-3">선택 회원 포인트 지급</basic-btn>
+                <basic-btn class="ml-3" @click="dialogs.showMemberIssuePointModal = true">선택 회원 포인트 지급</basic-btn>
             </div>
         </div>
         <table>
@@ -70,6 +70,7 @@
             </tbody>
         </table>
         <plus-btn>더보기</plus-btn>
+        <member-issue-point-modal :dialogs="dialogs" />
     </v-container>
 </template>
 
@@ -77,13 +78,17 @@
     import PlusBtn from '../../buttonComponents/PlusBtn'
     import BasicBtn from '../../buttonComponents/BasicBtn'
     import ActionBtn from '../../buttonComponents/ActionBtn'
+import MemberIssuePointModal from '../../../../views/healthy/member/member/Modal/MemberIssuePointModal.vue'
 
     export default {
         name: "MemberList",
-        components: { PlusBtn, BasicBtn, ActionBtn },
+        components: { PlusBtn, BasicBtn, ActionBtn, MemberIssuePointModal },
         data(){
             return{
-                num:'2'
+                num:'2',
+                dialogs: {
+                    showMemberIssuePointModal: false,
+                }
             }
         }
     }
