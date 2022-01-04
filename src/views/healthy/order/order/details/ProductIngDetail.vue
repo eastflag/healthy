@@ -8,7 +8,10 @@
             </div>
         </template>
         <template>
-            <order-prod-info />
+            <order-user-info :showOrderUserInfoTable="false" />
+        </template>
+        <template>
+            <order-prod-info-with-delivery :orderState = "'productIng'" />
         </template>
         <template>
             <order-payment-amt-info />
@@ -22,13 +25,14 @@
 <script>
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
-    import orderProdInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderProdInfo'
+    import orderUserInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderUserInfo'
+    import OrderProdInfoWithDelivery from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderProdInfoWithDelivery'
     import orderPaymentAmtInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderPaymentAmtInfo'
     import deliveryInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/DeliveryInfo'
 
     export default {
         name: "ProductIngDetail",
-        components: { ActionBtn, BasicBtn, orderProdInfo, orderPaymentAmtInfo, deliveryInfo },
+        components: { ActionBtn, BasicBtn, orderUserInfo, OrderProdInfoWithDelivery, orderPaymentAmtInfo, deliveryInfo },
         
     }
 </script>
@@ -72,11 +76,10 @@
                 }
             }
 
-            .button{
-                button:first-child{
-                    margin-right: 15px;
-                }
+            button {
+                margin-left: 15px;
             }
+            
         }
     }
 </style>

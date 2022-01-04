@@ -11,7 +11,7 @@
                     <th colspan="4">OD202111001-123456 주문 회원정보</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody v-if="showOrderUserInfoTable">
                 <tr>
                     <th>ID</th>
                     <td>User1</td>
@@ -35,10 +35,15 @@
 </template>
 
 <script>
-  
-
     export default {
         name: "OrderUserInfo",
+        props: {
+            showOrderUserInfoTable: {
+                type: Boolean,
+                required: false,
+                default: true
+            }
+        }
     }
 </script>
 

@@ -1,10 +1,10 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <v-dialog v-model="dialogs.showOrderCancelConfirmModal" content-class="rounded-0 elevation-0" width="500px">
+    <v-dialog v-model="dialogs.showShipCompleteModal" content-class="rounded-0 elevation-0" width="500px">
         <v-card class="rounded-0 elevation-0 modalLayout">
             <div class="and_popup_input">
-                <div class="modalTitle"><span>주문취소</span></div>
+                <div class="modalTitle"><span>관리자 설정</span></div>
                 <div class="modalBody">
-                    <span>해당 주문을 취소 하시겠습니까?</span>
+                    <span>출하완료 처리 하시겠습니까?</span>
                 </div>
                 <div class="button d-flex justify-center">
                     <delete-btn>닫기</delete-btn>
@@ -20,7 +20,7 @@
     import DeleteBtn from '@/components/common/buttonComponents/DeleteBtn'
 
     export default {
-        name: "OrderCancleConfirmModal",
+        name: "ShipCompleteModal",
         props: [
             "dialogs"
         ],

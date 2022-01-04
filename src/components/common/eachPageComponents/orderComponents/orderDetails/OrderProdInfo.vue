@@ -43,7 +43,7 @@
                            {{ getState }}
                         </div>
                         <div>
-                            <basic-btn @click="dialogs.showOrderCancleConfirmModal = true">주문취소</basic-btn>
+                            <basic-btn @click="dialogs.showOrderCancelConfirmModal = true">주문취소</basic-btn>
                         </div>
                         <div>
                             <basic-btn>입금확인</basic-btn>
@@ -83,7 +83,7 @@
             return {
                 dialogs: {
                     showOrderCancelCompleteModal: false,
-                    showOrderCancleConfirmModal: false
+                    showOrderCancelConfirmModal: false
                 },
             }
         },
