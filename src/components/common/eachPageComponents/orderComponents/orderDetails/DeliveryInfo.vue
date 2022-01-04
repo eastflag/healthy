@@ -3,7 +3,7 @@
         <div class="title d-flex justify-space-between">
             <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>배송지정보</span></div>
         </div>
-        <table>
+        <table v-if="showdeliveryInfoTable">
             <colgroup>
                 <col width="15%">
                 <col width="33.5%">
@@ -34,6 +34,19 @@
                 </tr>
             </tbody>
         </table>
+        <table v-else>
+            <colgroup>
+                <col width="15%">
+                <col width="33.5%">
+                <col width="15%">
+                <col width="33.5%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="4">배송지정보</th>
+                </tr>
+            </thead>
+        </table>
     </v-main>
 </template>
 
@@ -43,7 +56,13 @@
     export default {
         name: "DeliveryInfo",
         components: { BasicBtn },
-
+        props: {
+            showdeliveryInfoTable: {
+                type: Boolean,
+                required: false,
+                default: true
+            }
+        }
     }
 </script>
 

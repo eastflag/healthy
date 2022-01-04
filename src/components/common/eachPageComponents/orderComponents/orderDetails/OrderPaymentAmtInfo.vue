@@ -3,7 +3,7 @@
         <div class="title d-flex justify-space-between">
             <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>주문/결제 금액 정보</span></div>
         </div>
-        <table>
+        <table v-if="showPaymentTable">
             <colgroup>
                 <col width="15%">
                 <col width="15%">
@@ -68,6 +68,21 @@
                 </tr>
             </tbody>
         </table>
+        <table v-else>
+            <colgroup>
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+                <col width="22%">
+            </colgroup>
+            <thead>
+                <tr style="border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5">
+                    <th colspan="6">주문금액</th>
+                </tr>
+            </thead>
+        </table>
     </v-main>
 </template>
 
@@ -76,6 +91,13 @@
 
     export default {
         name: "OrderPaymentAmtInfo",
+        props: {
+            showPaymentTable: {
+                type: Boolean,
+                required: false,
+                default: true
+            }
+        }
     }
 </script>
 

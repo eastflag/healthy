@@ -12,6 +12,12 @@
         <template>
             <order-prod-info />
         </template>
+        <template>
+            <order-payment-amt-info :showPaymentTable="false" />
+        </template>
+        <template>
+            <delivery-info :showdeliveryInfoTable="false" />
+        </template>
     </v-container>
 </template>
 
@@ -19,10 +25,12 @@
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import orderUserInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderUserInfo'
     import orderProdInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderProdInfo'
+    import orderPaymentAmtInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderPaymentAmtInfo'
+    import deliveryInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/DeliveryInfo'
     
     export default {
         name: "OrderCancellationListDetail",
-        components: { BasicBtn, orderUserInfo, orderProdInfo },
+        components: { BasicBtn, orderUserInfo, orderProdInfo, orderPaymentAmtInfo, deliveryInfo },
         
     }
 </script>

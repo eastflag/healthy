@@ -5,19 +5,18 @@
         </div>
         <table>
             <colgroup>
-                <col width="4%">
-                <col width="16%">
-                <col width="8%">
                 <col width="10%">
-                <col width="8%">
+                <col width="15%">
+                <col width="17%">
                 <col width="10%">
-                <col width="18%">
+                <col width="10%">
+                <col width="10%">
+                <col width="10%">
                 <col width="6%">
                 <col width="10%">
-                <col width="7%">
             </colgroup>
             <thead>
-                <tr>
+                <tr style="border-top: 1px solid #E5E5E5">
                     <th>스토어명</th>
                     <th>제품이미지</th>
                     <th>제품명</th>
@@ -32,25 +31,43 @@
             <tbody>
                 <tr>
                     <td>종근당</td>
-                    <td>image</td>
+                    <td valign="middle"><img src="./hangleImg.jpg" width="150" height="150" alt="이미지" align="center"/></td>
                     <td>종근당 슈퍼활력업 파워</td>
                     <td>-</td>
                     <td>100,000원</td>
                     <td>33,000원</td>
                     <td>70,000원</td>
                     <td>1</td>
-                    <td>주문접수</td>
+                    <td>
+                        <div>
+                            취소처리중
+                        </div>
+                        <div>
+                            <basic-btn @click="dialogs.showOrderCancelCompleteModal = true">취소완료</basic-btn>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
+        <order-cancel-complete-modal :dialogs="dialogs" />
     </v-main>
 </template>
 
 <script>
-  
-
+    import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
+    import OrderCancelCompleteModal from '@/views/healthy/order/claim/Modal/OrderCancelCompleteModal'
+    
     export default {
         name: "OrderProdInfo",
+        components:{ BasicBtn, OrderCancelCompleteModal },
+        data() {
+            return {
+                dialogs: {
+                    showOrderCancelCompleteModal: false,
+                }
+            }
+        }
+
     }
 </script>
 
@@ -74,7 +91,6 @@
 
             thead {
                 tr {
-                    border-bottom: 1px solid $color-border;
                     th {
                         text-align: center;
                         vertical-align: middle;
@@ -87,23 +103,26 @@
 
             tbody {
                 tr {
-                    border-bottom: 1px solid $color-border;
-                    th {
-                        text-align: center;
-                        vertical-align: middle;
-                        height: 52px;
-                        font-size: $font-13;
-                        background: $color-table-bg;
-                    }
-
                     td {
                         text-align: center;
                         vertical-align: middle;
-                        height: 52px;
+                        min-height: 170px;
                         font-size: $font-12;
+                        border: 1px solid $color-border;
+                        padding: 5px;
+                        line-height: 25px;
 
                         &:first-child {
-                            border-bottom: none;
+                            border-left: none;
+                        }
+
+                        &:last-child {
+                            border-right: none;
+                        }
+
+                        img {
+                            text-align: center;
+                            vertical-align: middle;
                         }
                     }
                 }
