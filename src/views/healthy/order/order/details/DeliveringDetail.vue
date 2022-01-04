@@ -75,10 +75,8 @@
                 }
             }
 
-            .button{
-                button:first-child{
-                    margin-right: 15px;
-                }
+            button {
+                margin-left: 15px;
             }
         }
     }

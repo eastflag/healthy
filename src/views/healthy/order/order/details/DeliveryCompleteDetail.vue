@@ -8,7 +8,10 @@
             </div>
         </template>
         <template>
-            <order-prod-info />
+            <order-user-info :showOrderUserInfoTable="false" />
+        </template>
+        <template>
+            <order-prod-info-with-delivery-date :orderState = "'deliveringComplete'" />
         </template>
         <template>
             <order-payment-amt-info />
@@ -22,13 +25,14 @@
 <script>
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
-    import orderProdInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderProdInfo'
+    import orderUserInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderUserInfo'
+    import OrderProdInfoWithDeliveryDate from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderProdInfoWithDeliveryDate'
     import orderPaymentAmtInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderPaymentAmtInfo'
     import deliveryInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/DeliveryInfo'
 
     export default {
         name: "DeliveryCompleteDetail",
-        components: { ActionBtn, BasicBtn, orderProdInfo, orderPaymentAmtInfo, deliveryInfo },
+        components: { ActionBtn, BasicBtn, orderUserInfo, OrderProdInfoWithDeliveryDate, orderPaymentAmtInfo, deliveryInfo },
         
     }
 </script>
@@ -72,10 +76,8 @@
                 }
             }
 
-            .button{
-                button:first-child{
-                    margin-right: 15px;
-                }
+            button {
+                margin-left: 15px;
             }
         }
     }

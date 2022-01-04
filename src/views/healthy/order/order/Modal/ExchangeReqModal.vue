@@ -251,10 +251,11 @@
                 </div>
                 <div class="button d-flex justify-center">
                     <delete-btn>닫기</delete-btn>
-                    <action-btn class="upBtn">교환신청</action-btn>
+                    <action-btn class="upBtn" @click="showExchangeReqCompleteModal = true">교환신청</action-btn>
                 </div>
             </div>
         </v-card>
+    <exchange-req-complete-modal :showExchangeReqCompleteModal="showExchangeReqCompleteModal" />
     </v-dialog>
 </template>
 
@@ -262,16 +263,18 @@
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import DeleteBtn from '@/components/common/buttonComponents/DeleteBtn'
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
+    import ExchangeReqCompleteModal from './ExchangeReqCompleteModal'
 
     export default {
         name: "DeliveryDelayModal",
         props: [
             "dialogs"
         ],
-        components:{ ActionBtn, DeleteBtn, BasicBtn },
+        components:{ ActionBtn, DeleteBtn, BasicBtn, ExchangeReqCompleteModal },
         data() {
             return {
-                orderNum: 'OD202111001-123456'
+                orderNum: 'OD202111001-123456',
+                showExchangeReqCompleteModal: false,
             }
         }
     }
