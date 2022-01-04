@@ -10,7 +10,7 @@
             <order-user-info />
         </template>
         <template>
-            <order-prod-info />
+            <order-prod-info :orderState = "'orderReception'" />
         </template>
         <template>
             <order-payment-amt-info />

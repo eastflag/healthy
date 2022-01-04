@@ -38,9 +38,20 @@
                     <td>33,000원</td>
                     <td>70,000원</td>
                     <td>1</td>
-                    <td>
+                    <td v-if="orderState === 'orderReception'">
                         <div>
-                            취소처리중
+                           {{ getState }}
+                        </div>
+                        <div>
+                            <basic-btn @click="dialogs.showOrderCancleConfirmModal = true">주문취소</basic-btn>
+                        </div>
+                        <div>
+                            <basic-btn>입금확인</basic-btn>
+                        </div>
+                    </td>
+                    <td v-else-if="orderState === 'asd'">
+                        <div>
+                            {{ getState }}
                         </div>
                         <div>
                             <basic-btn @click="dialogs.showOrderCancelCompleteModal = true">취소완료</basic-btn>
@@ -50,24 +61,39 @@
             </tbody>
         </table>
         <order-cancel-complete-modal :dialogs="dialogs" />
+        <order-cancel-confirm-modal :dialogs="dialogs" />
     </v-main>
 </template>
 
 <script>
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import OrderCancelCompleteModal from '@/views/healthy/order/claim/Modal/OrderCancelCompleteModal'
-    
+    import OrderCancelConfirmModal from '@/views/healthy/order/order/Modal/OrderCancelConfirmModal'
+
     export default {
         name: "OrderProdInfo",
-        components:{ BasicBtn, OrderCancelCompleteModal },
+        components:{ BasicBtn, OrderCancelCompleteModal, OrderCancelConfirmModal },
+        props: {
+            orderState: {
+                type: String,
+                required: true
+            }
+        },
         data() {
             return {
                 dialogs: {
                     showOrderCancelCompleteModal: false,
+                    showOrderCancleConfirmModal: false
+                },
+            }
+        },
+        computed: {
+            getState() {
+                if ( this.orderState === 'orderReception') {
+                    return '주문접수'
                 }
             }
         }
-
     }
 </script>
 
@@ -110,7 +136,7 @@
                         font-size: $font-12;
                         border: 1px solid $color-border;
                         padding: 5px;
-                        line-height: 25px;
+                        line-height: 38px;
 
                         &:first-child {
                             border-left: none;
