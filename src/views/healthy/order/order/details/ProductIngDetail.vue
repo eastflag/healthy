@@ -33,7 +33,6 @@
     export default {
         name: "ProductIngDetail",
         components: { ActionBtn, BasicBtn, orderUserInfo, OrderProdInfoWithDelivery, orderPaymentAmtInfo, deliveryInfo },
-        
     }
 </script>
 

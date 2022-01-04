@@ -61,12 +61,15 @@
                             <basic-btn @click="dialogs.showShipCompleteModal = true">출하완료</basic-btn>
                         </div>
                     </td>
-                    <td v-else-if="orderState === 'asd'">
+                    <td v-else-if="orderState === 'delivering'">
                         <div>
                             {{ getState }}
                         </div>
                         <div>
-                            <basic-btn @click="dialogs.showOrderCancelCompleteModal = true">취소완료</basic-btn>
+                            <basic-btn>배송조회</basic-btn>
+                        </div>
+                        <div>
+                            <basic-btn>배송완료</basic-btn>
                         </div>
                     </td>
                 </tr>
@@ -104,8 +107,13 @@
         },
         computed: {
             getState() {
-                if ( this.orderState === 'productIng') {
-                    return '상품준비중'
+                switch (this.orderState) {
+                    case 'productIng':
+                        return '상품준비중'
+                    case 'delivering':
+                        return '배송중'
+                    default:
+                        return ''
                 }
             }
         }
