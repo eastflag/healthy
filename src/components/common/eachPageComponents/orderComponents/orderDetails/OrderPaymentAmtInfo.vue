@@ -5,38 +5,45 @@
         </div>
         <table>
             <colgroup>
-                <col width="10%">
-                <col width="18.5%">
-                <col width="10%">
-                <col width="18.5%">
-                <col width="10%">
-                <col width="10%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+                <col width="22%">
             </colgroup>
             <thead>
-                <tr>
+                <tr style="border-top: 1px solid #E5E5E5">
                     <th colspan="6">주문금액</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>상품금액</td>
-                    <td>100,000원</td>
-                    <td>포인트혜택</td>
-                    <td>총 700원</td>
-                    <td>결제수단</td>
-                    <td>무통장입금</td>
+                    <td style="text-align: left; font-weight: 800">상품금액</td>
+                    <td style="font-weight: 800">100,000원</td>
+                    <td style="text-align: left; font-weight: 800">포인트혜택</td>
+                    <td >총 700원</td>
+                    <td style="text-align: left; font-weight: 800">결제수단</td>
+                    <td style="text-align: left; font-weight: 800; border-bottom: none; padding-left: 35px">
+                        무통장입금
+                    </td>
                 </tr>
                 <tr>
-                    <td>배송비</td>
-                    <td>3,000원</td>
+                    <td style="text-align: left; font-weight: 800">배송비</td>
+                    <td style="font-weight: 800">3,000원</td>
                     <td>기본적립</td>
                     <td>700원</td>
                     <td rowspan="6"></td>
-                    <td rowspan="6">입금내역<br/>2021-09-02, 입금확인<br/>승인번호<br/>1234</td>
+                    <td rowspan="6" class="bankbook">
+                        <br/>입금내역
+                        <br/><span>2021-09-02, 입금확인</span>
+                        <br/>승인번호
+                        <br/><span>1234</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td>할인금액</td>
-                    <td>-33,000원</td>
+                    <td style="text-align: left; font-weight: 800">할인금액</td>
+                    <td style="font-weight: 800">-33,000원</td>
                     <td>멤버십 추가적립</td>
                     <td>0원</td>
                 </tr>
@@ -49,8 +56,7 @@
                 <tr>
                     <td>쿠폰할인</td>
                     <td>0원</td>
-                    <td rowspan="3"></td>
-                    <td rowspan="3"></td>
+                    <td rowspan="3" colspan="2"></td>
                 </tr>
                 <tr>
                     <td>배송비할인</td>
@@ -93,7 +99,6 @@
 
             thead {
                 tr {
-                    border-bottom: 1px solid $color-border;
                     th {
                         text-align: left;
                         vertical-align: middle;
@@ -107,28 +112,47 @@
 
             tbody {
                 tr {
-                    border-bottom: 1px solid $color-border;
                     th {
-                        text-align: left;
+                        text-align: right;
                         vertical-align: middle;
                         height: 52px;
-                        padding-left: 16px;
+                        padding: 0 16px;
                         font-size: $font-13;
                         background: $color-table-bg;
+                        border: 1px solid $color-border;
                     }
 
                     td {
-                        text-align: left;
+                        text-align: right;
                         vertical-align: middle;
                         height: 52px;
-                        padding-left: 16px;
-                        font-size: $font-12;
+                        padding: 0 16px;
+                        font-size: $font-13;
+                        border: 1px solid $color-border;
 
                         &:first-child {
-                            border-bottom: none;
+                            border-left: none;
+                        }
+
+                        &:last-child {
+                            border-right: none;
                         }
                     }
                 }
+            }
+        }
+
+        .bankbook {
+            text-align: left;
+            padding: 0 35px;
+            vertical-align: top;
+            font-size: $font-13;
+            font-weight: 800;
+            line-height: 25px;
+            border-top: none;
+
+            span {
+                font-weight: normal;
             }
         }
 
