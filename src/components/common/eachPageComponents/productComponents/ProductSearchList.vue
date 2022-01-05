@@ -10,7 +10,7 @@
                   <option value="num4">수정일 과거 순</option>
                 </select>
                 <basic-btn class="ml-3">엑셀다운</basic-btn>
-                <basic-btn class="ml-3">일괄수정</basic-btn>
+                <basic-btn class="ml-3" @click="dialogs.showProductSearchList = true">일괄수정</basic-btn>
             </div>
         </div>
         <table>
@@ -92,6 +92,7 @@
             </tbody>
         </table>
         <plus-btn>더보기</plus-btn>
+        <product-list-batch-edit-modal :dialogs="dialogs"/>
     </v-container>
 </template>
 
@@ -99,13 +100,17 @@
     import PlusBtn from '../../buttonComponents/PlusBtn'
     import BasicBtn from '../../buttonComponents/BasicBtn'
     import ActionBtn from '../../buttonComponents/ActionBtn'
+    import ProductListBatchEditModal from './Modal/ProductListBatchEditModal'
 
     export default {
         name: "ProductSearchList",
-        components: { PlusBtn, BasicBtn, ActionBtn },
+        components: { PlusBtn, BasicBtn, ActionBtn, ProductListBatchEditModal },
         data(){
             return{
-                num:'2'
+                num:'2',
+                dialogs: {
+                  showProductSearchList: false,
+                },
             }
         }
     }
