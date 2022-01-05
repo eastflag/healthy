@@ -28,33 +28,48 @@
                         </tr>
                     </table>
                     <p>아래 선택한 주문상품을 입력하신 배송정보로 배송 처리합니다.</p>
-                    <table>
-                        <colgroup>
-                            <col width="6%">
-                            <col width="34%">
-                            <col width="9%">
-                            <col width="16%">
-                            <col width="16%">
-                            <col width="16%">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>
-                                    <div class="spot">
-                                        <input class="checkbx" type="checkbox" id="modalchk1" name="list_check"><label for="modalchk1"></label>
-                                    </div>
-                                </th>
-                                <th><span>주문상품</span></th>
-                                <th><span>수량</span></th>
-                                <th><span>배송비</span></th>
-                                <th><span>주상품금액</span></th>
-                                <th><span>주문금액</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr></tr>
-                        </tbody>
-                    </table>
+                    <div class="ordInfo">
+                        <table>
+                            <colgroup>
+                                <col width="6%">
+                                <col width="40%">
+                                <col width="9%">
+                                <col width="14%">
+                                <col width="14%">
+                                <col width="14%">
+                            </colgroup>
+                            <thead>
+                                <tr style="border-top: 1px solid #E5E5E5">
+                                    <th>
+                                        <div class="spot">
+                                            <input class="checkbx" type="checkbox" id="ordModalchk1" name="list_check"><label for="ordModalchk1"></label>
+                                        </div>
+                                    </th>
+                                    <th><span>주문상품</span></th>
+                                    <th><span>수량</span></th>
+                                    <th><span>배송비</span></th>
+                                    <th><span>주상품금액</span></th>
+                                    <th><span>주문금액</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="spot">
+                                            <input class="checkbx" type="checkbox" id="ordModalchk2" name="list_check"><label for="ordModalchk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <img src="" width="73" height="73" alt="이미지" align="center"/><span>종근당 슈퍼활력업 파워</span>
+                                    </td>
+                                    <td><span>1</span></td>
+                                    <td><span>3,000원</span></td>
+                                    <td><span>100,000원</span></td>
+                                    <td><span>70,000원</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="button d-flex justify-center">
                     <delete-btn>닫기</delete-btn>
@@ -172,6 +187,62 @@
                     background-size: 20px auto;
                     cursor: pointer;
                     height: 100%;
+                }
+            }
+        }
+        .ordInfo {
+            table {
+                width: 100%;
+                thead {
+                    tr {
+                        th {
+                            height: 38px;
+                            position: relative;
+                            vertical-align: middle;
+                            align-items: center;
+                            text-align: center;
+                            padding: 0;
+                            font-size: $font-12;
+                            background: $color-table-bg;
+                            border: none;
+                            .spot{
+                                position: absolute;
+                                left:30%;
+                                bottom: 55%;
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        td {
+                            height: 100px;
+                            position: relative;
+                            text-align: center;
+                            vertical-align: middle;
+                            padding: 0;
+                            font-size: $font-12;
+                            font-weight: 400;
+                            border: 1px solid $color-border;
+                            &:first-child {
+                                border-left: none;
+                            }
+                            &:last-child {
+                                border-right: none;
+                            }
+                            .spot{
+                                position: absolute;
+                                left:30%;
+                                bottom: 55%;
+                            }
+                            img {
+                                text-align: center;
+                                vertical-align: middle;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
                 }
             }
         }
