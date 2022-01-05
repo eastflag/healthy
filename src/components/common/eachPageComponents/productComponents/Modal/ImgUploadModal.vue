@@ -1,11 +1,11 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <v-dialog content-class="rounded-0 elevation-0" width="500px">
+    <v-dialog v-model="dialogs.showImgUploadModal" content-class="rounded-0 elevation-0" width="500px">
         <!--value="true"-->
         <v-card class="rounded-0 elevation-0 modalLayout">
             <div class="and_popup_input">
                 <div class="modalTitle"><span>이미지파일</span></div>
-                <div class="inputLayoutContent">
-                    <!--파일 업로드 inputLayout-->
+                <div class="inputLayoutContent" style="margin: 24px;">
+                    <input style="width: 310px; margin-left: 10px;" type="file" id="cont" name="info1" placeholder="선택된 파일 없음">
                 </div>
                 <div class="button d-flex justify-center">
                     <action-btn>확인</action-btn>
@@ -21,6 +21,9 @@
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     export default {
         name: "ImgUploadModal",
+        props: [
+            "dialogs"
+        ],
         components:{ BasicBtn, ActionBtn }
     }
 </script>

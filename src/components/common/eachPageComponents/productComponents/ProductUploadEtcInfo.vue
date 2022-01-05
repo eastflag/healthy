@@ -11,7 +11,7 @@
         <th rowspan="2" style="text-align:left; align-items: center; vertical-align: middle;">관련상품</th>
         <td style="vertical-align: middle;">
           <div class="d-flex">
-            <basic-btn>상품불러오기</basic-btn>
+            <basic-btn @click="dialogs.showProductLoadModal = true">상품불러오기</basic-btn>
           </div>
         </td>
       </tr>
@@ -74,6 +74,7 @@
         </td>
       </tr>
     </table>
+    <product-load-modal :dialogs="dialogs"/>
   </v-container>
 </template>
 
@@ -83,13 +84,17 @@ import BasicBtn from '../../buttonComponents/BasicBtn'
 import dayjs from 'dayjs'
 import ProductUploadImageAdd from './ProductUploadImageAdd'
 import ProductUploadImageModify from './ProductUploadImageModify'
+import ProductLoadModal from './Modal/ProductLoadModal'
 
 export default {
   name: "ProductUploadBasicInfo",
-  components: { ActionBtn , BasicBtn , dayjs, ProductUploadImageAdd, ProductUploadImageModify },
+  components: { ActionBtn , BasicBtn , dayjs, ProductUploadImageAdd, ProductUploadImageModify, ProductLoadModal },
   data() {
     return {
       todate: dayjs().format("YYYY-MM-DD"),
+      dialogs: {
+        showProductLoadModal: false,
+      },
     }
   },
 }

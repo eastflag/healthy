@@ -16,12 +16,14 @@
         </td>
       </tr>
       <tr>
-        <th style="height: 330px;">상품 상세정보</th>
+        <th style="height: 380px;">상품 상세정보</th>
         <td style="vertical-align: middle;">
+            <basic-btn style="margin: 10px 0;" @click="dialogs.showImgUploadModal = true">파일불러오기</basic-btn>
             <product-upload-editor/>
         </td>
       </tr>
     </table>
+    <img-upload-modal :dialogs="dialogs"/>
   </v-container>
 </template>
 
@@ -32,13 +34,17 @@ import dayjs from 'dayjs'
 import ProductUploadImageAdd from './ProductUploadImageAdd'
 import ProductUploadImageModify from './ProductUploadImageModify'
 import ProductUploadEditor from './ProductUploadEditor'
+import ImgUploadModal from './Modal/ImgUploadModal'
 
 export default {
   name: "ProductUploadDetailAndAdditionalInfo",
-  components: { ActionBtn , BasicBtn , dayjs, ProductUploadImageAdd, ProductUploadImageModify, ProductUploadEditor },
+  components: { ActionBtn , BasicBtn , dayjs, ProductUploadImageAdd, ProductUploadImageModify, ProductUploadEditor, ImgUploadModal },
   data() {
     return {
       todate: dayjs().format("YYYY-MM-DD"),
+      dialogs: {
+        showImgUploadModal: false,
+      }
     }
   },
 }
@@ -49,7 +55,7 @@ export default {
 #app{
   .boardLayout{
     max-width: 1680px;
-    height: 490px;
+    height: 540px;
     margin: 15px auto 0 auto;
     border: 1px solid $color-bg-border;
     border-radius:  $border-radius-root;

@@ -10,7 +10,7 @@
                   <option value="num4">수정일 과거 순</option>
                 </select>
                 <basic-btn class="ml-3">엑셀다운</basic-btn>
-                <basic-btn class="ml-3" @click="dialogs.showProductSearchList = true">일괄수정</basic-btn>
+                <basic-btn class="ml-3" @click="dialogs.showProductSearchBatchEditModal = true">일괄수정</basic-btn>
             </div>
         </div>
         <table>
@@ -109,7 +109,7 @@
             return{
                 num:'2',
                 dialogs: {
-                  showProductSearchList: false,
+                  showProductSearchBatchEditModal: false,
                 },
             }
         }

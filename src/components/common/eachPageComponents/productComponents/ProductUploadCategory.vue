@@ -14,7 +14,7 @@
         <td>
           <div class="d-flex">
             <input class="store-input" type="text" id="cont" name="info1" placeholder="INPUTBOX">
-            <basic-btn>스토어검색</basic-btn>
+            <basic-btn @click="dialogs.showProductStoreInfoDialogModal = true">스토어검색</basic-btn>
           </div>
         </td>
       </tr>
@@ -171,6 +171,7 @@
         </td>
       </tr>
     </table>
+    <product-store-info-modal :dialogs="dialogs"/>
   </v-container>
 </template>
 
@@ -178,13 +179,17 @@
 import ActionBtn from '../../buttonComponents/ActionBtn'
 import BasicBtn from '../../buttonComponents/BasicBtn'
 import dayjs from 'dayjs'
+import ProductStoreInfoModal from './Modal/ProductStoreInfoModal'
 
 export default {
   name: "ProductUploadCategory",
-  components: { ActionBtn , BasicBtn , dayjs },
+  components: { ActionBtn , BasicBtn , dayjs, ProductStoreInfoModal },
   data() {
     return {
       todate: dayjs().format("YYYY-MM-DD"),
+      dialogs: {
+        showProductStoreInfoDialogModal: false,
+      },
     }
   },
 }

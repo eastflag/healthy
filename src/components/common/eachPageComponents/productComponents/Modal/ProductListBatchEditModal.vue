@@ -1,5 +1,5 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <v-dialog v-model="dialogs.showProductSearchList" content-class="rounded-0 elevation-0" width="500px">
+    <v-dialog v-model="dialogs.showProductSearchBatchEditModal" content-class="rounded-0 elevation-0" width="500px">
         <!--value="true"-->
         <v-card class="rounded-0 elevation-0 modalLayout">
             <div class="and_popup_input">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="button d-flex justify-center">
-                    <action-btn>확인</action-btn>
+                    <action-btn>수정하기</action-btn>
                     <basic-btn>닫기</basic-btn>
                 </div>
             </div>
