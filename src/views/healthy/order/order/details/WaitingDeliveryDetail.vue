@@ -10,7 +10,7 @@
             <order-user-info />
         </template>
         <template>
-            <order-prod-info />
+            <order-prod-info-chk-for-delivery />
         </template>
         <template>
             <order-payment-amt-info />
@@ -22,12 +22,12 @@
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import orderUserInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderUserInfo'
-    import orderProdInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderProdInfo'
+    import OrderProdInfoChkForDelivery from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderProdInfoChkForDelivery'
     import orderPaymentAmtInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderPaymentAmtInfo'
 
     export default {
         name: "WaitingDeliveryDetail",
-        components: { ActionBtn, BasicBtn, orderUserInfo, orderProdInfo, orderPaymentAmtInfo },
+        components: { ActionBtn, BasicBtn, orderUserInfo, OrderProdInfoChkForDelivery, orderPaymentAmtInfo },
         
     }
 </script>

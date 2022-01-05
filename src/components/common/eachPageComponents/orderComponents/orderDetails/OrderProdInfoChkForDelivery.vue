@@ -67,36 +67,105 @@
                     <td>1</td>
                     <td>
                         <div>
-                           결제완료
+                           배송대기
                         </div>
                         <div>
                             <basic-btn @click="dialogs.showOrderCancelConfirmModal = true">주문취소</basic-btn>
                         </div>
                         <div>
-                            <basic-btn @click="dialogs.showWaitingDeliveryModal = true">배송대기</basic-btn>
+                            <basic-btn @click="dialogs.showDeliveryDelayModal = true">배송지연</basic-btn>
+                        </div>
+                        <div>
+                            <basic-btn @click="dialogs.showReturnDirectionModal = true">상품준비중</basic-btn>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <colgroup>
+                <col width="4%">
+                <col width="10%">
+                <col width="14%">
+                <col width="14%">
+                <col width="8%">
+                <col width="7%">
+                <col width="7%">
+                <col width="7%">
+                <col width="4%">
+                <col width="12%">
+                <col width="10%">
+            </colgroup>
+            <thead>
+                <tr style="border-top: 1px solid #E5E5E5">
+                    <th></th>
+                    <th>스토어명</th>
+                    <th>제품이미지</th>
+                    <th>제품명</th>
+                    <th>옵션명</th>
+                    <th>상품금액</th>
+                    <th>할인금액</th>
+                    <th>주문금액</th>
+                    <th>주문수량</th>
+                    <th>배송지연정보</th>
+                    <th>주문상태</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="spot">
+                            <input class="checkbx" type="checkbox" id="list12" name="list_check"><label for="list12"></label>
+                        </div>
+                    </td>
+                    <td>종근당</td>
+                    <td valign="middle"><img src="" width="150" height="150" alt="이미지" align="center"/></td>
+                    <td>종근당 슈퍼활력업 파워</td>
+                    <td>-</td>
+                    <td>100,000원</td>
+                    <td>33,000원</td>
+                    <td>70,000원</td>
+                    <td>1</td>
+                    <td style="line-height: normal">
+                        배송예정일 : 2021-10-05<br />
+                        배송지연사우 : 재고부족
+                    </td>
+                    <td>
+                        <div>
+                           배송지연
+                        </div>
+                        <div>
+                            <basic-btn @click="dialogs.showOrderCancelConfirmModal = true">주문취소</basic-btn>
+                        </div>
+                        <div>
+                            <basic-btn @click="dialogs.showReturnDirectionModal = true">상품준비중</basic-btn>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
         <order-cancel-confirm-modal :dialogs="dialogs" />
-        <waiting-delivery-modal :dialogs="dialogs" />
+        <return-direction-modal :dialogs="dialogs" />
+        <delivery-delay-modal :dialogs="dialogs" />
     </v-main>
 </template>
 
 <script>
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
+    import ReturnDirectionModal from '@/views/healthy/order/claim/Modal/ReturnDirectionModal'
     import OrderCancelConfirmModal from '@/views/healthy/order/order/Modal/OrderCancelConfirmModal'
-    import WaitingDeliveryModal from '@/views/healthy/order/order/Modal/WaitingDeliveryModal'
+    import DeliveryDelayModal from '@/views/healthy/order/order/Modal/DeliveryDelayModal'
 
     export default {
-        name: "OrderProdInfoChk",
-        components:{ BasicBtn, OrderCancelConfirmModal, WaitingDeliveryModal },
+        name: "OrderProdInfoChkForDelivery",
+        components:{ BasicBtn, ReturnDirectionModal, OrderCancelConfirmModal, DeliveryDelayModal },
         data() {
             return {
                 dialogs: {
                     showOrderCancelConfirmModal: false,
-                    showWaitingDeliveryModal: false
+                    showDeliveryDelayModal: false,
+                    showReturnDirectionModal: false,
                 },
             }
         }
