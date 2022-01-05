@@ -19,7 +19,7 @@
             <delivery-info />
         </template>
         <template>
-            <return-prod-info />
+            <return-prod-info :subTitle="'exchangeInfo'" />
         </template>
     </v-container>
 </template>

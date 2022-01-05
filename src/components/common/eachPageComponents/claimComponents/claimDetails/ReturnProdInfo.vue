@@ -1,17 +1,17 @@
 <template>
     <v-main>
         <div class="title d-flex justify-space-between">
-            <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>교환정보</span></div>
+            <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>{{getTitle}}</span></div>
         </div>
         <table>
             <colgroup>
-                <col width="20%">
-                <col width="28.5%">
-                <col width="20%">
-                <col width="28.5%">
+                <col width="15%">
+                <col width="33.5%">
+                <col width="15%">
+                <col width="33.5%">
             </colgroup>
             <tbody>
-                <tr>
+                <tr style="border-top: 1px solid #E5E5E5">
                     <th>신청일자</th>
                     <td>2021-09-01</td>
                     <th>완료(환불)처리일자</th>
@@ -44,12 +44,12 @@
                 <tr>
                     <th>포인트할인</th>
                     <td>0원</td>
-                    <th rowspan="3"></th>
+                    <td rowspan="3"></td>
                     <td rowspan="3"></td>
                 </tr>
                 <tr>
                     <th>환급 적립금</th>
-                    <td>700원</td>
+                    <td style="text-align: right;">700원</td>
                 </tr>
                 <tr>
                     <th>사유</th>
@@ -61,7 +61,12 @@
                 </tr>
                 <tr>
                     <th>관리자메모</th>
-                    <td colspan="3">카드결제</td>
+                    <td colspan="3">
+                        <div class="leftRightSort">
+                            <textarea name="" id="" cols="15" rows="5" placeholder="관리자 메모"></textarea>
+                            <action-btn class="button">등록</action-btn>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -69,10 +74,26 @@
 </template>
 
 <script>
-  
+    import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
 
     export default {
         name: "ReturnProdInfo",
+        components:{ ActionBtn },
+        props: {
+            subTitle: {
+                type: String,
+                required: true,
+            }
+        },
+        computed: {
+            getTitle() {
+                if (this.subTitle === 'exchangeInfo') {
+                    return '교환정보'
+                } else if (this.subTitle === 'returnInfo') {
+                    return '반품정보'
+                }
+            }
+        }
     }
 </script>
 
@@ -94,50 +115,72 @@
             max-width: 1612px;
             margin-top: 20px;
 
-            thead {
-                tr {
-                    border-bottom: 1px solid $color-border;
-                    th {
-                        text-align: left;
-                        vertical-align: middle;
-                        height: 52px;
-                        padding-left: 16px;
-                        font-size: $font-15;
-                        background: $color-table-bg;
-                    }
-                }
-            }
-
             tbody {
                 tr {
                     border-bottom: 1px solid $color-border;
+                    
                     th {
                         text-align: left;
                         vertical-align: middle;
                         height: 52px;
-                        padding-left: 16px;
+                        padding: 0 16px;
                         font-size: $font-13;
                         background: $color-table-bg;
+                        
                     }
 
                     td {
                         text-align: left;
                         vertical-align: middle;
                         height: 52px;
-                        padding-left: 16px;
+                        padding: 0 16px;
                         font-size: $font-12;
 
-                        &:first-child {
-                            border-bottom: none;
+                        textarea {
+                            width: 100%;
+                            height: 70px;
+                            padding: 10px 16px;
+                            margin: 10px auto;
+                            word-break: break-word;
+                            font-weight: normal;
+                            border: 1px solid $color-bg-border;
+
+                            &::placeholder{
+                                font-weight: normal;
+                            }
+                            &:focus{
+                                border: 1px solid $color-sub;
+                            }
+                        }
+
+                        .leftRightSort {
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: space-between;
+
+                            .button{
+                                margin-left: 15px;
+                                
+                            }
+                        }
+                    }
+                    &:nth-child(n+3) {
+                        th {
+                            text-align: right;
+                        }
+                        td {
+                            text-align: right;
+                        }
+                    }
+                    &:nth-child(n+7) {
+                        th {
+                            text-align: left;
+                        }
+                        td {
+                            text-align: left;
                         }
                     }
                 }
-            }
-        }
-
-        .button{
-            button:first-child{
-                margin-right: 15px;
             }
         }
     }

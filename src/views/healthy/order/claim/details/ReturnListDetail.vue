@@ -16,7 +16,7 @@
             <delivery-info />
         </template>
         <template>
-            <return-prod-info />
+            <return-prod-info :subTitle="'returnInfo'" />
         </template>
     </v-container>
 </template>
