@@ -10,7 +10,7 @@
             <order-user-info :showOrderUserInfoTable="false" />
         </template>
         <template>
-            <order-prod-info-for-return-list />
+            <order-prod-info-for-exchange-list />
         </template>
         <template>
             <order-payment-amt-info />
@@ -28,14 +28,14 @@
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ActionBtn from '@/components/common/buttonComponents/ActionBtn'
     import orderUserInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderUserInfo'
-    import OrderProdInfoForReturnList from '@/components/common/eachPageComponents/claimComponents/claimDetails/OrderProdInfoForReturnList'
+    import OrderProdInfoForExchangeList from '@/components/common/eachPageComponents/claimComponents/claimDetails/OrderProdInfoForExchangeList'
     import orderPaymentAmtInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/OrderPaymentAmtInfo'
     import deliveryInfo from '@/components/common/eachPageComponents/orderComponents/orderDetails/DeliveryInfo'
     import returnProdInfo from '@/components/common/eachPageComponents/claimComponents/claimDetails/ReturnProdInfo'
 
     export default {
         name: "ExchangeListDetail",
-        components: { ActionBtn, BasicBtn, orderUserInfo, OrderProdInfoForReturnList, orderPaymentAmtInfo, deliveryInfo, returnProdInfo },
+        components: { ActionBtn, BasicBtn, orderUserInfo, OrderProdInfoForExchangeList, orderPaymentAmtInfo, deliveryInfo, returnProdInfo },
         
     }
 </script>

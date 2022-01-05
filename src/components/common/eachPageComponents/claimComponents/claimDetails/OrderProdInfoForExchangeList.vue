@@ -28,8 +28,8 @@
                     <th>할인금액</th>
                     <th>주문금액</th>
                     <th>주문수량</th>
-                    <th>반품수량</th>
-                    <th>반품운송장번호</th>
+                    <th>교환수량</th>
+                    <th>교환운송장번호</th>
                     <th>상품확인일자</th>
                     <th>주문상태</th>
                 </tr>
@@ -57,13 +57,13 @@
                     </td>
                     <td>
                         <div>
-                           반품회수지시
+                           교환처리중
                         </div>
                         <div>
-                            <basic-btn>반품접수</basic-btn>
+                            <basic-btn>교환접수</basic-btn>
                         </div>
                         <div>
-                            <basic-btn @click="dialogs.showReturnDirectionModal = true">반품회수지시</basic-btn>
+                            <basic-btn @click="dialogs.showReturnDirectionModal = true">교환회수지시</basic-btn>
                         </div>
                         <div>
                             <basic-btn >회수입고</basic-btn>
@@ -81,7 +81,7 @@
     import ReturnDirectionModal from '@/views/healthy/order/claim/Modal/ReturnDirectionModal'
 
     export default {
-        name: "OrderProdInfoForReturnList",
+        name: "OrderProdInfoForExchangeList",
         components:{ BasicBtn, ReturnDirectionModal },
         props: {
             orderState: {
