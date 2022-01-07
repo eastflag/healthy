@@ -121,6 +121,42 @@
                   <div class="spot">
                     <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
                   </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
+                  <div class="spot">
+                    <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>화곡동</em></label>
+                  </div>
               </div>
             </td>
           </tr>
@@ -179,7 +215,7 @@
                 margin: 10px;
                 border: 1px solid $color-border;
                 height: 200px;
-                overflow: scroll;
+                overflow: auto;
 
                 .spot {
                   display: block;

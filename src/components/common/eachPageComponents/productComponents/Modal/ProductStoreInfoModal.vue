@@ -1,8 +1,8 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
-    <v-dialog v-model="dialogs.showProductStoreInfoDialogModal" content-class="rounded-0 elevation-0" width="500px">
+    <v-dialog v-model="dialogs.showProductStoreInfoDialogModal" content-class="rounded-0 elevation-0" width="800px">
         <!--value="true"-->
        <v-card class="rounded-0 elevation-0 modalLayout">
-            <div class="and_popup_input" style="height: 550px;">
+            <div class="and_popup_input" style="height: 700px;">
                 <div class="modalTitle"><span>스토어정보</span></div>
 
                 <div class="inputLayoutContent" style="margin: 20px 24px;">
@@ -16,7 +16,7 @@
                         <action-btn>검색</action-btn>
                     </div>
 
-                    <div style="height: 200px; margin-top: 40px; overflow: scroll;">
+                    <div style="height: 400px; margin-top: 40px; overflow: scroll;">
                       <table>
                         <colgroup>
                             <col width="2%">
@@ -42,6 +42,50 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <tr>
+                            <td>
+                                <div class="spot">
+                                    <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
+                                </div>
+                            </td>
+                            <td><span>A업체</span></td>
+                            <td><span>A123</span></td>
+                            <td><span>12312-123-123124</span></td>
+                            <td><span>01012341234</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="spot">
+                                    <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
+                                </div>
+                            </td>
+                            <td><span>A업체</span></td>
+                            <td><span>A123</span></td>
+                            <td><span>12312-123-123124</span></td>
+                            <td><span>01012341234</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="spot">
+                                    <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
+                                </div>
+                            </td>
+                            <td><span>A업체</span></td>
+                            <td><span>A123</span></td>
+                            <td><span>12312-123-123124</span></td>
+                            <td><span>01012341234</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="spot">
+                                    <input class="checkbx" type="checkbox" id="list1" name="list_check"><label for="list1"></label>
+                                </div>
+                            </td>
+                            <td><span>A업체</span></td>
+                            <td><span>A123</span></td>
+                            <td><span>12312-123-123124</span></td>
+                            <td><span>01012341234</span></td>
+                        </tr>
                         <tr>
                             <td>
                                 <div class="spot">

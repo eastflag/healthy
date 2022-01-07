@@ -30,7 +30,7 @@
         <th>분류</th>
         <td>
             <div class="selectbx">
-                <select class="smallSelect" id="departure" name="departure">
+                <select id="departure" name="departure">
                     <option value="num1">대분류</option>
                     <option value="num2">대분류1</option>
                     <option value="num2">대분류2</option>
@@ -109,11 +109,19 @@ export default {
     border-radius:  $border-radius-root;
     background-color: $color-white;
 
-    .smallSelect {
-      width: 150px;
-      margin-right: 10px;
-    }
+    .selectbx{
+        width: 100%;
+        select{
+            width: 150px;
+            margin-right: 15px;
+            background:url('~@/assets/images/icons/search.svg') no-repeat 130px center;
 
+            option {
+                height: 20px;
+                font-size: $font-20;
+            }
+        }
+    }
     .keyword {
       border: 1px solid $color-bg-border;
       padding: 6px 12px;

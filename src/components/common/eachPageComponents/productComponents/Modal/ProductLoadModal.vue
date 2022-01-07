@@ -21,20 +21,20 @@
                       </div>
                     </div>
                     <div v-else>
-                      <div class="d-flex" style="margin: auto; width: 400px;">
-                        <select style="margin: 0 10px; height: 31px;" id="departure" name="departure">
+                      <div class="d-flex">
+                        <select style="height: 31px;" id="departure" name="departure">
                             <option value="num1">대분류</option>
                             <option value="num2">대분류</option>
                             <option value="num3">대분류</option>
                             <option value="num4">대분류</option>
                         </select>
-                        <select style="margin: 0 10px; height: 31px;" id="departure" name="departure">
+                        <select style="height: 31px;" id="departure" name="departure">
                             <option value="num1">중분류</option>
                             <option value="num2">중분류</option>
                             <option value="num3">중분류</option>
                             <option value="num4">중분류</option>
                         </select>
-                        <select style="margin: 0 10px; height: 31px;" id="departure" name="departure">
+                        <select style="height: 31px;" id="departure" name="departure">
                             <option value="num1">소분류</option>
                             <option value="num2">소분류</option>
                             <option value="num3">소분류</option>

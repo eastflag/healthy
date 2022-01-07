@@ -21,7 +21,7 @@
                     <label for="address"></label>
                   </div>
                   <div class="month">
-                    <span class="on">당일</span><span>1주일</span><span>1개월</span><span>3개월</span><span>6개월</span><span>1년</span><span>전체</span>
+                    <span class="on">11월</span><span>12월</span><span>01월</span><span>02월</span><span>03월</span><span>04월</span>
                   </div>
                 </div>
               </td>
@@ -39,18 +39,8 @@
                   <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>미게시</em></label>
                 </div>
               </td>
-              <th>재고</th>
-              <td>
-                <div class="spot">
-                  <input class="checkbx" type="checkbox" id="state1" name="list_check"><label for="state1"><em>전체</em></label>
-                </div>
-                <div class="spot">
-                  <input class="checkbx" type="checkbox" id="state2" name="list_check"><label for="state2"><em>재고있음</em></label>
-                </div>
-                <div class="spot">
-                  <input class="checkbx" type="checkbox" id="state3" name="list_check"><label for="state3"><em>품절</em></label>
-                </div>
-              </td>
+              <td/>
+              <td/>
             </tr>
             <tr>
                 <th>직접검색</th>

@@ -276,11 +276,12 @@ export default {
         .product-category{
           display: inline-block;
           padding: 6px 12px;
+          padding-bottom: 0;
           margin-right: 10px;
           margin-top: 10px;
           border: 1px solid $color-border;
           height: 155px;
-          overflow: scroll;
+          overflow: auto;
 
           .spot {
             display: block;

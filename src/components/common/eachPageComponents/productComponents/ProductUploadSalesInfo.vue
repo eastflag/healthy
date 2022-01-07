@@ -13,13 +13,13 @@
         <th>판매정보</th>
         <td>
           <div class="d-flex">
-            <input class="sales-input" type="number" id="cont" name="info1" placeholder="8자리 이내의 숫자">
+            <input class="sales-input" type="text" id="cont" name="info1" placeholder="8자리 이내의 숫자">
           </div>
         </td>
         <th>할인금액(원)</th>
         <td>
           <div class="d-flex">
-            <input class="sales-input" type="number" id="cont" name="info1" placeholder="8자리 이내의 숫자">
+            <input class="sales-input" type="text" id="cont" name="info1" placeholder="8자리 이내의 숫자">
           </div>
         </td>
       </tr>
@@ -27,13 +27,13 @@
         <th>재고(개)</th>
         <td>
           <div class="d-flex">
-            <input class="sales-input" type="number" id="cont" name="info1" placeholder="3자리 이내의 숫자(최대999)">
+            <input class="sales-input" type="text" id="cont" name="info1" placeholder="3자리 이내의 숫자(최대999)">
           </div>
         </td>
         <th>ID당 구매수량(개)</th>
         <td>
           <div class="d-flex">
-            <input class="sales-input" type="number" id="cont" name="info1" placeholder="3자리 이내의 숫자 (0입력 시 999개로 입력)">
+            <input class="sales-input" type="text" id="cont" name="info1" placeholder="3자리 이내의 숫자 (0입력 시 999개로 입력)">
           </div>
         </td>
       </tr>

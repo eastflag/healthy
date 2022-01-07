@@ -23,16 +23,11 @@
 import FaqSearchInput from '../../../../components/common/eachPageComponents/cscenterComponents/FaqSearchInput'
 import FaqSearchList from '../../../../components/common/eachPageComponents/cscenterComponents/FaqSearchList'
     export default {
-  components: { FaqSearchInput, FaqSearchList },
+        components: { FaqSearchInput, FaqSearchList },
         name: "FAQList"
     }
 </script>
 
 <style lang="scss" scoped>
     @import '~@/assets/scss/_index.scss';
-    #app{
-        .containerLayout{
-
-        }
-    }
 </style>
