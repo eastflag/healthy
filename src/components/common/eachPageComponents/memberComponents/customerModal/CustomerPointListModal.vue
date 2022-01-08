@@ -75,6 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/scss/_index.scss';
+@import '~@/assets/scss/popUpModal/popUpCommon.scss';
 
 
 </style>
