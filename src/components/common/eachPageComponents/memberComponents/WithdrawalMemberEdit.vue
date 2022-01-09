@@ -1,6 +1,6 @@
 <template>
     <v-container fluid class="boardLayout">
-        <template v-if="memberKind == 'customer'">
+        <template>
           <table>
               <colgroup>
                   <col width="200px">
@@ -41,7 +41,7 @@
           </table>
         </template>
 
-        <template v-else-if="memberKind == 'trchnical'">
+        <template>
           <table>
             <colgroup>
               <col width="200px">
@@ -82,7 +82,7 @@
           </table>
         </template>
 
-      <template v-else>
+      <template>
         <table>
           <colgroup>
             <col width="200px">
@@ -122,7 +122,7 @@
           <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>이용/운영 정보</span></div>
         </div>
 
-        <template v-if="memberKind == 'customer'">
+        <template>
           <table>
             <colgroup>
               <col width="200px">
@@ -204,7 +204,7 @@
           </div>
         </template>
 
-        <template v-else-if="memberKind == 'trchnical'">
+        <template>
           <table>
             <colgroup>
               <col width="200px">
@@ -297,7 +297,7 @@
           </div>
         </template>
 
-        <template v-else>
+        <template>
           <table>
             <colgroup>
               <col width="200px">

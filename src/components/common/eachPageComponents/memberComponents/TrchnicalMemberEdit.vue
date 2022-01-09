@@ -117,6 +117,7 @@
         <!-- 전문인 정보 -->
         <div class="title d-flex justify-space-between">
           <div class="d-flex"><v-icon class="titleIcon">$titleIcon</v-icon><span>전문인 정보</span></div>
+          <basic-btn class="ml-3" @click="dialogs.showTrchnicalAttachmentModal = true">첨부서류</basic-btn>
         </div>
 
         <table>
@@ -271,6 +272,7 @@
         <trchnical-consult-list-modal :dialogs="dialogs"></trchnical-consult-list-modal>
         <trchnical-visit-history-modal :dialogs="dialogs"></trchnical-visit-history-modal>
         <trchnical-dormant-member-modal :dialogs="dialogs"></trchnical-dormant-member-modal>
+        <trchnical-attachment-modal :dialogs="dialogs"></trchnical-attachment-modal>
     </v-container>
 </template>
 
@@ -281,10 +283,11 @@
     import TrchnicalVisitHistoryModal from "./trchnicalModal/TrchnicalVisitHistoryModal";
     import TrchnicalDormantMemberModal from "./trchnicalModal/TrchnicalDormantMemberModal";
     import TrchnicalConsultListModal from "./trchnicalModal/TrchnicalConsultListModal";
+    import TrchnicalAttachmentModal from "./trchnicalModal/TrchnicalAttachmentModal";
 
     export default {
         name: "TrchnicalMemberEdit",
-        components: {BasicBtn, TrchnicalCalculationListModal, TrchnicalBalanceModal, TrchnicalConsultListModal, TrchnicalVisitHistoryModal, TrchnicalDormantMemberModal},
+        components: {BasicBtn, TrchnicalCalculationListModal, TrchnicalBalanceModal, TrchnicalConsultListModal, TrchnicalVisitHistoryModal, TrchnicalDormantMemberModal, TrchnicalAttachmentModal},
         data() {
             return {
               dialogs: {
@@ -293,6 +296,7 @@
                 showTrchnicalConsultListModal: false,
                 showTrchnicalVisitHistoryModal: false,
                 showTrchnicalDormantMemberModal: false,
+                showTrchnicalAttachmentModal: false,
               },
               smsConsent: [
                 {
