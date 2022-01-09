@@ -12,8 +12,8 @@
                         로(으로)<br/>수정 하시겠습니까?</span>
                 </div>
                 <div class="button d-flex justify-center">
-                    <delete-btn>닫기</delete-btn>
                     <action-btn class="upBtn">수정하기</action-btn>
+                    <delete-btn>닫기</delete-btn>
                 </div>
             </div>
         </v-card>

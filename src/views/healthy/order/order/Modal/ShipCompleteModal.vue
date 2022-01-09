@@ -7,8 +7,8 @@
                     <span>출하완료 처리 하시겠습니까?</span>
                 </div>
                 <div class="button d-flex justify-center">
-                    <delete-btn>닫기</delete-btn>
                     <action-btn class="upBtn">확인</action-btn>
+                    <delete-btn>닫기</delete-btn>
                 </div>
             </div>
         </v-card>

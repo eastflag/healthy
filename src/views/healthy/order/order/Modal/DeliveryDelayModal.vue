@@ -31,8 +31,8 @@
                     </table>
                 </div>
                 <div class="button d-flex justify-center">
-                    <delete-btn>닫기</delete-btn>
                     <action-btn class="upBtn">확인</action-btn>
+                    <delete-btn>닫기</delete-btn>
                 </div>
             </div>
         </v-card>

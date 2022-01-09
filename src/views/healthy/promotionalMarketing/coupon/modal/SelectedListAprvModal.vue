@@ -7,8 +7,8 @@
                     <span>선택한 회원의 요청을<br />승인 하시겠습니까?</span>
                 </div>
                 <div class="button d-flex justify-center">
-                    <delete-btn>닫기</delete-btn>
                     <action-btn class="upBtn">확인</action-btn>
+                    <delete-btn>닫기</delete-btn>
                 </div>
             </div>
         </v-card>

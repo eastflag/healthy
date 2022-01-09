@@ -8,8 +8,8 @@
                     <textarea name="" id="" cols="30" rows="10" placeholder="사유입력 표시"></textarea>
                 </div>
                 <div class="button d-flex justify-center">
-                    <delete-btn>닫기</delete-btn>
                     <action-btn class="upBtn">확인</action-btn>
+                    <delete-btn>닫기</delete-btn>
                 </div>
             </div>
         </v-card>
