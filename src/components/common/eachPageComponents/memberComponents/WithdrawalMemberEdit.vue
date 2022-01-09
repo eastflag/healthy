@@ -134,7 +134,7 @@
               <th>상태</th>
               <td>
                 <div class="selectbx">
-                  <select id="status" name="status" :disabled="isDisabledUser">
+                  <select id="status" name="status" disabled>
                     <option value="num1">정상</option>
                     <option value="num2">정상2</option>
                     <option value="num3">정상3</option>
@@ -144,7 +144,7 @@
               <th>고객등급</th>
               <td>
                 <div class="selectbx">
-                  <select id="customer_grade" name="customer_grade" :disabled="isDisabledUser">
+                  <select id="customer_grade" name="customer_grade" disabled>
                     <option value="num1">1등급</option>
                     <option value="num2">2등급</option>
                     <option value="num3">3등급</option>
@@ -199,7 +199,7 @@
               </td>
             </tr>
           </table>
-          <div v-if="isDisabledUser" style="margin: 0 32px;">
+          <div style="margin: 0 32px;">
               <action-btn @click="dialogs.showCustomerMemberWithdrawalInfoModal = true">탈퇴내역보기</action-btn>
           </div>
         </template>
@@ -216,7 +216,7 @@
               <th>상태</th>
               <td>
                 <div class="selectbx">
-                  <select id="status" name="status" v-model="userStatus" :disabled="isDisabledUser">
+                  <select id="status" name="status" v-model="userStatus" disabled>
                     <option value="정상">정상</option>
                     <option value="탈퇴">탈퇴</option>
                   </select>
@@ -225,7 +225,7 @@
               <th>전문인등급</th>
               <td>
                 <div class="selectbx">
-                  <select id="customer_grade" name="customer_grade" :disabled="isDisabledUser">
+                  <select id="customer_grade" name="customer_grade" disabled>
                     <option value="num1">1등급</option>
                     <option value="num2">2등급</option>
                     <option value="num3">3등급</option>
@@ -241,10 +241,10 @@
               <th>출금계좌</th>
               <td>
                 <div class="selectbx d-flex">
-                  <select id="bankSelect" name="bankSelect" style="width: 100px;" :disabled="isDisabledUser">
+                  <select id="bankSelect" name="bankSelect" style="width: 100px;" disabled>
                     <option value="">은행선택</option>
                   </select>
-                  <input type="text" id="detail" name="detail" placeholder="110-333-333333" style="width: 400px;" :disabled="isDisabledUser">
+                  <input type="text" id="detail" name="detail" placeholder="110-333-333333" style="width: 400px;" disabled>
                 </div>
               </td>
             </tr>
@@ -292,7 +292,7 @@
               </td>
             </tr>
           </table>
-          <div v-if="isDisabledUser" style="margin: 0 32px;">
+          <div style="margin: 0 32px;">
               <action-btn @click="dialogs.showTrchnicalMemberWithdrawalInfoModal = true">탈퇴내역보기</action-btn>
           </div>
         </template>
@@ -309,7 +309,7 @@
               <th>상태</th>
               <td>
                 <div class="selectbx">
-                  <select id="status" name="status" :disabled="isDisabledUser">
+                  <select id="status" name="status" disabled>
                     <option value="num1">정상</option>
                     <option value="num2">정상2</option>
                     <option value="num3">정상3</option>
@@ -352,7 +352,7 @@
               </td>
             </tr>
           </table>
-          <div v-if="isDisabledUser" style="margin: 0 32px;">
+          <div style="margin: 0 32px;">
               <action-btn @click="dialogs.showStoreDormantMemberWithdrawalInfoModal = true">탈퇴내역보기</action-btn>
           </div>
         </template>
@@ -415,11 +415,6 @@
           TrchnicalCalculationListModal, TrchnicalBalanceModal, TrchnicalConsultListModal, TrchnicalVisitHistoryModal, TrchnicalDormantMemberModal,
           StoreAttachedDocumentModal, StoreCalculationListModal, StoreProductInfoModal, StoreVisitHistoryModal, StoreDormantMemberModal,
           ActionBtn,CustomerWithdrawalInfoModal, StoreWithdrawalInfoModal, TrchnicalWithdrawalInfoModal
-        },
-        computed: {
-          isDisabledUser: function() {
-            return this.userStatus === '탈퇴'
-          }
         },
         data() {
             return {

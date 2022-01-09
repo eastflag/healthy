@@ -35,12 +35,12 @@
                 <td>
                 <div class="dm_bx">
                     <div class="bx">
-                        <input type="text" id="email1" name="email1" placeholder="scn001">
+                        <input type="text" id="email1" name="email1" placeholder="scn001" disabled>
                         <label for="email1"></label>
                     </div>
                     <div class="dash">@</div>
                     <div class="bx">
-                        <input type="text" id="email2" name="email2" placeholder="scln.co.kr">
+                        <input type="text" id="email2" name="email2" placeholder="scln.co.kr" disabled>
                         <label for="email2"></label>
                     </div>
                 </div>
@@ -51,17 +51,17 @@
               <td>
                 <div class="dm_bx">
                   <div class="bx">
-                    <input type="text" id="phone1" name="phone1" placeholder="010">
+                    <input type="text" id="phone1" name="phone1" placeholder="010" disabled>
                     <label for="phone1"></label>
                   </div>
                   <div class="dash">-</div>
                   <div class="bx">
-                    <input type="text" id="phone2" name="phone2" placeholder="1234">
+                    <input type="text" id="phone2" name="phone2" placeholder="1234" disabled>
                     <label for="phone2"></label>
                   </div>
                   <div class="dash">-</div>
                   <div class="bx">
-                    <input type="text" id="phone3" name="phone3" placeholder="5678">
+                    <input type="text" id="phone3" name="phone3" placeholder="5678" disabled>
                     <label for="phone3"></label>
                   </div>
                 </div>
@@ -72,18 +72,18 @@
               <td>
                   <div class="dm_bx mb-2">
                     <div class="bx">
-                      <input type="text" id="post" name="post" placeholder="07769">
+                      <input type="text" id="post" name="post" placeholder="07769" disabled>
                       <label for="post"></label>
                     </div>
                     <basic-btn>우편번호 검색</basic-btn>
                   </div>
                   <div class="dm_bx">
                     <div class="addr1">
-                      <input type="text" id="address1" name="address1" placeholder="서울 강서구 마곡중앙">
+                      <input type="text" id="address1" name="address1" placeholder="서울 강서구 마곡중앙" disabled>
                       <label for="address1"></label>
                     </div>
                     <div class="bx">
-                      <input type="text" id="address2" name="address2" placeholder="장흥빌딩">
+                      <input type="text" id="address2" name="address2" placeholder="장흥빌딩" disabled>
                       <label for="address2"></label>
                     </div>
                   </div>
