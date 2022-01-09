@@ -146,43 +146,18 @@ table{
           padding:0 32px;
           font-size: $font-12;
           text-align:left;
-        }
-      }
-    }
-    table{
-      width: 1612px;
-      max-width: 1612px;
-      margin: 30px 0 30px 30px;
 
-      tr{
-        border-bottom: 1px solid $color-border;
-        height: 52px;
+          table {
+            th {
+              vertical-align: middle;
+              padding: 0;
+            }
 
-        th{
-          width: 200px;
-          padding-left:16px;
-          font-size: $font-13;
-          background: $color-table-bg;
-          // display: flex;
-          align-items: center;
-        }
-
-        td{
-          padding:0 32px;
-          font-size: $font-12;
-          text-align:left;
-        }
-      }
-
-      .innerTable {
-        th {
-          vertical-align: middle;
-        }
-
-        td{
-          font-size: $font-12;
-          text-align: center;
-          vertical-align: middle;
+            td {
+              text-align: center;
+              vertical-align: middle;
+            }
+          }
         }
       }
     }
