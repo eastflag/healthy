@@ -134,7 +134,7 @@
                     td {
                         text-align: center;
                         vertical-align: middle;
-                        min-height: 170px;
+                        height: 210px;
                         font-size: $font-12;
                         border: 1px solid $color-border;
                         padding: 5px;
