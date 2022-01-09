@@ -77,7 +77,7 @@
                             <basic-btn>상품평 보기</basic-btn>
                         </div>
                         <div>
-                            <basic-btn>포인트 지급</basic-btn>
+                            <basic-btn @click="dialogs.showPointSavingOrBalanceModal = true">포인트 지급</basic-btn>
                         </div>
                     </td>
                 </tr>
@@ -85,7 +85,7 @@
         </table>
         <exchange-req-modal :dialogs="dialogs" />
         <return-req-modal :dialogs="dialogs" />
-        <member-issue-point-modal :dialogs="dialogs" />
+        <point-saving-or-balance-modal :dialogs="dialogs" />
     </v-main>
 </template>
 
@@ -93,11 +93,11 @@
     import BasicBtn from '@/components/common/buttonComponents/BasicBtn'
     import ExchangeReqModal from '@/views/healthy/order/order/Modal/ExchangeReqModal'
     import ReturnReqModal from '@/views/healthy/order/order/Modal/ReturnReqModal'
-    import MemberIssuePointModal from '@/views/healthy/member/member/Modal/MemberIssuePointModal'
+    import PointSavingOrBalanceModal from '@/views/healthy/order/order/Modal/PointSavingOrBalanceModal'
 
     export default {
         name: "OrderProdInfoWithDelivery",
-        components:{ BasicBtn, ExchangeReqModal, ReturnReqModal, MemberIssuePointModal },
+        components:{ BasicBtn, ExchangeReqModal, ReturnReqModal, PointSavingOrBalanceModal },
         props: {
             orderState: {
                 type: String,
@@ -108,8 +108,8 @@
             return {
                 dialogs: {
                     showExchangeReqModal: false,
-                    showMemberIssuePointModal: false,
                     showReturnReqModal: false,
+                    showPointSavingOrBalanceModal: false,
                 },
             }
         },
