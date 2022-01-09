@@ -14,7 +14,7 @@
             <order-prod-info-with-delivery-date :orderState = "'deliveringComplete'" />
         </template>
         <template>
-            <order-payment-amt-info />
+            <order-payment-amt-info :paymentType = "'cardPay'" />
         </template>
         <template>
             <delivery-info />

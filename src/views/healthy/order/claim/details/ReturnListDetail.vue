@@ -13,7 +13,7 @@
             <order-prod-info-for-return-list />
         </template>
         <template>
-            <order-payment-amt-info />
+            <order-payment-amt-info :paymentType = "'cardPay'" />
         </template>
         <template>
             <delivery-info />

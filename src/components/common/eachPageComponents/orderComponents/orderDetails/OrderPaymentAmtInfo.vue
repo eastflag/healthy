@@ -24,8 +24,8 @@
                     <td style="text-align: left; font-weight: 800">포인트혜택</td>
                     <td >총 700원</td>
                     <td style="text-align: left; font-weight: 800">결제수단</td>
-                    <td style="text-align: left; font-weight: 800; border-bottom: none; padding-left: 35px">
-                        무통장입금
+                    <td :class="{'payment': paymentType === 'bankbook', 'cardPay': paymentType === 'cardPay'}">
+                        {{paymentType === 'bankbook' ? '무통장입금' : 'BC카드' }}
                     </td>
                 </tr>
                 <tr>
@@ -34,11 +34,16 @@
                     <td>기본적립</td>
                     <td>700원</td>
                     <td rowspan="6"></td>
-                    <td rowspan="6" class="bankbook">
+                    <td rowspan="6" v-if="paymentType === 'bankbook'" class="paymentContent">
                         <br/>입금내역
                         <br/><span>2021-09-02, 입금확인</span>
                         <br/>승인번호
                         <br/><span>1234</span>
+                    </td>
+                    <td rowspan="6" v-else-if="paymentType === 'cardPay'" class="cardContent">
+                        <br/>3개월 무이자
+                        <br/>승인번호 : 123456798563
+                        <br/>(2021-09-02 16:58:12)
                     </td>
                 </tr>
                 <tr>
@@ -96,8 +101,12 @@
                 type: Boolean,
                 required: false,
                 default: true
+            },
+            paymentType: {
+                type: String,
+                required: true
             }
-        }
+        },
     }
 </script>
 
@@ -164,7 +173,21 @@
             }
         }
 
-        .bankbook {
+        .payment {
+            text-align: left; 
+            font-weight: 800; 
+            border-bottom: none; 
+            padding-left: 35px;
+        }
+
+        .cardPay {
+            text-align: right; 
+            font-weight: 800; 
+            border-bottom: none; 
+            padding-right: 35px;
+        }
+
+        .paymentContent {
             text-align: left;
             padding: 0 35px;
             vertical-align: top;
@@ -176,6 +199,16 @@
             span {
                 font-weight: normal;
             }
+        }
+
+        .cardContent {
+            text-align: right;
+            padding: 0 35px;
+            vertical-align: top;
+            font-size: $font-13;
+            font-weight: normal;
+            line-height: 25px;
+            border-top: none;
         }
 
         .button{

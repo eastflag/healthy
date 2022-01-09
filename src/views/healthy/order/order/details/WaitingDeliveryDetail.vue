@@ -13,7 +13,7 @@
             <order-prod-info-chk-for-delivery />
         </template>
         <template>
-            <order-payment-amt-info />
+            <order-payment-amt-info :paymentType = "'cardPay'" />
         </template>
     </v-container>
 </template>

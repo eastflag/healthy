@@ -13,7 +13,7 @@
             <order-prod-info-with-delivery-date :orderState = "'confirmPurchasing'" />
         </template>
         <template>
-            <order-payment-amt-info />
+            <order-payment-amt-info :paymentType = "'cardPay'" />
         </template>
         <template>
             <delivery-info />

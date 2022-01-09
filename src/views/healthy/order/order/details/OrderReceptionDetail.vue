@@ -13,7 +13,7 @@
             <order-prod-info :orderState = "'orderReception'" />
         </template>
         <template>
-            <order-payment-amt-info />
+            <order-payment-amt-info :paymentType = "'bankbook'" />
         </template>
         <template>
             <delivery-info />
