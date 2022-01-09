@@ -99,4 +99,6 @@
 
 <style lang="scss" scoped>
     @import '~@/assets/scss/_index.scss';
+    // SearchInputForm Common SCSS
+    @import '~@/assets/scss/searchInputFormCommon.scss';
 </style>

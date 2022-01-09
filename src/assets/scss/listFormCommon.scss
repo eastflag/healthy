@@ -105,4 +105,125 @@
       }
     }
   }
+
+  .listBoardLayout{
+      max-width: 1680px;
+      min-height: 625px;
+      height: auto;
+      margin: 10px auto 0 auto;
+      border: 1px solid $color-bg-border;
+      border-radius:  $border-radius-root;
+      background-color: $color-white;
+
+      .title{
+          width: 1612px;
+          margin: 40px auto 0;
+          font-size: $font-16;
+          font-weight: bold;
+
+          div>span{
+              padding-right: 5px;
+          }
+
+          .selectbx{
+              select{
+                  width: 260px;
+                  height: 30px;
+                  padding: 0 10px;
+                  background:url('~@/assets/images/icons/search.svg') no-repeat 226px center;
+                  font-size: $font-12;
+                  color: $color-action;
+
+                  option {
+                      height: 20px;
+                      color:  $color-basic;
+                      font-size: $font-20;
+                  }
+              }
+          }
+      }
+
+      table{
+          display: block;
+          width: 1612px;
+          max-width: 1612px;
+          height: auto;
+          min-height: 436px;
+          margin: 20px auto 15px;
+          padding-bottom: 15px;
+          overflow: auto;
+          background: url("~@/assets/images/icons/not_find_info.svg") no-repeat 50% 20%;
+
+          thead{
+              tr{
+                  th{
+                      position: relative;
+                      height:52px;
+                      width: 1612px;
+                      background: $color-table-bg;
+                      border-top:1px solid $color-border;
+                      border-bottom:1px solid $color-border;
+                      font-size:13px;
+                      justify-content: center;
+                      vertical-align: middle;
+                      align-items: center;
+
+                      .spot{
+                          position: absolute;
+                          left: 30px;
+                          bottom: 52%;
+                      }
+                  }
+              }
+          }
+          tbody{
+              tr {
+                  td{
+                      position: relative;
+                      height:52px;
+                      border-bottom:1px solid $color-border;
+                      font-size: $font-13;
+                      background-color: $color-white;
+                      justify-content: center;
+                      vertical-align: middle;
+                      text-align: center;
+
+                      &:nth-child(2){
+                          span{
+                              a {
+                                  text-decoration: underline;
+                                  color: $color-basic;
+                              }
+                          }
+                      }
+
+                      .spot{
+                          position: absolute;
+                          left: 30px;
+                          bottom: 52%;
+                      }
+
+                      span {
+
+                          button{
+                              height: 25px;
+                              font-size: inherit;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+      .letterLimit {
+          height: inherit;
+          span{
+              display: inline-block;
+              width: 160px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              margin-bottom: -7px;
+          }
+      }
+  }
 }

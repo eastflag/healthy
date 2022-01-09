@@ -34,4 +34,6 @@
 
 <style lang="scss" scoped>
     @import '~@/assets/scss/_index.scss';
+    // manuPath Common SCSS
+    @import '~@/assets/scss/manuPathCommon.scss';
 </style>
