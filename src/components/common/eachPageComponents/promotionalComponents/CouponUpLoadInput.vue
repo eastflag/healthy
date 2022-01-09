@@ -13,9 +13,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="disabled">
                     <th>쿠폰코드</th>
-                    <td colspan="3">
+                    <td colspan="3" >
                         <div style="width: 550px">
                             <input type="text" id="couponCode" name="couponCode" placeholder="자동생성" disabled>
                         </div>
@@ -103,27 +103,31 @@
                     <th rowspan="3">할인적용상품</th>
                     <td style="height: 52px">
                         <div class="spot">
-                            <input class="radiobx" type="radio" id="saleProd1" name="radio"><label for="saleProd1"><em>전체</em></label>
+                            <input class="radiobx" type="radio" id="saleProd1" name="saleProd1" value="saleProd1" v-model="saleRadio"><label for="saleProd1"><em>전체</em></label>
                         </div>
                         <div class="spot">
-                            <input class="radiobx" type="radio" id="saleProd2" name="radio"><label for="saleProd2"><em>해당카테고리</em></label>
+                            <input class="radiobx" type="radio" id="saleProd2" name="saleProd2" value="saleProd2" v-model="saleRadio"><label for="saleProd2"><em>해당카테고리</em></label>
                         </div>
                         <div class="spot">
-                            <input class="radiobx" type="radio" id="saleProd3" name="radio"><label for="saleProd3"><em>해당상품</em></label>
+                            <input class="radiobx" type="radio" id="saleProd3" name="saleProd3" value="saleProd3" v-model="saleRadio"><label for="saleProd3"><em>해당상품</em></label>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td style="height: 52px">
+                <tr >
+                    <td style="height: 52px" v-if="saleRadio === 'saleProd3'">
                         <basic-btn>상품검색</basic-btn>
                     </td>
+                    <td style="height: 52px; border-bottom: none" v-else>
+                    </td>
                 </tr>
                 <tr>
-                    <td style="height: 52px">
+                    <td style="height: 52px" v-if="saleRadio === 'saleProd3'">
                         <div class="leftRightSort">
                             <span>상품명, 상품명, 상품명</span>
                             <basic-btn>삭제</basic-btn>
                         </div>
+                    </td>
+                    <td style="height: 52px; border-top: none" v-else>
                     </td>
                 </tr>
             </tbody>
@@ -144,16 +148,16 @@
                     <th>발급방식</th>
                     <td>
                         <div class="spot">
-                            <input class="radiobx" type="radio" id="issueWay1" name="radio"><label for="issueWay1"><em>관리자수동발급</em></label>
+                            <input class="radiobx" type="radio" id="issueWay1" name="issueWay1" value="issueWay1" v-model="picked"><label for="issueWay1"><em>관리자수동발급</em></label>
                         </div>
                         <div class="spot">
-                            <input class="radiobx" type="radio" id="issueWay2" name="radio"><label for="issueWay2"><em>특정조건자동발급</em></label>
+                            <input class="radiobx" type="radio" id="issueWay2" name="issueWay2" value="issueWay2" v-model="picked"><label for="issueWay2"><em>특정조건자동발급</em></label>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <th>발급대상</th>
-                    <td>
+                    <td v-if="picked === 'issueWay1'">
                         <div class="spot">
                             <input class="radiobx" type="radio" id="radio1" name="radio"><label for="radio1"><em>회원가입시</em></label>
                         </div>
@@ -165,6 +169,14 @@
                         </div>
                         <div class="spot">
                             <input class="radiobx" type="radio" id="radio4" name="radio"><label for="radio4"><em>마케팅수신동의</em></label>
+                        </div>
+                    </td>
+                    <td v-else-if="picked === 'issueWay2'">
+                        <div class="spot">
+                            <input class="radiobx" type="radio" id="radio5" name="radio"><label for="radio5"><em>고객</em></label>
+                        </div>
+                        <div class="spot">
+                            <input class="radiobx" type="radio" id="radio6" name="radio"><label for="radio6"><em>전문인</em></label>
                         </div>
                     </td>
                 </tr>
@@ -237,6 +249,8 @@
         data() {
             return {
                 todate: dayjs().format("YYYY-MM-DD"),
+                picked: 'issueWay1',
+                saleRadio: 'saleProd1'
             }
         },
     }
@@ -273,6 +287,22 @@
 
             tbody {
                 tr {
+
+                    &.disabled{
+
+                            th.disabled{
+                                color: $color-disabled;
+                            }
+
+                            td{
+                                background-color: $color-bg-border;
+
+                                .disabled{
+                                    color: $color-disabled;
+                                }
+                            }
+                        }
+
                     th {
                         text-align: center;
                         vertical-align: middle;
@@ -405,10 +435,6 @@
                     }
                 }
             }
-      }
-
-      input[type="text"]:disabled {
-        background: $color-disabled;
       }
 
       .button{
