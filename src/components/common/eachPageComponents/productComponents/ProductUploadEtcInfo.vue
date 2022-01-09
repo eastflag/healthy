@@ -9,7 +9,7 @@
       </colgroup>
       <tr style="border-top: 1px solid #E5E5E5;">
         <th rowspan="2" style="text-align:left; align-items: center; vertical-align: middle;">관련상품</th>
-        <td style="vertical-align: middle;">
+        <td style="vertical-align: middle; height: 53px;">
           <div class="d-flex">
             <basic-btn @click="dialogs.showProductLoadModal = true">상품불러오기</basic-btn>
           </div>
@@ -120,7 +120,7 @@ export default {
       margin: 30px 0 30px 30px;
     }
 
-table{
+    table{
       width: 1612px;
       max-width: 1612px;
       margin: 30px 0 30px 30px;

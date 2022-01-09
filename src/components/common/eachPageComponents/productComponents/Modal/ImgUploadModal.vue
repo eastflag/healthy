@@ -5,7 +5,12 @@
             <div class="and_popup_input">
                 <div class="modalTitle"><span>이미지파일</span></div>
                 <div class="inputLayoutContent" style="margin: 24px;">
-                    <input style="width: 310px; margin-left: 10px;" type="file" id="cont" name="info1" placeholder="선택된 파일 없음">
+                  <div style="display: flex; align-items: center;">
+                    <label class="customFileLabel" for="customFile">파일선택</label>
+                    <div class="fileName"><span>{{file_name}}</span></div>
+                    <input hidden id="customFile" type="file" @change="handleFileChange"/>
+                  </div>
+
                 </div>
                 <div class="button d-flex justify-center">
                     <action-btn>확인</action-btn>
@@ -24,7 +29,17 @@
         props: [
             "dialogs"
         ],
-        components:{ BasicBtn, ActionBtn }
+        methods: {
+          handleFileChange(e) {
+            this.file_name = e.target.files[0].name;
+          },
+        },
+        components:{ BasicBtn, ActionBtn },
+        data() {
+          return {
+            file_name: '선택된 파일 없음'
+          }
+        }
     }
 </script>
 
@@ -36,6 +51,23 @@
             button:first-child{
                 margin-right: 15px;
             }
+        }
+        .customFileLabel{
+            background-color: #07403A;
+            color: #F9F9F9;
+            font-size: 14px;
+            padding: 7px 19px;
+            padding-top: 10px;
+            border-radius: 5px;
+        }
+        .fileName{
+          margin-left: 15px;
+          border: 1px solid $color-bg-border;
+          display: inline-block;
+          height: 37px;
+          width: 304px;
+          padding-left: 10px;
+          padding-top: 6.5px;
         }
     }
 </style>
