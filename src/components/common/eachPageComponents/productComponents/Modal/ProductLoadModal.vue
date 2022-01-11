@@ -5,14 +5,14 @@
             <div class="and_popup_input" style="height: 550px;">
                 <div class="modalTitle"><span>상품불러오기</span></div>
 
-                <div class="inputLayoutContent" style="margin: 0 24px;">
-                    <div style="display: flex; margin: 10px 0;">
+                <div class="inputLayoutContent">
+                    <div class="searchTypeTab">
                         <div class="searchType" @click="selectedSearchType = 'search'" :class="selectedSearchType == 'search' ? 'active' : ''">직접검색</div>
                         <div class="searchType" @click="selectedSearchType = 'category'" :class="selectedSearchType == 'category' ? 'active' : ''">카테고리검색</div>
                     </div>
 
                     <div v-if="selectedSearchType == 'search'">
-                      <div class="d-flex" style="margin-top: 10px;">
+                      <div class="d-flex searchInputWrapper" style="margin-top: 10px;">
                           <input type="text" id="cont" name="info1" placeholder="상품명을 입력해주세요">
                       </div>
 
@@ -21,7 +21,7 @@
                       </div>
                     </div>
                     <div v-else>
-                      <div class="d-flex">
+                      <div class="d-flex searchInputWrapper">
                         <select class="categoryList" id="departure" name="departure">
                             <option value="num1">대분류</option>
                             <option value="num2">대분류</option>
@@ -161,6 +161,14 @@
 <style lang="scss" scoped>
     @import '~@/assets/scss/popUpModal/popUpCommon.scss';
     #app{
+        .searchTypeTab{
+          display: flex;
+          margin: 10px 0;
+        }
+        .inputLayoutContent{
+            margin: 0 24px;
+        }
+
         .searchType{
           flex-grow: 1;
           text-align: center;
@@ -174,8 +182,21 @@
         }
 
         .categoryList {
-          height: 32.5px;
+          height: 34px;
+          width: 200px;
+          background:url('~@/assets/images/icons/search.svg') no-repeat 170px center;
+
+          option {
+              height: 20px;
+              font-size: $font-20;
+          }
         }
+
+        .searchInputWrapper {
+          height: 34px;
+          justify-content: space-around;
+        }
+
         table{
           width: 100%;
           height: 300px;

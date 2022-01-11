@@ -5,7 +5,7 @@
             <div class="and_popup_input">
                 <div class="modalTitle"><span>이미지파일</span></div>
                 <div class="inputLayoutContent" style="margin: 24px;">
-                  <div style="display: flex; align-items: center;">
+                  <div class="inputWrapper">
                     <label class="customFileLabel" for="customFile">파일선택</label>
                     <div class="fileName"><span>{{file_name}}</span></div>
                     <input hidden id="customFile" type="file" @change="handleFileChange"/>
@@ -52,10 +52,15 @@
                 margin-right: 15px;
             }
         }
+        .inputWrapper{
+          display: flex;
+          align-items: center;
+        }
         .customFileLabel{
+            cursor: pointer;
             background-color: #07403A;
             color: #F9F9F9;
-            font-size: 14px;
+            font-size: 11px;
             padding: 7px 19px;
             padding-top: 10px;
             border-radius: 5px;
@@ -64,10 +69,10 @@
           margin-left: 15px;
           border: 1px solid $color-bg-border;
           display: inline-block;
-          height: 37px;
+          height: 34px;
           width: 304px;
           padding-left: 10px;
-          padding-top: 6.5px;
+          padding-top: 5px;
         }
     }
 </style>

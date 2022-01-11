@@ -5,12 +5,11 @@
                 <div class="menuNav">
                     <span>게시판관리</span><v-icon class="pagingArrow">$pagingArrow</v-icon><span>FAQ</span><v-icon class="actionPagingArrow">$actionPagingArrow</v-icon><span>FAQ등록/수정</span>
                 </div>
-                <div class="title">FAQ등록/수정</div>
-            </div>
-        </template>
-        <template>
-            <div class="content d-flex align-center justify-end">
-                <g-button>저장</g-button>
+
+                <div class="d-flex justify-space-between">
+                    <div class="title">FAQ등록/수정</div>
+                    <g-button>저장</g-button>
+                </div>
             </div>
         </template>
         <template>
@@ -40,11 +39,13 @@ import FaqUploadReviseEditor from '../../../../components/common/eachPageCompone
 
 <style lang="scss" scoped>
     @import '~@/assets/scss/_index.scss';
+    @import '~@/assets/scss/manuPathCommon.scss';
+
     #app{
         .containerLayout{
             .content{
                 width: 100%;
-                height: 32px;
+                height: 60px;
                 overflow: hidden;
             }
         }

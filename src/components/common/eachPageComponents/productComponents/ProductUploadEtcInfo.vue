@@ -8,20 +8,20 @@
         <col width="*">
       </colgroup>
       <tr style="border-top: 1px solid #E5E5E5;">
-        <th rowspan="2" style="text-align:left; align-items: center; vertical-align: middle;">관련상품</th>
-        <td style="vertical-align: middle; height: 53px;">
+        <th rowspan="2" class="relatedProductTh">관련상품</th>
+        <td class="dataLoadWrapper">
           <div class="d-flex">
             <basic-btn @click="dialogs.showProductLoadModal = true">상품불러오기</basic-btn>
           </div>
         </td>
       </tr>
       <tr>
-        <td style="padding: 0;">
-          <div style="display: flex; justify-content: space-between; margin-top: 10px; padding-left: 32px;">
-            <span style="font-weight: bold; font-size: large;">내역</span>
+        <td class="innerTableTd">
+          <div class="innerTableInfoWrapper">
+            <span>내역</span>
             <basic-btn>삭제</basic-btn>
           </div>
-            <table style="width: 100%; margin: 10px 0; border-left: 1px solid #E5E5E5;" class="innerTable">
+            <table class="innerTable">
               <colgroup>
                 <col width="2%">
                 <col width="5%">
@@ -116,10 +116,36 @@ export default {
       padding-bottom: 24px;
     }
 
+    .relatedProductTh{
+       text-align:left;
+       align-items: center;
+       vertical-align: middle;
+    }
+
+    .dataLoadWrapper{
+      vertical-align: middle;
+      height: 53px;
+    }
+
     .title{
       margin: 30px 0 30px 30px;
     }
 
+    .innerTableTd{
+      padding: 0;
+
+      .innerTableInfoWrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding-left: 32px;
+
+        span {
+          font-weight: bold;
+          font-size: large;
+        }
+      }
+    }
     table{
       width: 1612px;
       max-width: 1612px;
@@ -160,6 +186,12 @@ export default {
           }
         }
       }
+    }
+
+    .innerTable{
+      width: 100%;
+      margin: 10px 0;
+      border-left: 1px solid #E5E5E5;
     }
   }
 }
