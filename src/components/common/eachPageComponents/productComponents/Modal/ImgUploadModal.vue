@@ -60,10 +60,11 @@
             cursor: pointer;
             background-color: #07403A;
             color: #F9F9F9;
-            font-size: 11px;
-            padding: 7px 19px;
-            padding-top: 10px;
+            font-size: 14px;
+            padding: 6px 17px;
             border-radius: 5px;
+            width: 100px;
+            text-align: center;
         }
         .fileName{
           margin-left: 15px;
